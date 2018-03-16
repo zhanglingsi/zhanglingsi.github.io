@@ -1,6 +1,11 @@
 ﻿language: node_js
 node_js: stable
 
+cache:
+    apt: true
+    directories:
+        - node_modules
+
 # S: Build Lifecycle
 install:
   - npm install
