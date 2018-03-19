@@ -26,7 +26,7 @@ post:
   modified: Post modified
   sticky: Sticky
   posted: Posted on
-  visitors: Views
+  #visitors: Views
   in: In
   more: more
   read_more: Read more

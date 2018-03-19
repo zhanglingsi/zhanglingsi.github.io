@@ -817,6 +817,9 @@ images: images
 #  enable: true
 #  app_id: vieblXPxyzMtC8cQ9nQoXOS9-gzGzoHsz
 #  app_key: Vp8iSTFg2MnCsyfhH56P8caW
+#plugins: #插件，例如生成 RSS 和站点地图的
+#- hexo-generator-feed
+#- hexo-generator-sitemap
 
 # Theme version
 version: 5.1.4

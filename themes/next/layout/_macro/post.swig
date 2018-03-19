@@ -27,18 +27,6 @@
       <meta itemprop="name" content="{{ config.title }}">
     </span>
 
-    {# LeanCould PageView #}
-    {% if theme.leancloud_visitors.enable %}
-       <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-         &nbsp; | &nbsp;
-         <span class="post-meta-item-icon">
-           <i class="fa fa-eye"></i>
-         </span>
-         <span class="post-meta-item-text">{{__('post.visitors')}} </span>
-         <span class="leancloud-visitors-count"></span>
-        </span>
-    {% endif %}
-
     {% if not headlessPost %}
       <header class="post-header">
 
