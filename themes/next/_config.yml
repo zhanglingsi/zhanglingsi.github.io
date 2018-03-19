@@ -813,10 +813,10 @@ js: js
 images: images
 
 
-leancloud_visitors:
-  enable: true
-  app_id: vieblXPxyzMtC8cQ9nQoXOS9-gzGzoHsz
-  app_key: Vp8iSTFg2MnCsyfhH56P8caW
+#leancloud_visitors:
+#  enable: true
+#  app_id: vieblXPxyzMtC8cQ9nQoXOS9-gzGzoHsz
+#  app_key: Vp8iSTFg2MnCsyfhH56P8caW
 
 # Theme version
 version: 5.1.4
