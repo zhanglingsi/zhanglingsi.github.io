@@ -40,7 +40,7 @@ keywords: "zhanglingsi, Ethen"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss: true
+rss: false
 
 footer:
   # Specify the date when the site was setup.
@@ -177,8 +177,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
-  #position: left
-  position: right
+  position: left
+  #position: right
 
   # Sidebar Display, available value (only for Muse | Mist):
   #  - post    expand on posts automatically. Default.
@@ -811,7 +811,6 @@ vendors:
 css: css
 js: js
 images: images
-
 
 #leancloud_visitors:
 #  enable: true
