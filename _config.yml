@@ -2,45 +2,70 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+# 网站信息
+# 标题
+title: 凌思の博客
+# 副标题
+subtitle: 记录学习的技能和遇到的问题
+# 网站描述
+description: 做自己爱做的事，爱自己在做的事！
+# 作者昵称
+author: 张凌思
+# 网站语言，默认英语，设置简体汉语
+language: zh-Hans
+# 时区
+timezone: Asia/Shanghai
 
-# URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+# 网址
+# 如果网站是放在子目录中，将url设置成'http://yoursite.com/child', 将root设置成'/child/'
+url: http://zhangxuezhi.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
-# Directory
+# 目录设置
+# 资源文件夹，放在里面的文件会上传到github中
 source_dir: source
+# 公共文件夹，存放生成的静态文件
 public_dir: public
+# 标签文件夹，默认是tags。实际存放在source/tags中
 tag_dir: tags
+rss_dir: rss
+# 档案文件夹，默认是archives
 archive_dir: archives
+# 分类文件夹，默认是categories。实际存放在source/categories中
 category_dir: categories
+# 代码文件夹，默认是downloads/code
 code_dir: downloads/code
+# 国际化文件夹，默认跟language相同
 i18n_dir: :lang
-skip_render:
+#不需要渲染的文件夹或文件夹,放在[]中
+# 这两个文件是百度和google的站长验证文件，不能渲染，否则会改变内容，不能验证过
+skip_render:  [README.md]
 
-# Writing
-new_post_name: :title.md # File name of new posts
+# 写作选项
+# 新建博文（帖子）的默认名称
+new_post_name: :title.md
+#默认布局模板是post，而不是draft和page
 default_layout: post
-titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+# 是否将标题转换成标题形式（首字母大写）
+titlecase: false
+# 在新标签页面中打开网页
+external_link: true
 filename_case: 0
+# 是否渲染草稿
 render_drafts: false
+# 启动 Asset 文件夹
 post_asset_folder: false
+# 把链接改为与根目录的相对位址
 relative_link: false
+# 显示未来的文章
 future: true
+# 代码块的设置
 highlight:
-  enable: true
-  line_number: true
-  auto_detect: false
+  enable: true           # 使用代码高亮
+  line_number: true      # 显示行号
+  auto_detect: false     # 自动检测语言
   tab_replace:
 
 # Home page setting
@@ -52,13 +77,16 @@ index_generator:
   per_page: 10
   order_by: -date
 
-# Category & Tag
+# 分类和标签
+# 默认分类
 default_category: uncategorized
+# 分类别名
 category_map:
+# 标签别名
 tag_map:
 
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
+# 日期和时间格式
+# Hexo 使用 Moment.js 来解析和显示时间。
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
