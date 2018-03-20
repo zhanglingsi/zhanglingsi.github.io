@@ -37,16 +37,19 @@
   #}{{ __('footer.theme') }} &mdash; {#
   #}<a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">{#
     #}NexT.{{ theme.scheme }}{#
-  #}</a>{% if theme.footer.theme.version %}{% endif %}{#
+  #}</a>{% if theme.footer.theme.version %} v{{ theme.version }}{% endif %}{#
 #}</div>
 {% endif %}
 
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#
   #}{{ theme.footer.custom_text }}{#
-#}</div>
+#}
+<span class="post-meta-divider">|</span>
+<span class="with-love">
+  <i class="fa fa-{{ theme.footer.icon }}"></i>
+</span>您是第<span id="busuanzi_value_site_uv"></span>位访客
+<span class="post-meta-divider">|</span>
+总访问量<span id="busuanzi_value_site_pv"></span>次
+</div>
 {% endif %}
-<span class="post-meta-divider">|</span>
-本站总访问量<span id="busuanzi_value_site_pv"></span>次
-<span class="post-meta-divider">|</span>
-本站访客数<span id="busuanzi_value_site_uv"></span>人次
