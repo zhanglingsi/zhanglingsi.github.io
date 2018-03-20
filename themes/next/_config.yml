@@ -63,7 +63,7 @@ footer:
     version: false
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  custom_text: Hosted by <a target="_blank" href="https://github.com/zhanglingsi">GitHub Pages</a>
+  custom_text: Hosted by <a target="_blank" href="https://github.com/zhanglingsi/zhanglingsi.github.io">GitHub Pages</a>
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -148,11 +148,11 @@ social_icons:
 
 # Blog rolls
 links_icon: link
-links_title: Links
-links_layout: block
-#links_layout: inline
-#links:
-  #Title: http://example.com/
+links_title: 友情链接
+#links_layout: block
+links_layout: inline
+links:
+  GitHub: https://github.com/zhanglingsi
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -194,7 +194,7 @@ sidebar:
   offset: 12
 
   # Back to top in sidebar (only for Pisces | Gemini).
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button.
   scrollpercent: false
