@@ -150,6 +150,11 @@ search:
   format: html
   limit: 10000
 
+algolia:
+  applicationID: QHJPQT03DW
+  indexName: 'blog-index'
+  chunkSize: 5000
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
