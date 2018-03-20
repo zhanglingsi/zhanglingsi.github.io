@@ -166,6 +166,8 @@ live2d:
   bottom: -30
   mobileShow: false
 
+swiftype_key: jOIJICNDIOZKdo
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
