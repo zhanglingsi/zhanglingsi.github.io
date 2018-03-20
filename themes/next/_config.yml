@@ -819,3 +819,7 @@ version: 5.1.4
 
 passage_end_tag:
   enabled: true
+
+daovoice: true
+
+daovoice_app_id: 5483b2c4
