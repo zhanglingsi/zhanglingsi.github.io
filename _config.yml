@@ -155,6 +155,11 @@ algolia:
   indexName: 'blog-index'
   chunkSize: 5000
 
+live2d:
+  model: shizuku
+  bottom: -30
+  mobileShow: false
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
