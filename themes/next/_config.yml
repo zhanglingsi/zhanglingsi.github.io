@@ -129,9 +129,9 @@ scheme: Gemini
 social:
   GitHub: https://github.com/zhanglingsi || github
   E-Mail: mailto:zhanglingsi@aliyun.com || envelope
-  微博: https://weibo.com/2628558762/profile?topnav=1&wvr=6
-  豆瓣: https://www.douban.com/people/175605982/
-  知乎: https://www.zhihu.com/people/zhang-ling-si-9/activities
+  微博: https://weibo.com/2628558762/profile?topnav=1&wvr=6 || weibo
+  豆瓣: https://www.douban.com/people/175605982/ || heartbeat
+  知乎: https://www.zhihu.com/people/zhang-ling-si-9/activities || certificate
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
