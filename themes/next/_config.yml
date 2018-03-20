@@ -153,6 +153,8 @@ links_title: 友情链接
 links_layout: inline
 links:
   GitHub: https://github.com/zhanglingsi
+  制作图标: http://www.easyicon.net/
+  Font Awesome: https://fontawesome.com/icons?d=gallery
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -678,7 +680,7 @@ motion:
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
