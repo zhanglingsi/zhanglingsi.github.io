@@ -89,9 +89,9 @@ category_map:
 tag_map:
 
 sitemap:
-path: sitemap.xml
-# baidusitemap:
-# path: baidusitemap.xml
+    path: sitemap.xml
+baidusitemap:
+    path: baidusitemap.xml
 
 # 日期和时间格式
 # Hexo 使用 Moment.js 来解析和显示时间。
@@ -136,7 +136,7 @@ feed:
 rss: /atom.xml
 
 # Extensions
-## Plugins: https://hexo.io/plugins/
+Plugins: hexo-generator-sitemap
 ## Themes: https://hexo.io/themes/
 theme: next
 
