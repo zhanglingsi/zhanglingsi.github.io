@@ -1,3 +1,4 @@
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">{#
 #}{% set current = date(Date.now(), "YYYY") %}{#
 #}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} &mdash; {% endif %}{#
@@ -36,7 +37,7 @@
   #}{{ __('footer.theme') }} &mdash; {#
   #}<a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">{#
     #}NexT.{{ theme.scheme }}{#
-  #}</a>{% if theme.footer.theme.version %} v{{ theme.version }}{% endif %}{#
+  #}</a>{% if theme.footer.theme.version %}{% endif %}{#
 #}</div>
 {% endif %}
 
@@ -45,3 +46,7 @@
   #}{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
+<span class="post-meta-divider">|</span>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次
+<span class="post-meta-divider">|</span>
+本站访客数<span id="busuanzi_value_site_uv"></span>人次

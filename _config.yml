@@ -148,11 +148,6 @@ search:
   # 如只想索引文章，可设置为post
   field: all
 
-leancloud_visitors:
-  enable: true
-  app_id: vieblXPxyzMtC8cQ9nQoXOS9-gzGzoHsz
-  app_key: Vp8iSTFg2MnCsyfhH56P8caW
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
