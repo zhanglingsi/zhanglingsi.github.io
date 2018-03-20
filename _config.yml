@@ -156,7 +156,7 @@ algolia:
   chunkSize: 5000
 
 live2d:
-  model: shizuku
+  model: wanko
   bottom: -30
   mobileShow: false
 
