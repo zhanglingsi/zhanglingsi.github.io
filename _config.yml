@@ -163,12 +163,6 @@ algolia:
 
 swiftype_key: jOIJICNDIOZKdo
 
-live2d:
-  enable: false
-  modle: wanko
-  bottom: -80
-  moblieShow: false
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
