@@ -14,7 +14,7 @@ rss: /atom.xml
 since: 2013
 
 # Set default keywords (Use a comma to separate)
-keywords: "zhanglingsi,Ethen"
+keywords: ""
 
 # Put your favicon.ico or avatar.jpg into `hexo-site/themes/hiker/source/` directory.
 avatar:
