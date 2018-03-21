@@ -25,6 +25,7 @@ after_script:
   - git add .
   - git commit -m "Update docs"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+  - git push --force --quiet "https://zhanglingsi:${CO_TOKEN}@${CO_REF}" master:master
 # E: Build LifeCycle
 
 branches:
@@ -32,4 +33,7 @@ branches:
     - dev
 env:
  global:
+   # Github Pages
    - GH_REF: github.com/zhanglingsi/zhanglingsi.github.io.git
+   # Coding Pages
+   - CO_REF: git@git.coding.net:zhanglingsi/zhanglingsi.git

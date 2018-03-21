@@ -167,7 +167,7 @@ live2d:
   modle: wanko
   bottom: -80
   moblieShow: false
-  
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
