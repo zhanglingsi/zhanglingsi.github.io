@@ -41,7 +41,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 #不需要渲染的文件夹或文件夹,放在[]中
 # 这两个文件是百度和google的站长验证文件，不能渲染，否则会改变内容，不能验证过
-skip_render:  [README.md]
+skip_render: [README.md]
 
 # 写作选项
 # 新建博文（帖子）的默认名称
