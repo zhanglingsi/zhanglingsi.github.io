@@ -15,7 +15,7 @@ install:
  # - npm install -g gulp
 
 script:
-  - hexo g && gulp
+  - hexo g #&& gulp
 
 after_script:
   - cd ./public
@@ -31,7 +31,7 @@ after_script:
 branches:
   only:
     - dev
-    
+
 env:
  global:
    # Github Pages
