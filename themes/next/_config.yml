@@ -827,7 +827,7 @@ daovoice_app_id: 5483b2c4
 fireworks: true
 
 live2d:
-  enable: false
+  enable: true
   modle: wanko
   bottom: -80
   moblieShow: false
