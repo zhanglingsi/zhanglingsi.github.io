@@ -100,7 +100,7 @@
    <script type="text/javascript" src="/js/src/fireworks.js"></script>
 {% endif %}
 
-{% if theme.live2d %}
+{% if theme.live2d.enable %}
 <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.5/lib/L2Dwidget.min.js"></script>
 <script type="text/javascript">L2Dwidget.init();</script>
 {% endif %}
