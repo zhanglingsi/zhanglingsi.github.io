@@ -161,11 +161,6 @@ algolia:
   indexName: 'blog-index'
   chunkSize: 5000
 
-live2d:
-  model: wanko
-  bottom: -30
-  mobileShow: false
-
 swiftype_key: jOIJICNDIOZKdo
 
 # Deployment
