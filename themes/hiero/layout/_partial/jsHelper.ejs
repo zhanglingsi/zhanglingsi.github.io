@@ -1,6 +1,0 @@
-<script>
-var themeMenus = {};
-<% for (var i in theme.menu){ %>
-  themeMenus["<%- url_for(theme.menu[i]) %>"] = "<%= __(i.toLowerCase()) %>"; 
-<% } %>
-</script>
