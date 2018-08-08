@@ -34,7 +34,7 @@ branches:
 
 env:
  global:
-   # Github Pages
+   # Github Pages https://zhanglingsi.github.io/
    - GH_REF: github.com/zhanglingsi/zhanglingsi.github.io.git
-   # Coding Pages
+   # Coding Pages http://zhanglingsi.coding.me/
    - CO_REF: git.coding.net/zhanglingsi/zhanglingsi.git
