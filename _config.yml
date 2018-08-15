@@ -144,7 +144,7 @@ rss: /atom.xml
 # Extensions
 Plugins: hexo-generator-sitemap
 ## Themes: https://hexo.io/themes/
-theme: yelee
+theme: landscape
 
 # 自定义站点内容搜索
 # 需要先安装插件：
