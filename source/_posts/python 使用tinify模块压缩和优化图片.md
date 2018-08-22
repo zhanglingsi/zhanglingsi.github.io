@@ -1,1 +1,105 @@
-﻿﻿﻿---title: python 使用tinify模块压缩和优化图片categories: 编程copyright: truepassword: 6yhn^YHN---## tinify模块相关资料： 1. [tinypng官网](https://tinypng.com/)    压缩PNG图片 2. [tinyjpg官网](https://tinyjpg.com/)    压缩JPG图片 3. [tinify官网](https://tinypng.com/developers/reference/python) 开发参考文档## Quick Start### 安装 python 的 tinify 模块``` bash$ pip install --upgrade tinify```重要: [申请API KEY](https://tinyjpg.com/developers)<!--more-->### 编写Python代码``` bash# coding:utf-8# /usr/bin/python# author by zhanglsimport osimport sysimport os.pathimport shutilimport tinifytemPath = os.getcwd()+'/'+'temDir'                  #临时目录,注意该脚本最后是要删掉这个临时目录的tinify.key = "FVWYUsGfJyaFQvGtFXIlZrzWsk1voGQx"		#刚刚申请的API KEYversion = "0.0.1"  #版本# 压缩的主函数"""1. scale：如果method参数设置为scale，则只需要提供width或者height其中的一个。服务器会根据原比例缩小图片。如果同时提供width和height将会报错2. fit：如果method参数设置为fit，则需要同时提供width和height以确定一个范围，缩小后的图片会保证尽量填充该区域。3. cover：如果method参数设置为cover，缩小后的图片会填满width和height提供的区域，在必要的情况下服务器会根据一套算法保留他们认为的主要内容，其他部分会被裁剪。"""def compress_core(inputFile, outputFile, img_width):    source = tinify.from_file(inputFile)    if img_width is not -1:        resized = source.resize(method="scale", width=img_width)        resized.to_file(outputFile)    else:        copyrighted = source.preserve("copyright", "creation", "location")        copyrighted.to_file(outputFile)    # source.to_file(outputFile)# 压缩一个文件夹下的图片def compress_path(path, width):    print("compress_path-------------------------------------")    fromfilepath = path  #源路径    print("fromFilePath=%s" % fromfilepath)    for root, dirs, files in os.walk(fromfilepath):        print("root = %s" % root)        print("dirs = %s" % dirs)        print("files= %s" % files)        for name in files:            filename, filesuffix = os.path.splitext(name)            if filesuffix == '.png' or filesuffix == '.JPG' or filesuffix == '.jpg' or filesuffix == '.jpeg':                fromfile = os.path.join(root, name)                tofile = os.path.join(temPath, name)                print(fromfile)                print(tofile)                print(filename)                compress_core(fromfile, tofile, width)                shutil.copy2(tofile, fromfile)  # 将压缩后的文件覆盖原文件if __name__ == "__main__":    if not os.path.exists(temPath):        os.mkdir(temPath)    if len(sys.argv) == 2:        compress_path(sys.argv[1], -1)    if len(sys.argv) == 3:        compress_path(sys.argv[1], sys.argv[2])    shutil.rmtree(temPath)```保存文件名: comtest.py### 如何调用``` bashpython comtest.py d:\image``` 1. 存放待压缩的图片源文件: d:\image 2. 压缩完毕后的文件，会自动替换源目录的源文件。如想保存源文件，请做好备份工作。 3. 我使用的python是3.5版本### 参考文档[https://blog.csdn.net/jy692405180/article/details/52409369](https://blog.csdn.net/jy692405180/article/details/52409369)[https://tinypng.com/developers/reference/python](https://tinypng.com/developers/reference/python)
+﻿---
+title: python 使用tinify模块压缩和优化图片
+categories: 编程
+copyright: true
+password: 6yhn^YHN
+---
+
+## tinify模块
+相关资料：
+
+ 1. [tinypng官网](https://tinypng.com/)    压缩PNG图片
+ 2. [tinyjpg官网](https://tinyjpg.com/)    压缩JPG图片
+ 3. [tinify官网](https://tinypng.com/developers/reference/python) 开发参考文档
+
+## Quick Start
+
+### 安装 python 的 tinify 模块
+
+``` bash
+$ pip install --upgrade tinify
+```
+
+重要: [申请API KEY](https://tinyjpg.com/developers)
+<!-- more -->
+### 编写Python代码
+
+``` bash
+# coding:utf-8
+# /usr/bin/python
+
+# author by zhangls
+
+import os
+import sys
+import os.path
+import shutil
+import tinify
+
+temPath = os.getcwd()+'/'+'temDir'                  #临时目录,注意该脚本最后是要删掉这个临时目录的
+tinify.key = "FVWYUsGfJyaFQvGtFXIlZrzWsk1voGQx"		#刚刚申请的API KEY
+version = "0.0.1"  #版本
+
+# 压缩的主函数
+"""
+1. scale：如果method参数设置为scale，则只需要提供width或者height其中的一个。服务器会根据原比例缩小图片。如果同时提供width和height将会报错
+2. fit：如果method参数设置为fit，则需要同时提供width和height以确定一个范围，缩小后的图片会保证尽量填充该区域。
+3. cover：如果method参数设置为cover，缩小后的图片会填满width和height提供的区域，在必要的情况下服务器会根据一套算法保留他们认为的主要内容，其他部分会被裁剪。
+"""
+def compress_core(inputFile, outputFile, img_width):
+    source = tinify.from_file(inputFile)
+    if img_width is not -1:
+        resized = source.resize(method="scale", width=img_width)
+        resized.to_file(outputFile)
+    else:
+        copyrighted = source.preserve("copyright", "creation", "location")
+        copyrighted.to_file(outputFile)
+    # source.to_file(outputFile)
+
+# 压缩一个文件夹下的图片
+def compress_path(path, width):
+    print("compress_path-------------------------------------")
+    fromfilepath = path  #源路径
+    print("fromFilePath=%s" % fromfilepath)
+
+    for root, dirs, files in os.walk(fromfilepath):
+        print("root = %s" % root)
+        print("dirs = %s" % dirs)
+        print("files= %s" % files)
+        for name in files:
+            filename, filesuffix = os.path.splitext(name)
+            if filesuffix == '.png' or filesuffix == '.JPG' or filesuffix == '.jpg' or filesuffix == '.jpeg':
+                fromfile = os.path.join(root, name)
+                tofile = os.path.join(temPath, name)
+                print(fromfile)
+                print(tofile)
+                print(filename)
+                compress_core(fromfile, tofile, width)
+                shutil.copy2(tofile, fromfile)  # 将压缩后的文件覆盖原文件
+
+
+if __name__ == "__main__":
+    if not os.path.exists(temPath):
+        os.mkdir(temPath)
+    if len(sys.argv) == 2:
+        compress_path(sys.argv[1], -1)
+    if len(sys.argv) == 3:
+        compress_path(sys.argv[1], sys.argv[2])
+    shutil.rmtree(temPath)
+
+```
+保存文件名: comtest.py
+
+### 如何调用
+
+``` bash
+python comtest.py d:\image
+```
+
+ 1. 存放待压缩的图片源文件: d:\image
+ 2. 压缩完毕后的文件，会自动替换源目录的源文件。如想保存源文件，请做好备份工作。
+ 3. 我使用的python是3.5版本
+
+### 参考文档
+[https://blog.csdn.net/jy692405180/article/details/52409369](https://blog.csdn.net/jy692405180/article/details/52409369)
+[https://tinypng.com/developers/reference/python](https://tinypng.com/developers/reference/python)
