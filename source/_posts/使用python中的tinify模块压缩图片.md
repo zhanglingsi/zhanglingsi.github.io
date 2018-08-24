@@ -1,8 +1,7 @@
 ﻿---
-title: python 使用tinify模块压缩和优化图片
+title: 使用python中的tinify模块压缩图片
 categories: 编程
 copyright: true
-password: 6yhn^YHN
 ---
 
 ## tinify模块
