@@ -4,12 +4,12 @@ categories: 编程
 copyright: true
 ---
 
-## AutoHotkey安装与配置
-## Quick Start
+##AutoHotkey安装与配置
+##Quick Start
 ###AutoHotkey安装
 
-官方文档 (https://www.autohotkey.com/docs/Tutorial.htm)
-官方下载地址 (https://www.autohotkey.com/) 
+[官方文档] (https://www.autohotkey.com/docs/Tutorial.htm)
+[官方下载地址] (https://www.autohotkey.com/) 
 
 ###操作说明
 
@@ -19,7 +19,7 @@ copyright: true
  - 注意在脚本中回车用“`n”表示，加号用“{+}”表示
  - 将上述脚本保存为my.ahk文件保存到你的工作目录，然后双击运行。
  - 将my.ahk文件创建快捷方式，放到windows启动文件夹中，即可实现开机后自动运行AutoHotkey
-
+ - 马上丢掉你是鼠标，快来体验飞一般的感觉吧！你懂的！
 <!-- more -->
 
 ###我的配置文件
@@ -259,8 +259,6 @@ Return,0
 ;===================================================
 
 ```
-
-马上丢掉你是鼠标，快来体验飞一般的感觉吧！你懂的！
 
 
  
