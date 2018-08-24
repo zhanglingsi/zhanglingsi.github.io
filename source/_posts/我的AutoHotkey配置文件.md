@@ -6,9 +6,8 @@ copyright: true
 
 # AutoHotkey安装与配置
 
-标签（空格分隔）： 我的配置文件
+##Quick Start
 
----
 ### AutoHotkey安装
 
 官方文档 (https://www.autohotkey.com/docs/Tutorial.htm)
@@ -52,7 +51,7 @@ copyright: true
 !1::send #{Tab} 
 !3::send #^{right} 
 !2::send #^{left} 
-;===============================================
+;===================拷贝文件路径============================
 ^+c::
 ; null= 
 send ^c
@@ -63,6 +62,7 @@ sleep,500
 tooltip,
 return
 ;================================================
+<!--more-->
 ;replace CapsLock to LeftEnter; CapsLock = Alt CapsLock
 $CapsLock::Enter
 
@@ -80,7 +80,7 @@ LAlt & Capslock::SetCapsLockState, % GetKeyState("CapsLock", "T") ? "Off" : "On"
 ::/win:: Win {+} e：打开资源管理器;`nWin` {+} d：显示桌面;`nWin` {+} f：打开查找对话框;`nWin {+} r：打开运行对话框;`nWin {+} l：锁定电脑;`nWin {+} u: 打开控制面板－轻松使用设置中心;`n`nwin {+} t：打开网页travis-ci;`nwin {+} b：打开网页baidu;`nwin {+} h：打开网页blog for github;`nwin {+} c：打开网页blog for coding;`nwin {+} j：打开网页my github;`nwin {+} v：打开网页DACP;`nwin {+} i：打开网页tinypng;`nwin {+} o：打开网页OA;`nwin {+} s：置顶当前窗口;`nwin {+} q：关闭应用程序;`nwin {+} z：激活chrome窗口;`n
 ::/alt:: ALT {+} n： 打开notepad;`nALT {+} b： 打开打开Markdown;`nALT {+} r： 打开Cmder;`nALT {+} w： 打开微信;`nALT {+} s： 打开Uedit32;`nALT {+} t： 打开CRT;`nALT {+} i： 打开idea;`nALT {+} m： 打开SQLyog;`nALT {+} o： 打开plsqldev;`nALT {+} f： 打开Foxmail;`nALT {+} e： 打开iexplore;`nALT {+} d： 打开VSCode;`nALT {+} q： 打开TIM;`nALT {+} x： 最小化当前窗口;`nALT {+} z： 最大化当前窗口;`nALT {+} c： 还原当前窗口;`nALT {+} 1： 打开虚拟桌面;`nALT {+} 3： 向右切换虚拟桌面;`nALT {+} 2： 向左切换虚拟桌面;`n
 ::/other::  Ctrl {+} shift {+} C：拷贝文件路径;`nCtrl {+}  Win {+}  C：拷贝取色;`n
-;=====================拷贝文件路径==============================
+;=====================拷贝鼠标取色==============================
 ^#c::
 MouseGetPos, mouseX, mouseY
 PixelGetColor, color, %mouseX%, %mouseY%, RGB
@@ -262,6 +262,7 @@ Return,0
  6. 将my.ahk文件创建快捷方式，放到windows启动文件夹中，即可实现开机后自动运行AutoHotkey
 
 
-#马上丢掉你是鼠标，快来体验飞一般的感觉吧！你懂的！
+马上丢掉你是鼠标，快来体验飞一般的感觉吧！你懂的！
+-------------------------
 
  
