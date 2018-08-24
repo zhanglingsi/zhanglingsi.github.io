@@ -6,12 +6,23 @@ copyright: true
 
 # AutoHotkey安装与配置
 
-###1. AutoHotkey安装
+##1. AutoHotkey安装
 
 官方文档 (https://www.autohotkey.com/docs/Tutorial.htm)
 官方下载地址 (https://www.autohotkey.com/) 
 
-###2. 我的配置文件
+##2. 操作说明
+
+ - 可以使用/alt 打印alt键相关快捷键
+ - 可以使用/win 打印windows快捷键
+ - 可以使用/other 打印其他快捷键 
+ - 注意在脚本中回车用“`n”表示，加号用“{+}”表示
+ - 将上述脚本保存为my.ahk文件保存到你的工作目录，然后双击运行。
+ - 将my.ahk文件创建快捷方式，放到windows启动文件夹中，即可实现开机后自动运行AutoHotkey
+
+<!-- more -->
+
+##3. 我的配置文件
 
 ``` bash
 ;Notes: #==win !==Alt,  ^==Ctr, +==shift
@@ -60,12 +71,9 @@ sleep,500
 tooltip,
 return
 ;================================================
-<!-- more -->
 ;replace CapsLock to LeftEnter; CapsLock = Alt CapsLock
 $CapsLock::Enter
-
 LAlt & Capslock::SetCapsLockState, % GetKeyState("CapsLock", "T") ? "Off" : "On"
-
 !u::Send ^c !{tab} ^v
 ;================================================
 ::/cmail::zhanglingsi@asiainfo.com
@@ -252,15 +260,7 @@ Return,0
 
 ```
 
- 1. 可以使用/alt 打印alt键相关快捷键
- 2. 可以使用/win 打印windows快捷键
- 3. 可以使用/other 打印其他快捷键 
- 4. 注意在脚本中回车用“`n”表示，加号用“{+}”表示
- 5. 将上述脚本保存为my.ahk文件保存到你的工作目录，然后双击运行。
- 6. 将my.ahk文件创建快捷方式，放到windows启动文件夹中，即可实现开机后自动运行AutoHotkey
-
-
 马上丢掉你是鼠标，快来体验飞一般的感觉吧！你懂的！
--------------------------
+
 
  
