@@ -4,14 +4,14 @@ categories: 编程
 copyright: true
 ---
 
-# AutoHotkey安装与配置
-
-##1. AutoHotkey安装
+## AutoHotkey安装与配置
+## Quick Start
+###1. AutoHotkey安装
 
 官方文档 (https://www.autohotkey.com/docs/Tutorial.htm)
 官方下载地址 (https://www.autohotkey.com/) 
 
-##2. 操作说明
+###2. 操作说明
 
  - 可以使用/alt 打印alt键相关快捷键
  - 可以使用/win 打印windows快捷键
@@ -22,7 +22,7 @@ copyright: true
 
 <!-- more -->
 
-##3. 我的配置文件
+###3. 我的配置文件
 
 ``` bash
 ;Notes: #==win !==Alt,  ^==Ctr, +==shift
