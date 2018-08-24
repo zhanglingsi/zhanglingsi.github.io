@@ -6,14 +6,12 @@ copyright: true
 
 # AutoHotkey安装与配置
 
-##Quick Start
-
-### AutoHotkey安装
+###1. AutoHotkey安装
 
 官方文档 (https://www.autohotkey.com/docs/Tutorial.htm)
 官方下载地址 (https://www.autohotkey.com/) 
 
-### 我的配置文件
+###2. 我的配置文件
 
 ``` bash
 ;Notes: #==win !==Alt,  ^==Ctr, +==shift
@@ -62,7 +60,7 @@ sleep,500
 tooltip,
 return
 ;================================================
-<!--more-->
+<!-- more -->
 ;replace CapsLock to LeftEnter; CapsLock = Alt CapsLock
 $CapsLock::Enter
 
