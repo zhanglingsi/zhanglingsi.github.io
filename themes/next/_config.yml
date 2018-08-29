@@ -824,10 +824,10 @@ daovoice: true
 
 daovoice_app_id: 5483b2c4
 
-fireworks: true
+fireworks: false
 
 live2d:
   enable: true
-  modle: wanko
+  modle: Unitychan
   bottom: -80
   moblieShow: false
