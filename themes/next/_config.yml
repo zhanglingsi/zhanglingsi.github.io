@@ -826,8 +826,8 @@ daovoice_app_id: 5483b2c4
 
 fireworks: false
 
-live2d:
-  enable: true
-  modle: Unitychan
-  bottom: -80
-  moblieShow: false
+#live2d:
+#  enable: true
+#  modle: Unitychan
+#  bottom: -80
+#  moblieShow: false
