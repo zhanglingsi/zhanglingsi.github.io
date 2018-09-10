@@ -4,7 +4,7 @@ categories: 编程
 copyright: true
 ---
 
-## 编写自动化shell脚本 Oracle sql loader 导入数据
+# 编写自动化shell脚本 Oracle sql loader 导入数据
 
 ## 需求
 1. 调度周期：日调度 
@@ -13,8 +13,8 @@ copyright: true
 4. 更新规则：全量更新
 5. 入库表名 慢必赔新装表（INF_MBP_DRX）慢必赔报障表（INF_MBP_DRZ）
 
-### 准备工作
-1. 调度服务器需要安装Oracle客户端，配置tns链接字符串，如下
+## 准备工作
+### 调度服务器需要安装Oracle客户端，配置tns链接字符串，如下
 ```bash
 EDWDB_NEW =
   (DESCRIPTION =
@@ -25,7 +25,7 @@ EDWDB_NEW =
     )
   )
 ```
-2. 调度服务器单独划分一块区域存储从FTP下载下来的数据文件和校验文件。
+### 调度服务器单独划分一块区域存储从FTP下载下来的数据文件和校验文件。
 文件存储路径 /data/manyidu/data
 ```bash
 [root@server1 data]# df -h
@@ -36,12 +36,12 @@ tmpfs                 4.9G   76K  4.9G   1% /dev/shm
 /dev/mapper/vgdata-lvdata
                       148G  6.5G  134G   5% /data
 ```
-3. 文件服务器的网络环境要打通，网络环境配置。
+### 文件服务器的网络环境要打通，网络环境配置。
 文件服务器IP：137.32.126.137   
 用户名：zx_order  
 密码：zxOrder_12
 
-4. 新建目录，存放脚本如下：
+### 新建目录，存放脚本如下：
 ```bash
 [root@server1 data]# tree -L 1 /home/oracle/manyidu
 /home/oracle/manyidu
@@ -53,9 +53,9 @@ tmpfs                 4.9G   76K  4.9G   1% /dev/shm
 ```
 
 <!-- more -->
-### 开始写脚本
+## 开始写脚本
 
-[load_table_info_DR.sh]
+### 文件名：load_table_info_DR.sh
 ```bash
 ###########################################################################################
 #功能： 完成数据导入Oracle表中   
@@ -183,7 +183,7 @@ echo ${table_name} "[`date`] 整体完成日志！"
 exit
 ```
 
-### 创建生成控制文件的脚本 
+## 创建生成控制文件的脚本 
 脚本名称 mkdir_${table_name}_ctl.shell， 示例表名INF_MBP_DRX
 在路径/home/oracle/manyidu/shell 新建mkdir_INF_MBP_DRX_ctl.shell
 
@@ -243,7 +243,7 @@ fields terminated by $parameter
 exit
 ```
 
-### 配置调度crontab 
+## 配置调度crontab 
 
 [root@server1 ~]# crontab -e
 ```bash
@@ -254,7 +254,7 @@ exit
 配置规则为 早上7点到11点钟    每到50分钟的时候调用一次
 即 7:50  8:50  9:50  10:50  11:50 触发调度
 
-### 编写总调度shell
+## 编写总调度shell
 
 如果同步的表比较多可以写个总调度的shell
 
