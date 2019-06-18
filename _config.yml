@@ -142,9 +142,9 @@ feed:
 rss: /atom.xml
 
 # Extensions
-Plugins: hexo-generator-sitemap
+Plugins: hexo-generator-sitemap, hexo-generate-feed
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: icarus
 
 # 自定义站点内容搜索
 # 需要先安装插件：
