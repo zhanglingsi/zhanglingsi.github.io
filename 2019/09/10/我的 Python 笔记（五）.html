@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "5483b2c4"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="zhanglingsi, Ethen" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="EthenのBlog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="我的 Python 笔记（五）Python 中的 正则表达式 爬虫常见匹配模式   模式 描述     \w 匹配字母数字及下划线   \W 匹配非字母数字下划线   \s 匹配任意空白字符，等价于 [\t\n\r\f].   \S 匹配任意非空字符   \d 匹配任意数字，等价于 [0-9]   \D 匹配任意非数字   \A 匹配字符串开始   \Z 匹配字符串结束，如果是存在换行，只匹配到换">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的 Python 笔记（五）">
+<meta property="og:url" content="http://zhanglingsi.github.io/2019/09/10/我的 Python 笔记（五）.html">
+<meta property="og:site_name" content="EthenのBlog">
+<meta property="og:description" content="我的 Python 笔记（五）Python 中的 正则表达式 爬虫常见匹配模式   模式 描述     \w 匹配字母数字及下划线   \W 匹配非字母数字下划线   \s 匹配任意空白字符，等价于 [\t\n\r\f].   \S 匹配任意非空字符   \d 匹配任意数字，等价于 [0-9]   \D 匹配任意非数字   \A 匹配字符串开始   \Z 匹配字符串结束，如果是存在换行，只匹配到换">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-10T02:53:38.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的 Python 笔记（五）">
+<meta name="twitter:description" content="我的 Python 笔记（五）Python 中的 正则表达式 爬虫常见匹配模式   模式 描述     \w 匹配字母数字及下划线   \W 匹配非字母数字下划线   \s 匹配任意空白字符，等价于 [\t\n\r\f].   \S 匹配任意非空字符   \d 匹配任意数字，等价于 [0-9]   \D 匹配任意非数字   \A 匹配字符串开始   \Z 匹配字符串结束，如果是存在换行，只匹配到换">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'QHJPQT03DW',
+      apiKey: '',
+      indexName: 'blog-index',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhanglingsi.github.io/2019/09/10/我的 Python 笔记（五）.html"/>
+
+
+
+
+
+  <title>我的 Python 笔记（五） | EthenのBlog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eca085334b3b8ec26752e0a24893169d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/zhanglingsi"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EthenのBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">记录工作学习的日志及遇到问题的解决方案</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhanglingsi.github.io/2019/09/10/我的 Python 笔记（五）.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ethen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/13826424?s=400&u=eb775f4fe9b8bac3a21dd467735b6078c47e7325&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EthenのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">我的 Python 笔记（五）</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-10T02:53:38+00:00">
+                2019-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/09/10/我的 Python 笔记（五）.html" class="leancloud_visitors" data-flag-title="我的 Python 笔记（五）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span><span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,186 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  21 分钟
+                </span>
+              
+            </div>
+          
+
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="我的-Python-笔记（五）"><a href="#我的-Python-笔记（五）" class="headerlink" title="我的 Python 笔记（五）"></a>我的 Python 笔记（五）</h1><h2 id="Python-中的-正则表达式-爬虫"><a href="#Python-中的-正则表达式-爬虫" class="headerlink" title="Python 中的 正则表达式 爬虫"></a>Python 中的 正则表达式 爬虫</h2><h3 id="常见匹配模式"><a href="#常见匹配模式" class="headerlink" title="常见匹配模式"></a>常见匹配模式</h3><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\w</td>
+<td>匹配字母数字及下划线</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配非字母数字下划线</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意空白字符，等价于 [\t\n\r\f].</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意非空字符</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配任意数字，等价于 [0-9]</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字</td>
+</tr>
+<tr>
+<td>\A</td>
+<td>匹配字符串开始</td>
+</tr>
+<tr>
+<td>\Z</td>
+<td>匹配字符串结束，如果是存在换行，只匹配到换行前的结束字符串</td>
+</tr>
+<tr>
+<td>\z</td>
+<td>匹配字符串结束</td>
+</tr>
+<tr>
+<td>\G</td>
+<td>匹配最后匹配完成的位置</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串的开头</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串的末尾。</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配任意字符，除了换行符，当re.DOTALL标记被指定时，则可以匹配包括换行符的任意字符。</td>
+</tr>
+<tr>
+<td>[…]</td>
+<td>用来表示一组字符,单独列出：[amk] 匹配 ‘a’，’m’或’k’</td>
+</tr>
+<tr>
+<td>[^…]</td>
+<td>不在[]中的字符：[^abc] 匹配除了a,b,c之外的字符。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配0个或多个的表达式。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配1个或多个的表达式。</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配0个或1个由前面的正则表达式定义的片段，非贪婪方式</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>精确匹配n个前面表达式。</td>
+</tr>
+<tr>
+<td>{n, m}</td>
+<td>匹配 n 到 m 次由前面的正则表达式定义的片段，贪婪方式</td>
+</tr>
+<tr>
+<td>a&#124;b</td>
+<td>匹配a或b</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>匹配括号内的表达式，也表示一个组</td>
+</tr>
+</tbody>
+</table>
+<h3 id="re-match"><a href="#re-match" class="headerlink" title="re.match"></a>re.match</h3><p>re.match 尝试从字符串的起始位置匹配一个模式，如果不是起始位置匹配成功的话，match()就返回none。<br>re.match(pattern, string, flags=0)</p>
+<h3 id="最常规的匹配"><a href="#最常规的匹配" class="headerlink" title="最常规的匹配"></a>最常规的匹配</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Hello 123 4567 World_This is a Regex Demo'</span></span><br><span class="line">print(len(content))</span><br><span class="line">result = re.match(<span class="string">'^Hello\s\d\d\d\s\d&#123;4&#125;\s\w&#123;10&#125;.*Demo$'</span>, content)</span><br><span class="line">print(result)</span><br><span class="line">print(result.group())</span><br><span class="line">print(result.span())</span><br></pre></td></tr></table></figure>
+<pre><code>41
+&lt;_sre.SRE_Match object; span=(0, 41), match=&apos;Hello 123 4567 World_This is a Regex Demo&apos;&gt;
+Hello 123 4567 World_This is a Regex Demo
+(0, 41)
+</code></pre><h3 id="泛匹配"><a href="#泛匹配" class="headerlink" title="泛匹配"></a>泛匹配</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Hello 123 4567 World_This is a Regex Demo'</span></span><br><span class="line">result = re.match(<span class="string">'^Hello.*Demo$'</span>, content)</span><br><span class="line">print(result)</span><br><span class="line">print(result.group())</span><br><span class="line">print(result.span())</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;_sre.SRE_Match object; span=(0, 41), match=&apos;Hello 123 4567 World_This is a Regex Demo&apos;&gt;
+Hello 123 4567 World_This is a Regex Demo
+(0, 41)
+</code></pre><a id="more"></a>
+<h3 id="匹配目标"><a href="#匹配目标" class="headerlink" title="匹配目标"></a>匹配目标</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Hello 1234567 World_This is a Regex Demo'</span></span><br><span class="line">result = re.match(<span class="string">'^Hello\s(\d+)\sWorld.*Demo$'</span>, content)</span><br><span class="line">print(result)</span><br><span class="line">print(result.group(<span class="number">1</span>))</span><br><span class="line">print(result.span())</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;_sre.SRE_Match object; span=(0, 40), match=&apos;Hello 1234567 World_This is a Regex Demo&apos;&gt;
+1234567
+(0, 40)
+</code></pre><h3 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Hello 1234567 World_This is a Regex Demo'</span></span><br><span class="line">result = re.match(<span class="string">'^He.*(\d+).*Demo$'</span>, content)</span><br><span class="line">print(result)</span><br><span class="line">print(result.group(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;_sre.SRE_Match object; span=(0, 40), match=&apos;Hello 1234567 World_This is a Regex Demo&apos;&gt;
+7
+</code></pre><h3 id="非贪婪匹配"><a href="#非贪婪匹配" class="headerlink" title="非贪婪匹配"></a>非贪婪匹配</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Hello 1234567 World_This is a Regex Demo'</span></span><br><span class="line">result = re.match(<span class="string">'^He.*?(\d+).*Demo$'</span>, content)</span><br><span class="line">print(result)</span><br><span class="line">print(result.group(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;_sre.SRE_Match object; span=(0, 40), match=&apos;Hello 1234567 World_This is a Regex Demo&apos;&gt;
+1234567
+</code></pre><h3 id="匹配模式"><a href="#匹配模式" class="headerlink" title="匹配模式"></a>匹配模式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''Hello 1234567 World_This</span></span><br><span class="line"><span class="string">is a Regex Demo</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">result = re.match(<span class="string">'^He.*?(\d+).*?Demo$'</span>, content, re.S)</span><br><span class="line">print(result.group(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>1234567
+</code></pre><h3 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'price is $5.00'</span></span><br><span class="line">result = re.match(<span class="string">'price is $5.00'</span>, content)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<pre><code>None
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'price is $5.00'</span></span><br><span class="line">result = re.match(<span class="string">'price is \$5\.00'</span>, content)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;_sre.SRE_Match object; span=(0, 14), match=&apos;price is $5.00&apos;&gt;
+</code></pre><p>总结：尽量使用泛匹配、使用括号得到匹配目标、尽量使用非贪婪模式、有换行符就用re.S</p>
+<h2 id="re-search"><a href="#re-search" class="headerlink" title="re.search"></a>re.search</h2><p>re.search 扫描整个字符串并返回第一个成功的匹配。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Extra stings Hello 1234567 World_This is a Regex Demo Extra stings'</span></span><br><span class="line">result = re.match(<span class="string">'Hello.*?(\d+).*?Demo'</span>, content)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<pre><code>None
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Extra stings Hello 1234567 World_This is a Regex Demo Extra stings'</span></span><br><span class="line">result = re.search(<span class="string">'Hello.*?(\d+).*?Demo'</span>, content)</span><br><span class="line">print(result)</span><br><span class="line">print(result.group(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;_sre.SRE_Match object; span=(13, 53), match=&apos;Hello 1234567 World_This is a Regex Demo&apos;&gt;
+1234567
+</code></pre><p>总结：为匹配方便，能用search就不用match</p>
+<h3 id="匹配演练"><a href="#匹配演练" class="headerlink" title="匹配演练"></a>匹配演练</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">html = <span class="string">'''&lt;div id="songs-list"&gt;</span></span><br><span class="line"><span class="string">    &lt;h2 class="title"&gt;经典老歌&lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;p class="introduction"&gt;</span></span><br><span class="line"><span class="string">        经典老歌列表</span></span><br><span class="line"><span class="string">    &lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;ul id="list" class="list-group"&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="2"&gt;一路上有你&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="7"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/2.mp3" singer="任贤齐"&gt;沧海一声笑&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="4" class="active"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="6"&gt;&lt;a href="/4.mp3" singer="beyond"&gt;光辉岁月&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;&lt;a href="/5.mp3" singer="陈慧琳"&gt;记事本&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/6.mp3" singer="邓丽君"&gt;&lt;i class="fa fa-user"&gt;&lt;/i&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;'''</span></span><br><span class="line">result = re.search(<span class="string">'&lt;li.*?active.*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>, html, re.S)</span><br><span class="line"><span class="keyword">if</span> result:</span><br><span class="line">    print(result.group(<span class="number">1</span>), result.group(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>齐秦 往事随风
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">html = <span class="string">'''&lt;div id="songs-list"&gt;</span></span><br><span class="line"><span class="string">    &lt;h2 class="title"&gt;经典老歌&lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;p class="introduction"&gt;</span></span><br><span class="line"><span class="string">        经典老歌列表</span></span><br><span class="line"><span class="string">    &lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;ul id="list" class="list-group"&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="2"&gt;一路上有你&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="7"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/2.mp3" singer="任贤齐"&gt;沧海一声笑&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="4" class="active"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="6"&gt;&lt;a href="/4.mp3" singer="beyond"&gt;光辉岁月&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;&lt;a href="/5.mp3" singer="陈慧琳"&gt;记事本&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/6.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;'''</span></span><br><span class="line">result = re.search(<span class="string">'&lt;li.*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>, html, re.S)</span><br><span class="line"><span class="keyword">if</span> result:</span><br><span class="line">    print(result.group(<span class="number">1</span>), result.group(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>任贤齐 沧海一声笑
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">html = <span class="string">'''&lt;div id="songs-list"&gt;</span></span><br><span class="line"><span class="string">    &lt;h2 class="title"&gt;经典老歌&lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;p class="introduction"&gt;</span></span><br><span class="line"><span class="string">        经典老歌列表</span></span><br><span class="line"><span class="string">    &lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;ul id="list" class="list-group"&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="2"&gt;一路上有你&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="7"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/2.mp3" singer="任贤齐"&gt;沧海一声笑&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="4" class="active"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="6"&gt;&lt;a href="/4.mp3" singer="beyond"&gt;光辉岁月&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;&lt;a href="/5.mp3" singer="陈慧琳"&gt;记事本&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/6.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;'''</span></span><br><span class="line">result = re.search(<span class="string">'&lt;li.*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>, html)</span><br><span class="line"><span class="keyword">if</span> result:</span><br><span class="line">    print(result.group(<span class="number">1</span>), result.group(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<pre><code>beyond 光辉岁月
+</code></pre><h2 id="re-findall"><a href="#re-findall" class="headerlink" title="re.findall"></a>re.findall</h2><p>搜索字符串，以列表形式返回全部能匹配的子串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">html = <span class="string">'''&lt;div id="songs-list"&gt;</span></span><br><span class="line"><span class="string">    &lt;h2 class="title"&gt;经典老歌&lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;p class="introduction"&gt;</span></span><br><span class="line"><span class="string">        经典老歌列表</span></span><br><span class="line"><span class="string">    &lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;ul id="list" class="list-group"&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="2"&gt;一路上有你&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="7"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/2.mp3" singer="任贤齐"&gt;沧海一声笑&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="4" class="active"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="6"&gt;&lt;a href="/4.mp3" singer="beyond"&gt;光辉岁月&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;&lt;a href="/5.mp3" singer="陈慧琳"&gt;记事本&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/6.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;'''</span></span><br><span class="line">results = re.findall(<span class="string">'&lt;li.*?href="(.*?)".*?singer="(.*?)"&gt;(.*?)&lt;/a&gt;'</span>, html, re.S)</span><br><span class="line">print(results)</span><br><span class="line">print(type(results))</span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">    print(result)</span><br><span class="line">    print(result[<span class="number">0</span>], result[<span class="number">1</span>], result[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>[(&apos;/2.mp3&apos;, &apos;任贤齐&apos;, &apos;沧海一声笑&apos;), (&apos;/3.mp3&apos;, &apos;齐秦&apos;, &apos;往事随风&apos;), (&apos;/4.mp3&apos;, &apos;beyond&apos;, &apos;光辉岁月&apos;), (&apos;/5.mp3&apos;, &apos;陈慧琳&apos;, &apos;记事本&apos;), (&apos;/6.mp3&apos;, &apos;邓丽君&apos;, &apos;但愿人长久&apos;)]
+&lt;class &apos;list&apos;&gt;
+(&apos;/2.mp3&apos;, &apos;任贤齐&apos;, &apos;沧海一声笑&apos;)
+/2.mp3 任贤齐 沧海一声笑
+(&apos;/3.mp3&apos;, &apos;齐秦&apos;, &apos;往事随风&apos;)
+/3.mp3 齐秦 往事随风
+(&apos;/4.mp3&apos;, &apos;beyond&apos;, &apos;光辉岁月&apos;)
+/4.mp3 beyond 光辉岁月
+(&apos;/5.mp3&apos;, &apos;陈慧琳&apos;, &apos;记事本&apos;)
+/5.mp3 陈慧琳 记事本
+(&apos;/6.mp3&apos;, &apos;邓丽君&apos;, &apos;但愿人长久&apos;)
+/6.mp3 邓丽君 但愿人长久
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">html = <span class="string">'''&lt;div id="songs-list"&gt;</span></span><br><span class="line"><span class="string">    &lt;h2 class="title"&gt;经典老歌&lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;p class="introduction"&gt;</span></span><br><span class="line"><span class="string">        经典老歌列表</span></span><br><span class="line"><span class="string">    &lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;ul id="list" class="list-group"&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="2"&gt;一路上有你&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="7"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/2.mp3" singer="任贤齐"&gt;沧海一声笑&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="4" class="active"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="6"&gt;&lt;a href="/4.mp3" singer="beyond"&gt;光辉岁月&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;&lt;a href="/5.mp3" singer="陈慧琳"&gt;记事本&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/6.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;'''</span></span><br><span class="line">results = re.findall(<span class="string">'&lt;li.*?&gt;\s*?(&lt;a.*?&gt;)?(\w+)(&lt;/a&gt;)?\s*?&lt;/li&gt;'</span>, html, re.S)</span><br><span class="line">print(results)</span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">    print(result[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<pre><code>[(&apos;&apos;, &apos;一路上有你&apos;, &apos;&apos;), (&apos;&lt;a href=&quot;/2.mp3&quot; singer=&quot;任贤齐&quot;&gt;&apos;, &apos;沧海一声笑&apos;, &apos;&lt;/a&gt;&apos;), (&apos;&lt;a href=&quot;/3.mp3&quot; singer=&quot;齐秦&quot;&gt;&apos;, &apos;往事随风&apos;, &apos;&lt;/a&gt;&apos;), (&apos;&lt;a href=&quot;/4.mp3&quot; singer=&quot;beyond&quot;&gt;&apos;, &apos;光辉岁月&apos;, &apos;&lt;/a&gt;&apos;), (&apos;&lt;a href=&quot;/5.mp3&quot; singer=&quot;陈慧琳&quot;&gt;&apos;, &apos;记事本&apos;, &apos;&lt;/a&gt;&apos;), (&apos;&lt;a href=&quot;/6.mp3&quot; singer=&quot;邓丽君&quot;&gt;&apos;, &apos;但愿人长久&apos;, &apos;&lt;/a&gt;&apos;)]
+一路上有你
+沧海一声笑
+往事随风
+光辉岁月
+记事本
+但愿人长久
+</code></pre><h3 id="re-sub"><a href="#re-sub" class="headerlink" title="re.sub"></a>re.sub</h3><p>替换字符串中每一个匹配的子串后返回替换后的字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Extra stings Hello 1234567 World_This is a Regex Demo Extra stings'</span></span><br><span class="line">content = re.sub(<span class="string">'\d+'</span>, <span class="string">''</span>, content)</span><br><span class="line">print(content)</span><br></pre></td></tr></table></figure>
+<pre><code>Extra stings Hello  World_This is a Regex Demo Extra stings
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Extra stings Hello 1234567 World_This is a Regex Demo Extra stings'</span></span><br><span class="line">content = re.sub(<span class="string">'\d+'</span>, <span class="string">'Replacement'</span>, content)</span><br><span class="line">print(content)</span><br></pre></td></tr></table></figure>
+<pre><code>Extra stings Hello Replacement World_This is a Regex Demo Extra stings
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'Extra stings Hello 1234567 World_This is a Regex Demo Extra stings'</span></span><br><span class="line">content = re.sub(<span class="string">'(\d+)'</span>, <span class="string">r'\1 8910'</span>, content)</span><br><span class="line">print(content)</span><br></pre></td></tr></table></figure>
+<pre><code>Extra stings Hello 1234567 8910 World_This is a Regex Demo Extra stings
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">html = <span class="string">'''&lt;div id="songs-list"&gt;</span></span><br><span class="line"><span class="string">    &lt;h2 class="title"&gt;经典老歌&lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;p class="introduction"&gt;</span></span><br><span class="line"><span class="string">        经典老歌列表</span></span><br><span class="line"><span class="string">    &lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;ul id="list" class="list-group"&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="2"&gt;一路上有你&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="7"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/2.mp3" singer="任贤齐"&gt;沧海一声笑&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="4" class="active"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="6"&gt;&lt;a href="/4.mp3" singer="beyond"&gt;光辉岁月&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;&lt;a href="/5.mp3" singer="陈慧琳"&gt;记事本&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/6.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;'''</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">html = <span class="string">'''&lt;div id="songs-list"&gt;</span></span><br><span class="line"><span class="string">    &lt;h2 class="title"&gt;经典老歌&lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;p class="introduction"&gt;</span></span><br><span class="line"><span class="string">        经典老歌列表</span></span><br><span class="line"><span class="string">    &lt;/p&gt;</span></span><br><span class="line"><span class="string">    &lt;ul id="list" class="list-group"&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="2"&gt;一路上有你&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="7"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/2.mp3" singer="任贤齐"&gt;沧海一声笑&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="4" class="active"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/3.mp3" singer="齐秦"&gt;往事随风&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="6"&gt;&lt;a href="/4.mp3" singer="beyond"&gt;光辉岁月&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;&lt;a href="/5.mp3" singer="陈慧琳"&gt;记事本&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li data-view="5"&gt;</span></span><br><span class="line"><span class="string">            &lt;a href="/6.mp3" singer="邓丽君"&gt;但愿人长久&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;'''</span></span><br><span class="line">html = re.sub(<span class="string">'&lt;a.*?&gt;|&lt;/a&gt;'</span>, <span class="string">''</span>, html)</span><br><span class="line">print(html)</span><br><span class="line">results = re.findall(<span class="string">'&lt;li.*?&gt;(.*?)&lt;/li&gt;'</span>, html, re.S)</span><br><span class="line">print(results)</span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">    print(result.strip())</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;div id=&quot;songs-list&quot;&gt;
+    &lt;h2 class=&quot;title&quot;&gt;经典老歌&lt;/h2&gt;
+    &lt;p class=&quot;introduction&quot;&gt;
+        经典老歌列表
+    &lt;/p&gt;
+    &lt;ul id=&quot;list&quot; class=&quot;list-group&quot;&gt;
+        &lt;li data-view=&quot;2&quot;&gt;一路上有你&lt;/li&gt;
+        &lt;li data-view=&quot;7&quot;&gt;
+            沧海一声笑
+        &lt;/li&gt;
+        &lt;li data-view=&quot;4&quot; class=&quot;active&quot;&gt;
+            往事随风
+        &lt;/li&gt;
+        &lt;li data-view=&quot;6&quot;&gt;光辉岁月&lt;/li&gt;
+        &lt;li data-view=&quot;5&quot;&gt;记事本&lt;/li&gt;
+        &lt;li data-view=&quot;5&quot;&gt;
+            但愿人长久
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+[&apos;一路上有你&apos;, &apos;\n            沧海一声笑\n        &apos;, &apos;\n            往事随风\n        &apos;, &apos;光辉岁月&apos;, &apos;记事本&apos;, &apos;\n            但愿人长久\n        &apos;]
+一路上有你
+沧海一声笑
+往事随风
+光辉岁月
+记事本
+但愿人长久
+</code></pre><h2 id="re-compile"><a href="#re-compile" class="headerlink" title="re.compile"></a>re.compile</h2><p>将正则字符串编译成正则表达式对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将一个正则表达式串编译成正则对象，以便于复用该匹配模式</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">content = <span class="string">'''Hello 1234567 World_This</span></span><br><span class="line"><span class="string">is a Regex Demo'''</span></span><br><span class="line">pattern = re.compile(<span class="string">'Hello.*Demo'</span>, re.S)</span><br><span class="line">result = re.match(pattern, content)</span><br><span class="line"><span class="comment">#result = re.match('Hello.*Demo', content, re.S)</span></span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;_sre.SRE_Match object; span=(0, 40), match=&apos;Hello 1234567 World_This\nis a Regex Demo&apos;&gt;
+</code></pre><h2 id="实战练习"><a href="#实战练习" class="headerlink" title="实战练习"></a>实战练习</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">content = requests.get(<span class="string">'https://book.douban.com/'</span>).text</span><br><span class="line">pattern = re.compile(<span class="string">'&lt;li.*?cover.*?href="(.*?)".*?title="(.*?)".*?more-meta.*?author"&gt;(.*?)&lt;/span&gt;.*?year"&gt;(.*?)&lt;/span&gt;.*?&lt;/li&gt;'</span>, re.S)</span><br><span class="line">results = re.findall(pattern, content)</span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">    url, name, author, date = result</span><br><span class="line">    author = re.sub(<span class="string">'\s'</span>, <span class="string">''</span>, author)</span><br><span class="line">    date = re.sub(<span class="string">'\s'</span>, <span class="string">''</span>, date)</span><br><span class="line">    print(url, name, author, date)</span><br></pre></td></tr></table></figure>
+<pre><code>https://book.douban.com/subject/26925834/?icn=index-editionrecommend 别走出这一步 [英]S.J.沃森 2017-1
+https://book.douban.com/subject/26953532/?icn=index-editionrecommend 白先勇细说红楼梦 白先勇 2017-2-1
+https://book.douban.com/subject/26959159/?icn=index-editionrecommend 岁月凶猛 冯仑 2017-2
+https://book.douban.com/subject/26949210/?icn=index-editionrecommend 如果没有今天，明天会不会有昨天？ [瑞士]伊夫·博萨尔特（YvesBossart） 2017-1
+https://book.douban.com/subject/27001447/?icn=index-editionrecommend 人类这100年 阿夏 2017-2
+https://book.douban.com/subject/26864566/?icn=index-latestbook-subject 眼泪的化学 [澳]彼得·凯里 2017-2
+https://book.douban.com/subject/26991064/?icn=index-latestbook-subject 青年斯大林 [英]西蒙·蒙蒂菲奥里 2017-3
+https://book.douban.com/subject/26938056/?icn=index-latestbook-subject 带艾伯特回家 [美]霍默·希卡姆 2017-3
+https://book.douban.com/subject/26954757/?icn=index-latestbook-subject 乳房 [美]弗洛伦斯·威廉姆斯 2017-2
+https://book.douban.com/subject/26956479/?icn=index-latestbook-subject 草原动物园 马伯庸 2017-3
+https://book.douban.com/subject/26956018/?icn=index-latestbook-subject 贩卖音乐 [美]大卫·伊斯曼 2017-3-1
+https://book.douban.com/subject/26703649/?icn=index-latestbook-subject 被占的宅子 [阿根廷]胡利奥·科塔萨尔 2017-3
+https://book.douban.com/subject/26578402/?icn=index-latestbook-subject 信仰与观看 [法]罗兰·雷希特(RolandRecht) 2017-2-17
+https://book.douban.com/subject/26939171/?icn=index-latestbook-subject 妹妹的坟墓 [美]罗伯特·杜格尼(RobertDugoni) 2017-3-1
+https://book.douban.com/subject/26972465/?icn=index-latestbook-subject 全栈市场人 Lydia 2017-2-1
+https://book.douban.com/subject/26986928/?icn=index-latestbook-subject 终极X战警2 [英]马克·米勒&amp;nbsp;/&amp;nbsp;[美]亚当·库伯特 2017-3-15
+https://book.douban.com/subject/26948144/?icn=index-latestbook-subject 格调（修订第3版） [美]保罗·福塞尔（PaulFussell） 2017-2
+https://book.douban.com/subject/26945792/?icn=index-latestbook-subject 原谅石 [美]洛里·斯皮尔曼 2017-2
+https://book.douban.com/subject/26974207/?icn=index-latestbook-subject 庇护二世闻见录 [意]皮科洛米尼 2017-2
+https://book.douban.com/subject/26983143/?icn=index-latestbook-subject 遇见野兔的那一年 [芬]阿托·帕西林纳 2017-3-1
+https://book.douban.com/subject/26976429/?icn=index-latestbook-subject 鲍勃·迪伦：诗人之歌 [法]让-多米尼克·布里埃 2017-4
+https://book.douban.com/subject/26962860/?icn=index-latestbook-subject 牙医谋杀案 [英]阿加莎·克里斯蒂 2017-3
+https://book.douban.com/subject/26923022/?icn=index-latestbook-subject 石挥谈艺录：把生命交给舞台 石挥 2017-2
+https://book.douban.com/subject/26897190/?icn=index-latestbook-subject 理想 [美]安·兰德 2017-2
+https://book.douban.com/subject/26985981/?icn=index-latestbook-subject 青苔不会消失 袁凌 2017-4
+https://book.douban.com/subject/26984949/?icn=index-latestbook-subject 地下铁道 [美]科尔森·怀特黑德（ColsonWhitehead） 2017-3
+https://book.douban.com/subject/26944012/?icn=index-latestbook-subject 极简进步史 [英]罗纳德·赖特 2017-4-1
+https://book.douban.com/subject/26969002/?icn=index-latestbook-subject 驻马店伤心故事集 郑在欢 2017-2
+https://book.douban.com/subject/26854223/?icn=index-latestbook-subject 致薇拉 [美]弗拉基米尔·纳博科夫 2017-3
+https://book.douban.com/subject/26841616/?icn=index-latestbook-subject 北方档案 [法]玛格丽特·尤瑟纳尔 2017-2
+https://book.douban.com/subject/26980391/?icn=index-latestbook-subject 食帖15：便当灵感集 林江 2017-2
+https://book.douban.com/subject/26958882/?icn=index-latestbook-subject 生火 [法]克里斯多夫·夏布特（ChristopheChabouté）编绘 2017-3
+https://book.douban.com/subject/26989163/?icn=index-latestbook-subject 文明之光（第四册） 吴军 2017-3-1
+https://book.douban.com/subject/26878906/?icn=index-latestbook-subject 公牛山 [美]布赖恩·帕诺威奇 2017-2
+https://book.douban.com/subject/26989534/?icn=index-latestbook-subject 几乎消失的偷闲艺术 [加拿大]达尼·拉费里埃 2017-4
+https://book.douban.com/subject/26939973/?icn=index-latestbook-subject 散步去 [日]谷口治郎 2017-3
+https://book.douban.com/subject/26865333/?icn=index-latestbook-subject 中国1945 [美]理查德·伯恩斯坦(RichardBernstein) 2017-3-1
+https://book.douban.com/subject/26989242/?icn=index-latestbook-subject 有匪2：离恨楼 Priest 2017-3
+https://book.douban.com/subject/26985790/?icn=index-latestbook-subject 女人、火与危险事物 [美]乔治·莱考夫 2017-3
+https://book.douban.com/subject/26972277/?icn=index-latestbook-subject 寻找时间的人 [爱尔兰]凯特·汤普森 2017-3
+https://www.douban.com/note/610758170/ 白先勇细说红楼梦【全二册】 白先勇 2017-2-1
+https://read.douban.com/ebook/31540864/?dcs=book-hot&amp;amp;dcm=douban&amp;amp;dct=read-subject 奇爱博士 [英]彼得·乔治 2016-8-1
+https://read.douban.com/ebook/31433872/?dcs=book-hot&amp;amp;dcm=douban&amp;amp;dct=read-subject 在时光中盛开的女子 李筱懿 2017-3
+https://read.douban.com/ebook/31178635/?dcs=book-hot&amp;amp;dcm=douban&amp;amp;dct=read-subject 如何高效记忆（原书第2版） [美]肯尼思•希格比（KennethL.Higbee） 2017-3-5
+https://read.douban.com/ebook/31358183/?dcs=book-hot&amp;amp;dcm=douban&amp;amp;dct=read-subject 愿无岁月可回头 回忆专用小马甲 2016-9
+https://read.douban.com/ebook/31341636/?dcs=book-hot&amp;amp;dcm=douban&amp;amp;dct=read-subject 走神的艺术与科学 [新西兰]迈克尔·C.科尔巴里斯 2017-3-1
+https://read.douban.com/ebook/27621094/?dcs=book-hot&amp;amp;dcm=douban&amp;amp;dct=read-subject 神秘的量子生命 [英]吉姆•艾尔－哈利利/约翰乔•麦克法登 2016-8
+https://read.douban.com/ebook/31221966/?dcs=book-hot&amp;amp;dcm=douban&amp;amp;dct=read-subject 寻找时间的人 [爱尔兰]凯特·汤普森 2017-3
+https://read.douban.com/ebook/31481323/?dcs=book-hot&amp;amp;dcm=douban&amp;amp;dct=read-subject 山之四季 [日]高村光太郎 2017-1
+https://read.douban.com/ebook/31154855/?dcs=book-hot&amp;amp;dcm=douban&amp;amp;dct=read-subject 东北游记 [美]迈克尔·麦尔 2017-1
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    <div>
+        
+          
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/09/10/我的 Python 笔记（五）.html">我的 Python 笔记（五）</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Ethen 的个人博客">Ethen</a></p>
+  <p><span>发布时间:</span>2019年09月10日 - 10:09</p>
+  <p><span>最后更新:</span>2019年09月10日 - 02:09</p>
+  <p><span>原始链接:</span><a href="/2019/09/10/我的 Python 笔记（五）.html" title="我的 Python 笔记（五）">http://zhanglingsi.github.io/2019/09/10/我的 Python 笔记（五）.html</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://zhanglingsi.github.io/2019/09/10/我的 Python 笔记（五）.html"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+        });
+    });
+</script>
+
+
+        
+    </div>
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>您的支持将鼓励我继续创作！-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Ethen 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Ethen 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/10/我的 Python 笔记（六）.html" rel="next" title="我的 Python 笔记（六）">
+                <i class="fa fa-chevron-left"></i> 我的 Python 笔记（六）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/10/我的 Python 笔记（二）.html" rel="prev" title="我的 Python 笔记（二）">
+                我的 Python 笔记（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDg1OS8xMTM5Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars1.githubusercontent.com/u/13826424?s=400&u=eb775f4fe9b8bac3a21dd467735b6078c47e7325&v=4"
+                alt="Ethen" />
+            
+              <p class="site-author-name" itemprop="name">Ethen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhanglingsi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhanglingsi@aliyun.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/2628558762/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/175605982/" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>豆瓣</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/zhang-ling-si-9/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-certificate"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/zhanglingsi" title="GitHub" target="_blank">GitHub</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.easyicon.net/" title="制作图标" target="_blank">制作图标</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://fontawesome.com/icons?d=gallery" title="Font Awesome" target="_blank">Font Awesome</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我的-Python-笔记（五）"><span class="nav-number">1.</span> <span class="nav-text">我的 Python 笔记（五）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-中的-正则表达式-爬虫"><span class="nav-number">1.1.</span> <span class="nav-text">Python 中的 正则表达式 爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见匹配模式"><span class="nav-number">1.1.1.</span> <span class="nav-text">常见匹配模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#re-match"><span class="nav-number">1.1.2.</span> <span class="nav-text">re.match</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最常规的匹配"><span class="nav-number">1.1.3.</span> <span class="nav-text">最常规的匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#泛匹配"><span class="nav-number">1.1.4.</span> <span class="nav-text">泛匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配目标"><span class="nav-number">1.1.5.</span> <span class="nav-text">匹配目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪婪匹配"><span class="nav-number">1.1.6.</span> <span class="nav-text">贪婪匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非贪婪匹配"><span class="nav-number">1.1.7.</span> <span class="nav-text">非贪婪匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配模式"><span class="nav-number">1.1.8.</span> <span class="nav-text">匹配模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转义"><span class="nav-number">1.1.9.</span> <span class="nav-text">转义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#re-search"><span class="nav-number">1.2.</span> <span class="nav-text">re.search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配演练"><span class="nav-number">1.2.1.</span> <span class="nav-text">匹配演练</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#re-findall"><span class="nav-number">1.3.</span> <span class="nav-text">re.findall</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#re-sub"><span class="nav-number">1.3.1.</span> <span class="nav-text">re.sub</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#re-compile"><span class="nav-number">1.4.</span> <span class="nav-text">re.compile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战练习"><span class="nav-number">1.5.</span> <span class="nav-text">实战练习</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ethen</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">全站字数统计&#58;</span>
+    
+    <span title="全站字数统计">23.4k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" href="https://github.com/zhanglingsi/zhanglingsi.github.io">GitHub Pages</a>
+<span class="post-meta-divider">|</span>
+<span class="with-love">
+  <i class="fa fa-user"></i>
+</span>您是第<span id="busuanzi_value_site_uv"></span>位访客
+<span class="post-meta-divider">|</span>
+总访问量<span id="busuanzi_value_site_pv"></span>次
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("vieblXPxyzMtC8cQ9nQoXOS9-gzGzoHsz", "Vp8iSTFg2MnCsyfhH56P8caW");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+
+
+</body>
+</html>
