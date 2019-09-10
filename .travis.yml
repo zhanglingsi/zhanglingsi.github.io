@@ -11,9 +11,9 @@ install:
   - npm install
 
 
-before_script:
-  - npm install -g gulp
-  - npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
+# before_script:
+#   - npm install -g gulp
+#   - npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
 
 script:
   - hexo g
