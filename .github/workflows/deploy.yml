@@ -1,0 +1,53 @@
+name: Deploy Hexo Blog
+
+# 推送到 dev 分支时自动触发构建部署（也支持手动触发）
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+
+# 允许使用内置 GITHUB_TOKEN 向仓库写入（推送 master 分支）
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dev branch
+        uses: actions/checkout@v4
+
+      # hexo 3.6 及相关老版本依赖，使用 Node.js 10 保证兼容
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "10"
+
+      - name: Cache NPM dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-cache-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-cache
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build (hexo generate)
+        run: npx hexo generate
+
+      # 与原 .travis.yml 的 after_script 逻辑一致：
+      # 将编译产物 public/ 强制推送到 master 分支，实现博客发布
+      - name: Deploy to master branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd ./public
+          git init
+          git config user.name "zhanglingsi"
+          git config user.email "zhanglingsi@aliyun.com"
+          git add .
+          git commit -m "Update docs by GitHub Actions ($(date +'%Y-%m-%d %H:%M:%S'))"
+          git push --force --quiet "https://x-access-token:${GH_TOKEN}@github.com/zhanglingsi/zhanglingsi.github.io.git" HEAD:master
