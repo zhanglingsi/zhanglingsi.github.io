@@ -1,53 +1,44 @@
-name: Deploy Hexo Blog
+# Ref: https://docs.astro.build/en/guides/deploy/github/
 
-# 推送到 dev 分支时自动触发构建部署（也支持手动触发）
+name: Deploy to GitHub Pages
+
 on:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches:
-      - dev
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# 允许使用内置 GITHUB_TOKEN 向仓库写入（推送 master 分支）
+# Allow this job to clone the repo and create a page deployment
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout dev branch
-        uses: actions/checkout@v4
+      - name: Checkout your repository using git
+        uses: actions/checkout@v7
+      - name: Install, build, and upload your site
+        uses: withastro/action@v6
+        # with:
+          # path: . # The root location of your Astro project inside the repository. (optional)
+          # node-version: 24 # The specific version of Node that should be used to build your site. Defaults to 24. (optional)
+          # package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+          # build-cmd: pnpm run build # The command to run to build your site. Runs the package build script/task by default. (optional)
+        # env:
+          # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Use single quotation marks for the variable value. (optional)
 
-      # hexo 3.6 及相关老版本依赖，使用 Node.js 10 保证兼容
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "10"
-
-      - name: Cache NPM dependencies
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-npm-cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-cache
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build (hexo generate)
-        run: npx hexo generate
-
-      # 与原 .travis.yml 的 after_script 逻辑一致：
-      # 将编译产物 public/ 强制推送到 master 分支，实现博客发布
-      - name: Deploy to master branch
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          cd ./public
-          git init
-          git config user.name "zhanglingsi"
-          git config user.email "zhanglingsi@aliyun.com"
-          git add .
-          git commit -m "Update docs by GitHub Actions ($(date +'%Y-%m-%d %H:%M:%S'))"
-          git push --force --quiet "https://x-access-token:${GH_TOKEN}@github.com/zhanglingsi/zhanglingsi.github.io.git" HEAD:master
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
