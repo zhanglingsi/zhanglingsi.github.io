@@ -3,9 +3,9 @@ site:
     # 站点 URL（以斜杠结尾）
     siteURL: "https://zhanglingsi.github.io/"
     # 站点标题
-    title: "Twilight"
+    title: "EthenのBlog"
     # 站点副标题
-    subtitle: "Blog Template"
+    subtitle: "private spaces"
     # 语言配置
     lang: "en"
     # 翻译配置
@@ -32,13 +32,22 @@ site:
     # 时区配置
     timeZone: 8
     # 字体配置
+    # 顺序很关键：Inter 在前、Noto Sans SC 在后。
+    # 浏览器对英文字符使用 Inter（Inter 不含中文字形），
+    # 遇到中文时自动回退到 Noto Sans SC，从而实现“英文 Inter / 中文思源黑体”。
     font:
-        # 示例字体配置 - Zen Maru Gothic
-        "Example - ZenMaruGothic":
-            # 字体源 (字体 CSS 链接 | 字体文件路径)
-            src: "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
+        # 英文字体：Inter（无衬线、清晰度极高、当前最流行的网页字体）
+        "Inter":
+            # 字体源 (Google Fonts CSS 链接)
+            src: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
             # 字体名 (font-family)
-            family: "Zen Maru Gothic"
+            family: "Inter"
+        # 中文字体：Noto Sans SC（思源黑体简体，多字重，跨平台显示极度清晰通用）
+        "NotoSansSC":
+            # 字体源 (Google Fonts CSS 链接)
+            src: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"
+            # 字体名 (font-family)
+            family: "Noto Sans SC"
     # 主题色配置
     themeColor:
         # 主题色的默认色相 (范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345)
