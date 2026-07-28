@@ -1,7 +1,7 @@
 /* This is a script to build the site with Pagefind */
 
 const { execSync } = require('child_process');
-const { existsSync } = require('fs');
+const { existsSync, writeFileSync } = require('fs');
 const { join } = require('path');
 
 // Detect the platform
@@ -77,6 +77,11 @@ function main() {
 
         console.log('✅ Build completed!');
         console.log(`📊 Search index generated at: ${outputDir}/pagefind/`);
+
+        // GitHub Pages 默认用 Jekyll 渲染，而 Jekyll 会忽略所有以 "_" 开头的目录（Astro 的 CSS/JS 都在 _astro/ 下）。
+        // 必须在产物根放一个空的 .nojekyll，否则页面会变成无样式的裸 HTML。
+        writeFileSync(join(outputDir, '.nojekyll'), '');
+        console.log('📝 Added .nojekyll to skip Jekyll processing on GitHub Pages');
 
     } catch (error) {
         console.error('❌ Build failed:', error.message);
