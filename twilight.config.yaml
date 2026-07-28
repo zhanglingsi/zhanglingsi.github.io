@@ -5,7 +5,7 @@ site:
     # 站点标题
     title: "EthenのBlog"
     # 站点副标题
-    subtitle: "private spaces"
+    subtitle: "在技术的理性中，寻找生活的温度。"
     # 语言配置
     lang: "en"
     # 翻译配置
@@ -65,6 +65,21 @@ site:
                 - "/assets/images/desktopWallpaper_1.jpg"
                 - "/assets/images/desktopWallpaper_2.jpg"
                 - "/assets/images/desktopWallpaper_3.jpg"
+                - "/assets/images/desktopWallpaper_4.jpg"
+                - "/assets/images/desktopWallpaper_5.jpg"
+                - "/assets/images/desktopWallpaper_6.jpg"
+                - "/assets/images/desktopWallpaper_7.jpg"
+                - "/assets/images/desktopWallpaper_8.jpg"
+                - "/assets/images/desktopWallpaper_9.jpg"
+                - "/assets/images/desktopWallpaper_10.jpg"
+                - "/assets/images/desktopWallpaper_11.jpg"
+                - "/assets/images/desktopWallpaper_12.jpg"
+                - "/assets/images/desktopWallpaper_13.jpg"
+                - "/assets/images/desktopWallpaper_14.jpg"
+                - "/assets/images/desktopWallpaper_15.jpg"
+                - "/assets/images/desktopWallpaper_16.jpg"
+                - "/assets/images/desktopWallpaper_17.jpg"
+                - "/assets/images/desktopWallpaper_18.jpg"
             # 移动壁纸图片 (相对于 /public 目录; 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播)
             mobile:
                 - "/assets/images/mobileWallpaper_1.jpg"
@@ -86,10 +101,10 @@ site:
                 # 在主页显示文本
                 enable: true
                 # 主标题
-                title: "Twilight"
+                title: "EthenのBlog"
                 # 副标题，支持单个字符串或字符串数组
                 subtitle:
-                    - "Illuminate Our Paths"
+                    - "左手代码，右手生活｜一个开发者的日常观测。"
                 # 副标题打字机效果
                 typewriter:
                     # 启用副标题打字机效果
