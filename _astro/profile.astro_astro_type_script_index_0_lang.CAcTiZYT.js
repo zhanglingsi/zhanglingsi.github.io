@@ -1,0 +1,1 @@
+import{i as t}from"./umami-share.DbDippd7.js";import"./config.BXvMVDz8.js";t(".site-stats-container",".site-stats-display","umami",!1);document.addEventListener("astro:page-load",()=>{t(".site-stats-container",".site-stats-display","umami",!1)});

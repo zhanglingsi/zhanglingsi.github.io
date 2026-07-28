@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Twilight</title><description>Blog Template</description><link>https://zhanglingsi.github.io/</link><language>en</language><item><title>Guide for Template - Getting Started</title><link>https://zhanglingsi.github.io/posts/guide/getting-started/</link><guid isPermaLink="true">https://zhanglingsi.github.io/posts/guide/getting-started/</guid><description>How to use this blog template.</description><pubDate>Tue, 02 Oct 2001 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Tip: For the things that are not mentioned in this guide, you may find the answers in the &lt;a href=&quot;https://docs.astro.build/&quot;&gt;Astro Docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Front-matter of Posts&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: My First Blog Post
+published: 2020-02-02
+description: This is the first post of my new Astro blog.
+cover: ./cover.jpg
+coverInContent: false
+tags: []
+category: Chore
+comment: true
+draft: false
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Attribute&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The title of the post.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;published&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The date the post was published.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;pinned&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Whether this post is pinned to the top of the post list.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;description&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;A short description of the post. Displayed on index page.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cover&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The cover image path of the post. &amp;lt;br/&amp;gt;1. Start with &lt;code&gt;http://&lt;/code&gt; or &lt;code&gt;https://&lt;/code&gt;: For web image &amp;lt;br/&amp;gt;2. Start with &lt;code&gt;/&lt;/code&gt;: For image in &lt;code&gt;public&lt;/code&gt; dir &amp;lt;br/&amp;gt;3. With none of the prefixes: Relative to the markdown file&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;coverInContent&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Whether to show the cover image in the post content.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The tags of the post.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;category&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The category of the post &amp;lt;br/&amp;gt;1. Single category: &lt;code&gt;category: Guides&lt;/code&gt; &amp;lt;br/&amp;gt;2. Multi-category: &lt;code&gt;category: [Guides, Getting Started]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;licenseName&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The license name for the post content.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;author&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The author of the post.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sourceLink&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;The source link or reference for the post content.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;comment&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Whether to enable comment for this post. Default is &lt;code&gt;true&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;draft&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;If this post is still a draft, which won&apos;t be displayed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Where to Place the Post Files&lt;/h2&gt;
+&lt;p&gt;Your post files should be placed in &lt;code&gt;src/content/posts/&lt;/code&gt; directory. You can also create sub-directories to better organize your posts and assets.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;src/content/posts/
+├── post-1.md
+└── post-2/
+    ├── cover.jpg
+    └── index.md
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded><category>Guides / Getting Started</category></item><item><title>Guide for Template - Advanced Customization</title><link>https://zhanglingsi.github.io/posts/guide/advanced-customization/</link><guid isPermaLink="true">https://zhanglingsi.github.io/posts/guide/advanced-customization/</guid><description>Master the advanced features and customization options of the Twilight template.</description><pubDate>Sat, 10 Feb 2024 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This guide covers advanced customization options and features available in the Twilight template, from global configurations to specialized Markdown extensions.&lt;/p&gt;
+&lt;h2&gt;Global Configuration&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;twilight.config.yaml&lt;/code&gt; file is the heart of your blog&apos;s configuration. Here are some advanced settings you can tweak:&lt;/p&gt;
+&lt;h3&gt;Site &amp;amp; Localization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Language &amp;amp; Translation&lt;/strong&gt;: Enable client-side translation using &lt;code&gt;site.translate.enable&lt;/code&gt;. You can choose different services and configure auto-detection.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Custom Fonts&lt;/strong&gt;: Add your own fonts by providing a CSS link or file path under &lt;code&gt;site.font&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Visual Effects&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Theme Color&lt;/strong&gt;: Change the primary color of your blog by adjusting the &lt;code&gt;site.themeColor.hue&lt;/code&gt; (0-360).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Wallpaper Modes&lt;/strong&gt;: Choose between &lt;code&gt;banner&lt;/code&gt;, &lt;code&gt;fullscreen&lt;/code&gt;, or &lt;code&gt;none&lt;/code&gt;. You can also enable a &lt;code&gt;carousel&lt;/code&gt; for multiple wallpapers with the &lt;code&gt;kenBurns&lt;/code&gt; effect.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Waves Effect&lt;/strong&gt;: Toggle the animated water ripple effect on the banner using &lt;code&gt;site.wallpaper.banner.waves.enable&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Particle Effects&lt;/strong&gt;: Enable floating particles in the background with &lt;code&gt;particle.enable&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Navbar Transparency&lt;/strong&gt;: Adjust &lt;code&gt;site.wallpaper.banner.navbar.transparentMode&lt;/code&gt; between &lt;code&gt;semi&lt;/code&gt;, &lt;code&gt;full&lt;/code&gt;, or &lt;code&gt;semifull&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Sidebar Widgets&lt;/strong&gt;: Reorder or toggle sidebar components like &lt;code&gt;profile&lt;/code&gt;, &lt;code&gt;announcement&lt;/code&gt;, &lt;code&gt;categories&lt;/code&gt;, &lt;code&gt;tags&lt;/code&gt;, &lt;code&gt;toc&lt;/code&gt;, and &lt;code&gt;statistics&lt;/code&gt; in &lt;code&gt;sidebar.components&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Markdown Extensions&lt;/h2&gt;
+&lt;h3&gt;GitHub Repository Cards&lt;/h3&gt;
+&lt;p&gt;You can add dynamic cards that link to GitHub repositories, on page load, the repository information is pulled from the GitHub API.&lt;/p&gt;
+&lt;p&gt;::github{repo=&quot;Spr-Aachen/Twilight&quot;}&lt;/p&gt;
+&lt;p&gt;Create a GitHub repository card with the code &lt;code&gt;::github{repo=&quot;Spr-Aachen/Twilight&quot;}&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;::github{repo=&quot;Spr-Aachen/Twilight&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Music Cards&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Online
+::music{meting=&quot;https://meting.spr-aachen.com/api?server=netease&amp;amp;type=song&amp;amp;id=1390882521&quot;}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;::music{meting=&quot;https://meting.spr-aachen.com/api?server=netease&amp;amp;type=song&amp;amp;id=1390882521&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Local
+::music{title=&quot;深海之息&quot; artist=&quot;Youzee Music&quot; cover=&quot;https://p1.music.126.net/PhKOqFtljgHDDpKYM2ADUA==/109951169858309716.jpg&quot; audio=&quot;assets/music/深海之息.m4a&quot; lrc=&quot;assets/music/深海之息.lrc&quot;}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;::music{title=&quot;深海之息&quot; artist=&quot;Youzee Music&quot; cover=&quot;https://p1.music.126.net/PhKOqFtljgHDDpKYM2ADUA==/109951169858309716.jpg&quot; audio=&quot;assets/music/深海之息.m4a&quot; lrc=&quot;assets/music/深海之息.lrc&quot;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Admonitions&lt;/h3&gt;
+&lt;p&gt;Following types of admonitions are supported: &lt;code&gt;note&lt;/code&gt; &lt;code&gt;tip&lt;/code&gt; &lt;code&gt;important&lt;/code&gt; &lt;code&gt;warning&lt;/code&gt; &lt;code&gt;caution&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;:::note
+Highlights information that users should take into account, even when skimming.
+:::&lt;/p&gt;
+&lt;p&gt;:::tip
+Optional information to help a user be more successful.
+:::&lt;/p&gt;
+&lt;p&gt;:::important
+Crucial information necessary for users to succeed.
+:::&lt;/p&gt;
+&lt;p&gt;:::warning
+Critical content demanding immediate user attention due to potential risks.
+:::&lt;/p&gt;
+&lt;p&gt;:::caution
+Negative potential consequences of an action.
+:::&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Basic Syntax&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::note
+Highlights information that users should take into account, even when skimming.
+:::
+
+:::tip
+Optional information to help a user be more successful.
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Custom Titles&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The title of the admonition can be customized.
+:::note[MY CUSTOM TITLE]
+This is a note with a custom title.
+:::&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:::note[MY CUSTOM TITLE]
+This is a note with a custom title.
+:::
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;GitHub Syntax&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!TIP]
+&lt;a href=&quot;https://github.com/orgs/community/discussions/16925&quot;&gt;The GitHub syntax&lt;/a&gt; is also supported.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; [!TIP]
+&amp;gt; The GitHub syntax is also supported.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Spoiler&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can add spoilers to your text. The text also supports &lt;strong&gt;Markdown&lt;/strong&gt; syntax.&lt;/p&gt;
+&lt;p&gt;The content :spoiler[is hidden &lt;strong&gt;ayyy&lt;/strong&gt;]!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;The content :spoiler[is hidden **ayyy**]!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;For more details, check the &lt;a href=&quot;https://docs.twilight.spr-aachen.com&quot;&gt;Documentation&lt;/a&gt;.&lt;/p&gt;
+</content:encoded><category>Guides / Advanced Customization</category></item><item><title>Copy Protection Example</title><link>https://zhanglingsi.github.io/posts/copy-protection/</link><guid isPermaLink="true">https://zhanglingsi.github.io/posts/copy-protection/</guid><description>This post demonstrates the copyProtection frontmatter option with granular controls.</description><pubDate>Tue, 01 Nov 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Post with Copy Protection Enabled&lt;/h1&gt;
+&lt;p&gt;This post has all four &lt;code&gt;copyProtection&lt;/code&gt; sub-options enabled in its frontmatter:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;copyProtection:
+    blockSelection: true
+    blockClipboard: true
+    blockContextMenu: true
+    blockDevTools: true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The following protections are active on this page:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Block Selection&lt;/strong&gt; — Text selection is disabled via &lt;code&gt;user-select: none&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Block Clipboard&lt;/strong&gt; — &lt;code&gt;copy&lt;/code&gt;, &lt;code&gt;cut&lt;/code&gt;, and &lt;code&gt;paste&lt;/code&gt; events are intercepted and prevented.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Block Context Menu&lt;/strong&gt; — Right-clicking is disabled.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Block DevTools&lt;/strong&gt; — &lt;code&gt;F12&lt;/code&gt;, &lt;code&gt;Ctrl+U&lt;/code&gt; (view source), and &lt;code&gt;Ctrl+S&lt;/code&gt; (save page) are blocked.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Options&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;blockSelection&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Disable text selection&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;blockClipboard&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Block copy/cut/paste events&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;blockContextMenu&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Block right-click menu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;blockDevTools&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Block F12 / Ctrl+U / Ctrl+S&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;All sub-options default to &lt;code&gt;false&lt;/code&gt; — enable only the protections you need.&lt;/p&gt;
+&lt;h2&gt;Try It&lt;/h2&gt;
+&lt;p&gt;Try selecting text, right-clicking, pressing &lt;code&gt;Ctrl+C&lt;/code&gt;, or hitting &lt;code&gt;F12&lt;/code&gt; on this page — you&apos;ll find all of these actions are blocked.&lt;/p&gt;
+</content:encoded><category>Examples</category><category>Copy Protection</category></item><item><title>Video Example</title><link>https://zhanglingsi.github.io/posts/videos/</link><guid isPermaLink="true">https://zhanglingsi.github.io/posts/videos/</guid><description>This post demonstrates how to embed video in a blog post.</description><pubDate>Thu, 02 Dec 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Instructions&lt;/h2&gt;
+&lt;p&gt;Just copy the embed code from YouTube or other platforms, and paste it in the markdown file as below:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+title: Include Video in the Post
+published: 2023-10-19
+// ...
+---
+
+&amp;lt;iframe width=&quot;100%&quot; height=&quot;468&quot; src=&quot;https://www.youtube.com/embed/yrn7eInApnc?si=gGZeFbPcfMpJ1uV3_&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
+&lt;h3&gt;YouTube&lt;/h3&gt;
+&lt;p&gt;&amp;lt;iframe width=&quot;100%&quot; height=&quot;468&quot; src=&quot;https://www.youtube.com/embed/yrn7eInApnc?si=gGZeFbPcfMpJ1uV3_&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Bilibili&lt;/h3&gt;
+&lt;p&gt;&amp;lt;iframe width=&quot;100%&quot; height=&quot;468&quot; src=&quot;https://player.bilibili.com/player.html?bvid=BV1WrsdeSES1&amp;amp;p=1&amp;amp;autoplay=0&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&amp;gt; &amp;lt;/iframe&amp;gt;&lt;/p&gt;
+</content:encoded><category>Examples</category><category>Markdown</category><category>Video</category></item><item><title>Mermaid Example</title><link>https://zhanglingsi.github.io/posts/mermaids/</link><guid isPermaLink="true">https://zhanglingsi.github.io/posts/mermaids/</guid><description>A simple example of a Markdown blog post with Mermaid.</description><pubDate>Wed, 02 Nov 2011 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Complete Guide to Markdown with Mermaid Diagrams&lt;/h1&gt;
+&lt;p&gt;This article demonstrates how to create various complex diagrams using Mermaid in Markdown documents, including flowcharts, sequence diagrams, Gantt charts, class diagrams, and state diagrams.&lt;/p&gt;
+&lt;h2&gt;Flowchart Example&lt;/h2&gt;
+&lt;p&gt;Flowcharts are excellent for representing processes or algorithm steps.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;graph TD
+    A[Start] --&amp;gt; B{Condition Check}
+    B --&amp;gt;|Yes| C[Process Step 1]
+    B --&amp;gt;|No| D[Process Step 2]
+    C --&amp;gt; E[Subprocess]
+    D --&amp;gt; E
+    subgraph E [Subprocess Details]
+        E1[Substep 1] --&amp;gt; E2[Substep 2]
+        E2 --&amp;gt; E3[Substep 3]
+    end
+    E --&amp;gt; F{Another Decision}
+    F --&amp;gt;|Option 1| G[Result 1]
+    F --&amp;gt;|Option 2| H[Result 2]
+    F --&amp;gt;|Option 3| I[Result 3]
+    G --&amp;gt; J[End]
+    H --&amp;gt; J
+    I --&amp;gt; J
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Sequence Diagram Example&lt;/h2&gt;
+&lt;p&gt;Sequence diagrams show interactions between objects over time.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sequenceDiagram
+    participant User
+    participant WebApp
+    participant Server
+    participant Database
+
+    User-&amp;gt;&amp;gt;WebApp: Submit Login Request
+    WebApp-&amp;gt;&amp;gt;Server: Send Auth Request
+    Server-&amp;gt;&amp;gt;Database: Query User Credentials
+    Database--&amp;gt;&amp;gt;Server: Return User Data
+    Server--&amp;gt;&amp;gt;WebApp: Return Auth Result
+    
+    alt Auth Successful
+        WebApp-&amp;gt;&amp;gt;User: Show Welcome Page
+        WebApp-&amp;gt;&amp;gt;Server: Request User Data
+        Server-&amp;gt;&amp;gt;Database: Get User Preferences
+        Database--&amp;gt;&amp;gt;Server: Return Preferences
+        Server--&amp;gt;&amp;gt;WebApp: Return User Data
+        WebApp-&amp;gt;&amp;gt;User: Load Personalized Interface
+    else Auth Failed
+        WebApp-&amp;gt;&amp;gt;User: Show Error Message
+        WebApp-&amp;gt;&amp;gt;User: Prompt Re-entry
+    end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Gantt Chart Example&lt;/h2&gt;
+&lt;p&gt;Gantt charts are perfect for displaying project schedules and timelines.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gantt
+    title Website Development Project Timeline
+    dateFormat  YYYY-MM-DD
+    axisFormat  %m/%d
+    
+    section Design Phase
+    Requirements Analysis      :a1, 2023-10-01, 7d
+    UI Design                 :a2, after a1, 10d
+    Prototype Creation        :a3, after a2, 5d
+    
+    section Development Phase
+    Frontend Development      :b1, 2023-10-20, 15d
+    Backend Development       :b2, after a2, 18d
+    Database Design           :b3, after a1, 12d
+    
+    section Testing Phase
+    Unit Testing              :c1, after b1, 8d
+    Integration Testing       :c2, after b2, 10d
+    User Acceptance Testing   :c3, after c2, 7d
+    
+    section Deployment
+    Production Deployment     :d1, after c3, 3d
+    Launch                    :milestone, after d1, 0d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Class Diagram Example&lt;/h2&gt;
+&lt;p&gt;Class diagrams show the static structure of a system, including classes, attributes, methods, and their relationships.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;classDiagram
+    class User {
+        +String username
+        +String password
+        +String email
+        +Boolean active
+        +login()
+        +logout()
+        +updateProfile()
+    }
+    
+    class Article {
+        +String title
+        +String content
+        +Date publishDate
+        +Boolean published
+        +publish()
+        +edit()
+        +delete()
+    }
+    
+    class Comment {
+        +String content
+        +Date commentDate
+        +addComment()
+        +deleteComment()
+    }
+    
+    class Category {
+        +String name
+        +String description
+        +addArticle()
+        +removeArticle()
+    }
+    
+    User &quot;1&quot; -- &quot;*&quot; Article : writes
+    User &quot;1&quot; -- &quot;*&quot; Comment : posts
+    Article &quot;1&quot; -- &quot;*&quot; Comment : has
+    Article &quot;1&quot; -- &quot;*&quot; Category : belongs to
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;State Diagram Example&lt;/h2&gt;
+&lt;p&gt;State diagrams show the sequence of states an object goes through during its life cycle.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;stateDiagram-v2
+    [*] --&amp;gt; Draft
+    
+    Draft --&amp;gt; UnderReview : submit
+    UnderReview --&amp;gt; Draft : reject
+    UnderReview --&amp;gt; Approved : approve
+    Approved --&amp;gt; Published : publish
+    Published --&amp;gt; Archived : archive
+    Published --&amp;gt; Draft : retract
+    
+    state Published {
+        [*] --&amp;gt; Active
+        Active --&amp;gt; Hidden : temporarily hide
+        Hidden --&amp;gt; Active : restore
+        Active --&amp;gt; [*]
+        Hidden --&amp;gt; [*]
+    }
+    
+    Archived --&amp;gt; [*]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Pie Chart Example&lt;/h2&gt;
+&lt;p&gt;Pie charts are ideal for displaying proportions and percentage data.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pie title Website Traffic Sources Analysis
+    &quot;Search Engines&quot; : 45.6
+    &quot;Direct Access&quot; : 30.1
+    &quot;Social Media&quot; : 15.3
+    &quot;Referral Links&quot; : 6.4
+    &quot;Other Sources&quot; : 2.6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Mermaid is a powerful tool for creating various types of diagrams in Markdown documents. This article demonstrated how to use flowcharts, sequence diagrams, Gantt charts, class diagrams, state diagrams, and pie charts. These diagrams can help you express complex concepts, processes, and data structures more clearly.&lt;/p&gt;
+&lt;p&gt;To use Mermaid, simply specify the mermaid language in a code block and describe the diagram using concise text syntax. Mermaid will automatically convert these descriptions into beautiful visual diagrams.&lt;/p&gt;
+&lt;p&gt;Try using Mermaid diagrams in your next technical blog post or project documentation - they will make your content more professional and easier to understand!&lt;/p&gt;
+</content:encoded><category>Examples</category><category>Markdown</category><category>Mermaid</category></item></channel></rss>

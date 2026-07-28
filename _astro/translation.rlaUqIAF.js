@@ -1,0 +1,1 @@
+import{c as i}from"./language.Dlh1PcYx.js";import{L as r,l as t,a as e}from"./language.oQIsDRMo.js";const s=t.en;function c(o){const n=o.toLowerCase();if(n in r&&n in t)return t[n];if(n in e){const a=e[n];if(a in t)return t[a]}return s}function u(o){const n=i();return c(n)[o]}export{u as i};

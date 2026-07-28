@@ -1,0 +1,1350 @@
+<!DOCTYPE html><html lang="en" class="bg-(--page-bg) text-[14px] md:text-[16px] is-loading" data-astro-cid-tnnyocjb style="--navbar-height: 4.5rem;--navbar-gap: 1.25rem;--navbar-follow-distance: 0rem;--main-panel-overlaps-banner-height: 0rem;--sidebar-top: 1rem;--sidebar-spacing: 1rem;--bannerOffset: 18vh;--banner-height-home: 66vh;--banner-height: 30vh;--configHue: 255;--page-width: 90rem;"> <head><meta charset="UTF-8"><!-- Resource Preconnect --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://code.iconify.design"><!-- Font Loader --><!-- Font Loading --><link rel="preload" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" as="style"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"><!-- Apply Global Font Family --><style is:global>
+    :root {
+        --font-family-fallback: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        --global-font-family: "Zen Maru Gothic", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    /* Apply to body as default */
+    body {
+        font-family: var(--global-font-family);
+    }
+
+    /* Generate specific classes for each font*/
+    
+        .font-Example - ZenMaruGothic,
+        .font-Example - ZenMaruGothic * {
+            font-family: "Zen Maru Gothic", var(--font-family-fallback) !important;
+        }
+    
+</style><!-- title --><title>Guide for Template - Advanced Customization - Twilight</title><!-- description --><meta name="description" content="Master the advanced features and customization options of the Twilight template."><!-- keywords --><!-- author --><meta name="author" content="Twilight"><!-- Open Graph --><meta property="og:site_name" content="Twilight"><meta property="og:url" content="https://zhanglingsi.github.io/posts/guide/advanced-customization/"><meta property="og:title" content="Guide for Template - Advanced Customization - Twilight"><meta property="og:description" content="Master the advanced features and customization options of the Twilight template."><meta property="og:type" content="article"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://zhanglingsi.github.io/posts/guide/advanced-customization/"><meta name="twitter:title" content="Guide for Template - Advanced Customization - Twilight"><meta name="twitter:description" content="Master the advanced features and customization options of the Twilight template."><!-- viewport --><meta name="viewport" content="width=device-width"><!-- generator --><meta name="generator" content="Astro v5.16.15"><!-- favicons --><link rel="icon" href="/favicon/icon-light.ico" sizes="96x96" media="(prefers-color-scheme: light)"><link rel="icon" href="/favicon/icon-dark.ico" sizes="96x96" media="(prefers-color-scheme: dark)"><!-- Set the theme before the page is rendered to avoid a flash --><script>(function(){const LIGHT_MODE = "light";
+const DARK_MODE = "dark";
+const SYSTEM_MODE = "system";
+const BANNER_HEIGHT_EXTEND = 36;
+const PAGE_WIDTH = 90;
+const NAVBAR_HEIGHT = 72;
+const configHue = 255;
+const defaultTheme = "dark";
+
+            // Load the theme from local storage
+            const theme = localStorage.getItem('theme') || defaultTheme;
+            // Apply the theme to the document
+            let isDark = false;
+            switch (theme) {
+                case LIGHT_MODE:
+                    document.documentElement.classList.remove('dark');
+                    isDark = false;
+                    break
+                case DARK_MODE:
+                    document.documentElement.classList.add('dark');
+                    isDark = true;
+                    break
+                case SYSTEM_MODE:
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                        isDark = true;
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        isDark = false;
+                    }
+            }
+            const expressiveTheme = isDark ? "github-dark" : "github-light";
+            document.documentElement.setAttribute("data-theme", expressiveTheme);
+            // Load the hue from local storage
+            const hue = localStorage.getItem('hue') || configHue;
+            // Apply the hue to the document
+            document.documentElement.style.setProperty('--hue', hue);
+            // calculate the --banner-height-extend, which needs to be a multiple of 4 to avoid blurry text
+            let offset = Math.floor(window.innerHeight * (BANNER_HEIGHT_EXTEND / 100));
+            offset = offset - offset % 4;
+            document.documentElement.style.setProperty('--banner-height-extend', `${offset}px`);
+        })();</script><!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why --><!-- custom head --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Guide for Template - Advanced Customization","description":"Master the advanced features and customization options of the Twilight template.","keywords":[],"author":{"@type":"Person","name":"Twilight","url":"https://zhanglingsi.github.io/"},"datePublished":"2024-02-10","inLanguage":"en"}</script><!-- Pio 看板娘样式 - 仅在启用时加载 --><!-- rss feed --><link rel="alternate" type="application/rss+xml" title="Twilight" href="https://zhanglingsi.github.io/rss.xml"><link rel="stylesheet" href="/_astro/_menu_.y3Ble-Pa.css">
+<style>.password-protection[data-astro-cid-isrenuqs]{display:flex;justify-content:center;align-items:center;min-height:40vh;padding:2rem}.password-container[data-astro-cid-isrenuqs]{text-align:center;max-width:400px;width:100%;padding:2.5rem;border-radius:1rem;background:var(--card-bg);border:1px solid var(--line-divider);box-shadow:0 10px 25px -5px #0000001a,0 8px 10px -6px #0000001a}.lock-icon[data-astro-cid-isrenuqs]{margin-bottom:1.5rem;color:var(--primary);display:flex;justify-content:center}.password-container[data-astro-cid-isrenuqs] h2[data-astro-cid-isrenuqs]{margin-bottom:.75rem;font-size:1.5rem;font-weight:700}.password-container[data-astro-cid-isrenuqs] p[data-astro-cid-isrenuqs]{margin-bottom:2rem;font-size:.95rem;line-height:1.5}.password-input-group[data-astro-cid-isrenuqs]{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1rem}.password-input-wrapper[data-astro-cid-isrenuqs]{position:relative;width:100%}.password-input[data-astro-cid-isrenuqs]{width:100%;padding:.75rem 3rem .75rem 1rem;border:1px solid var(--line-divider);border-radius:.5rem;background:var(--card-bg);font-size:1rem;transition:all .2s ease}.password-input[data-astro-cid-isrenuqs]::-ms-reveal,.password-input[data-astro-cid-isrenuqs]::-ms-clear{display:none}.toggle-password-btn[data-astro-cid-isrenuqs]{position:absolute;right:.75rem;top:50%;translate:0 -50%;background:none;border:none;padding:.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:color .2s ease}.toggle-password-btn[data-astro-cid-isrenuqs]:hover{color:var(--primary)}.password-input[data-astro-cid-isrenuqs]::placeholder{color:var(--content-meta);opacity:.7}.password-input[data-astro-cid-isrenuqs]:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-light)}.unlock-button[data-astro-cid-isrenuqs]{width:100%;padding:.75rem 1.5rem;background:var(--primary);color:#fff;border:none;border-radius:.5rem;font-size:1rem;font-weight:600;cursor:pointer;transition:all .2s ease}.unlock-button[data-astro-cid-isrenuqs]:hover{background:var(--primary-hover);translate:0 -1px}.unlock-button[data-astro-cid-isrenuqs]:active{translate:0 0}.error-message[data-astro-cid-isrenuqs]{color:#ef4444;font-size:.875rem;margin-top:.75rem;font-weight:500}.decrypted-content[data-astro-cid-isrenuqs]{animation:fadeIn .5s ease-out}@keyframes fadeIn{0%{opacity:0;translate:0 10px}to{opacity:1;translate:0 0}}@media(max-width:768px){.password-protection[data-astro-cid-isrenuqs]{padding:1rem;min-height:30vh}.password-container[data-astro-cid-isrenuqs]{padding:1.5rem}}
+</style>
+<link rel="stylesheet" href="/_astro/projects.DcA-njP0.css">
+<link rel="stylesheet" href="/_astro/_menu_.VYFE21MH.css">
+<link rel="stylesheet" href="/_astro/about.CLMvY_Mt.css">
+<style>.menu-card[data-astro-cid-la6idv53]{cursor:pointer;background-color:none;border-color:var(--line-divider)}.icon-wrapper[data-astro-cid-la6idv53]{background-color:color-mix(in oklch,var(--primary),transparent 85%);color:var(--primary)}.menu-card[data-astro-cid-la6idv53]:hover{background-color:color-mix(in oklch,var(--primary),transparent 95%);border-color:var(--primary);box-shadow:0 0 20px color-mix(in oklch,var(--primary),transparent 80%);translate:0 -4px}.menu-card[data-astro-cid-la6idv53]:hover .icon-wrapper[data-astro-cid-la6idv53]{background-color:var(--primary);color:#fff;box-shadow:0 0 15px color-mix(in oklch,var(--primary),transparent 50%)}
+.grid-layout[data-astro-cid-rgidg7mq]{display:grid;gap:1rem}.grid-layout[data-astro-cid-rgidg7mq][data-columns="2"]{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.grid-layout[data-astro-cid-rgidg7mq][data-columns="3"]{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.grid-layout[data-astro-cid-rgidg7mq][data-columns="4"]{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.masonry-layout[data-astro-cid-rgidg7mq]{columns:2;column-gap:1rem}@media(min-width:768px){.masonry-layout[data-astro-cid-rgidg7mq]{columns:3}}@media(min-width:1280px){.masonry-layout[data-astro-cid-rgidg7mq][data-columns="4"]{columns:4}}.masonry-layout[data-astro-cid-rgidg7mq] .photo-item[data-astro-cid-rgidg7mq]{break-inside:avoid;margin-bottom:1rem}.grid-layout[data-astro-cid-rgidg7mq] .photo-container[data-astro-cid-rgidg7mq]{aspect-ratio:1}
+.album-card[data-astro-cid-b6yaaygw]:hover{translate:0 -2px}@keyframes fadeInUp{0%{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}.album-card[data-astro-cid-b6yaaygw]{animation:fadeInUp .3s ease-out}
+.card-base[data-astro-cid-pyfuvgrx]{background:var(--card-bg);border:1px solid var(--line-divider);transition:all .3s ease}.moments-header[data-astro-cid-pyfuvgrx]{padding:1rem;border-radius:8px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark, var(--primary)) 100%);color:#fff;position:relative;overflow:hidden}.header-content[data-astro-cid-pyfuvgrx]{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}.moments-title[data-astro-cid-pyfuvgrx]{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.1)}.moments-subtitle[data-astro-cid-pyfuvgrx]{color:#ffffffe6}.stat-number[data-astro-cid-pyfuvgrx]{color:#fff}.stat-label[data-astro-cid-pyfuvgrx]{color:#fffc}.image-item[data-astro-cid-pyfuvgrx] img[data-astro-cid-pyfuvgrx]{transition:scale .3s ease}.image-item[data-astro-cid-pyfuvgrx]:hover img[data-astro-cid-pyfuvgrx]{scale:1.05}.action-btn[data-astro-cid-pyfuvgrx]{background:none;border:none;cursor:pointer;color:var(--text-muted)}.action-btn[data-astro-cid-pyfuvgrx]:hover{color:var(--primary)}.moment-text[data-astro-cid-pyfuvgrx]{white-space:pre-line}@media(min-width:1280px){.moments-header[data-astro-cid-pyfuvgrx]{padding:1.5rem}.moment-item[data-astro-cid-pyfuvgrx]{padding:2rem}.moment-images[data-astro-cid-pyfuvgrx]{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));max-width:600px;gap:1rem}.moment-text[data-astro-cid-pyfuvgrx]{font-size:1.1rem;line-height:1.8}}@media(min-width:768px)and (max-width:1279px){.moments-header[data-astro-cid-pyfuvgrx]{padding:1.25rem}.header-content[data-astro-cid-pyfuvgrx]{display:flex;justify-content:space-between;align-items:center}.moment-item[data-astro-cid-pyfuvgrx]{padding:1.5rem}.moment-images[data-astro-cid-pyfuvgrx]{grid-template-columns:repeat(3,1fr);gap:.75rem;max-width:500px}.moment-text[data-astro-cid-pyfuvgrx]{font-size:1rem;line-height:1.7}.moment-footer[data-astro-cid-pyfuvgrx]{margin-top:1rem}}@media(max-width:768px){.moments-header[data-astro-cid-pyfuvgrx]{padding:.75rem}.header-content[data-astro-cid-pyfuvgrx]{flex-direction:column;text-align:center;gap:.75rem}.moment-images[data-astro-cid-pyfuvgrx]{grid-template-columns:repeat(2,1fr)}.moment-footer[data-astro-cid-pyfuvgrx]{flex-direction:column;align-items:flex-start;gap:.5rem}}@media(max-width:512px){.card-base[data-astro-cid-pyfuvgrx]{margin:0 -.5rem}.moment-item[data-astro-cid-pyfuvgrx]{border-radius:8px}.moments-header[data-astro-cid-pyfuvgrx]{border-radius:6px}}
+.menu-card[data-astro-cid-spp2p3no]{cursor:pointer;background-color:none;border-color:var(--line-divider)}.icon-wrapper[data-astro-cid-spp2p3no]{background-color:color-mix(in oklch,var(--primary),transparent 85%);color:var(--primary)}.menu-card[data-astro-cid-spp2p3no]:hover{background-color:color-mix(in oklch,var(--primary),transparent 95%);border-color:var(--primary);box-shadow:0 0 20px color-mix(in oklch,var(--primary),transparent 80%);translate:0 -4px}.menu-card[data-astro-cid-spp2p3no]:hover .icon-wrapper[data-astro-cid-spp2p3no]{background-color:var(--primary);color:#fff;box-shadow:0 0 15px color-mix(in oklch,var(--primary),transparent 50%)}
+.inline-icon svg{width:1em;height:1em;fill:currentColor}
+</style>
+<link rel="stylesheet" href="/_astro/projects.gnM2R_EB.css"><script type="module" src="/_astro/page.B2x_03eg.js"></script></head> <body class=" min-h-screen  enable-banner" data-astro-cid-tnnyocjb style="--navbar-height: 4.5rem;--navbar-gap: 1.25rem;--navbar-follow-distance: 0rem;--main-panel-overlaps-banner-height: 0rem;--sidebar-top: 1rem;--sidebar-spacing: 1rem;--bannerOffset: 18vh;--banner-height-home: 66vh;--banner-height: 30vh;--configHue: 255;--page-width: 90rem;"> <!-- 页面加载动画 --> <div id="loading-overlay" class="fixed inset-0 z-100 flex items-center justify-center bg-(--page-bg) transition-opacity duration-600" data-astro-cid-zwfdok6v style="--spinnerInterval: 1.5s;--titleInterval: 1.5s;"><div class="flex flex-col items-center" data-astro-cid-zwfdok6v style="--spinnerInterval: 1.5s;--titleInterval: 1.5s;"><!-- loading icon --><div class="loading-spinner mb-4" data-astro-cid-zwfdok6v style="--spinnerInterval: 1.5s;--titleInterval: 1.5s;"></div><!-- loading title --><div class="loading-title text-(--primary) font-medium tracking-widest" data-astro-cid-zwfdok6v style="--spinnerInterval: 1.5s;--titleInterval: 1.5s;">LOADING</div></div></div> <!-- 全局配置载体 --> <!-- 全局配置载体 --><div id="config-carrier" data-hue="255" data-lang="en" data-theme="dark" data-wallpaper-mode="banner" data-wait-for-all-resources="true"></div> <!-- 页面顶部渐变高光效果 - 只在full和semifull模式下显示 --> <div class="top-gradient-highlight" data-astro-cid-tnnyocjb style="--navbar-height: 4.5rem;--navbar-gap: 1.25rem;--navbar-follow-distance: 0rem;--main-panel-overlaps-banner-height: 0rem;--sidebar-top: 1rem;--sidebar-spacing: 1rem;--bannerOffset: 18vh;--banner-height-home: 66vh;--banner-height: 30vh;--configHue: 255;--page-width: 90rem;"></div> <!-- 页面内容 -->    <div id="top-row" class="z-50 pointer-events-none relative transition-all duration-600 max-w-(--page-width) px-0 md:px-4 mx-auto h-(--top-row-height)"> <div id="navbar-wrapper" class="pointer-events-auto sticky top-0 transition-all"> <div id="navbar" class="z-50 onload-animation-down px-3 sm:px-6 md:px-0" data-transparent-mode="semifull"> <div class="absolute h-8 left-0 right-0 -top-8 bg-(--card-bg) transition"></div> <!-- used for onload animation --> <div class="overflow-visible! max-w-(--page-width) h-18 mx-auto flex items-center justify-between md:px-4"> <a href="/" class="btn-plain scale-animation rounded-lg h-13 px-5 font-bold active:scale-95"> <div class="flex flex-row text-(--primary) items-center text-md"> <svg width="1em" height="1em" class="text-[1.75rem] mb-1 mr-2" data-icon="material-symbols:home-pin-outline">   <symbol id="ai:material-symbols:home-pin-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M9 13h2v-2.75h2V13h2V8.25l-3-2l-3 2zm3 6.35q3.05-2.8 4.525-5.087T18 10.2q0-2.725-1.737-4.462T12 4T7.738 5.738T6 10.2q0 1.775 1.475 4.063T12 19.35M12 22q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22m0-12"/></symbol><use href="#ai:material-symbols:home-pin-outline"></use>  </svg> Twilight </div> </a> <div class="hidden md:flex items-center navbar-nav-links"> <div class="nav-link-container"> <a aria-label="Home" href="/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-3 active:scale-95 nav-link-item" data-link-name="Home"> <div class="flex items-center"> <svg width="1em" height="1em" class="text-[1.1rem] nav-link-icon" data-icon="material-symbols:home">   <symbol id="ai:material-symbols:home" viewBox="0 0 24 24"><path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7z"/></symbol><use href="#ai:material-symbols:home"></use>  </svg> <span class="nav-link-text ml-2 hidden lg:inline">Home</span>  </div> </a> </div><div class="nav-link-container"> <a aria-label="Archive" href="/archive/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-3 active:scale-95 nav-link-item" data-link-name="Archive"> <div class="flex items-center"> <svg width="1em" height="1em" class="text-[1.1rem] nav-link-icon" data-icon="material-symbols:archive">   <symbol id="ai:material-symbols:archive" viewBox="0 0 24 24"><path fill="currentColor" d="m12 18l4-4l-1.4-1.4l-1.6 1.6V10h-2v4.2l-1.6-1.6L8 14zm-7 3q-.825 0-1.412-.587T3 19V6.525q0-.35.113-.675t.337-.6L4.7 3.725q.275-.35.687-.538T6.25 3h11.5q.45 0 .863.188t.687.537l1.25 1.525q.225.275.338.6t.112.675V19q0 .825-.587 1.413T19 21zm.4-15h13.2l-.85-1H6.25z"/></symbol><use href="#ai:material-symbols:archive"></use>  </svg> <span class="nav-link-text ml-2 hidden lg:inline">Archive</span>  </div> </a> </div><div class="nav-link-container"> <a aria-label="Exhibition" href="/exhibition/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-3 active:scale-95 nav-link-item" data-link-name="Exhibition"> <div class="flex items-center"> <svg width="1em" height="1em" class="text-[1.1rem] nav-link-icon" data-icon="material-symbols:person">   <symbol id="ai:material-symbols:person" viewBox="0 0 24 24"><path fill="currentColor" d="M9.175 10.825Q8 9.65 8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12t-2.825-1.175M4 20v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z"/></symbol><use href="#ai:material-symbols:person"></use>  </svg> <span class="nav-link-text ml-2 hidden lg:inline">Exhibition</span>  </div> </a> </div><div class="nav-link-container"> <a aria-label="Friends" href="/friends/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-3 active:scale-95 nav-link-item" data-link-name="Friends"> <div class="flex items-center"> <svg width="1em" height="1em" class="text-[1.1rem] nav-link-icon" data-icon="material-symbols:group">   <symbol id="ai:material-symbols:group" viewBox="0 0 24 24"><path fill="currentColor" d="M1 20v-2.8q0-.85.438-1.562T2.6 14.55q1.55-.775 3.15-1.162T9 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T17 17.2V20zm18 0v-3q0-1.1-.612-2.113T16.65 13.15q1.275.15 2.4.513t2.1.887q.9.5 1.375 1.112T23 17v3zM6.175 10.825Q5 9.65 5 8t1.175-2.825T9 4t2.825 1.175T13 8t-1.175 2.825T9 12t-2.825-1.175m11.65 0Q16.65 12 15 12q-.275 0-.7-.062t-.7-.138q.675-.8 1.038-1.775T15 8t-.362-2.025T13.6 4.2q.35-.125.7-.163T15 4q1.65 0 2.825 1.175T19 8t-1.175 2.825"/></symbol><use href="#ai:material-symbols:group"></use>  </svg> <span class="nav-link-text ml-2 hidden lg:inline">Friends</span>  </div> </a> </div><div class="nav-link-container"> <a aria-label="About" href="/about/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-3 active:scale-95 nav-link-item" data-link-name="About"> <div class="flex items-center"> <svg width="1em" height="1em" class="text-[1.1rem] nav-link-icon" data-icon="material-symbols:info">   <symbol id="ai:material-symbols:info" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1.713-8.287Q13 8.425 13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9t.713-.288M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></symbol><use href="#ai:material-symbols:info"></use>  </svg> <span class="nav-link-text ml-2 hidden lg:inline">About</span>  </div> </a> </div> </div> <div class="flex items-center navbar-buttons" id="navbar-buttons"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="PDSYR" component-url="/_astro/search.CVME7shK.js" component-export="default" renderer-url="/_astro/client.svelte.Cmf8TTJm.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;Search&quot;,&quot;value&quot;:true}" await-children><!--[--><div id="search-bar" class="hidden lg:flex transition-all items-center h-11 rounded-lg btn-plain scale-animation active:scale-90 w-11" role="button" tabindex="0" aria-label="Search"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base absolute text-[1.25rem] pointer-events-none left-1/2 -translate-x-1/2 transition my-auto svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"/></svg><!----></span><!--]--><!----> <input id="search-input-desktop" placeholder="Search" value="" class="transition-all pl-10 text-sm bg-transparent outline-0 h-full w-0 text-black/50 dark:text-white/50 svelte-acx8g7"/></div> <button aria-label="Search Panel" id="search-switch" class="btn-plain scale-animation lg:hidden! rounded-lg w-11 h-11 active:scale-90 flex items-center justify-center"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"/></svg><!----></span><!--]--><!----></button> <div id="search-panel" class="card-base float-panel p-2 float-panel-closed absolute md:w-120 top-20 left-4 md:left-[unset] right-4 z-50 search-panel"><!--[0--><div id="search-bar-inside" class="flex relative lg:hidden transition-all items-center h-11 rounded-xl bg-black/4 hover:bg-black/6 focus-within:bg-black/6 dark:bg-white/5 dark:hover:bg-white/10 dark:focus-within:bg-white/10"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base absolute text-[1.25rem] pointer-events-none ml-3 transition my-auto text-black/30 dark:text-white/30 svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"/></svg><!----></span><!--]--><!----> <input placeholder="Search" value="" class="pl-10 absolute inset-0 text-sm bg-transparent outline-0 focus:w-60 text-black/50 dark:text-white/50 svelte-acx8g7"/></div> <!--[--><!--]--><!----><!--]--></div><!----><!--]--><!--astro:end--></astro-island> <astro-island uid="QUohT" component-url="/_astro/translator.BIPOJVMo.js" component-export="default" renderer-url="/_astro/client.svelte.Cmf8TTJm.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;Translator&quot;,&quot;value&quot;:true}" await-children><!--[--><!--[0--><div class="relative z-50"><button aria-label="Language Translation" class="btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90 flex items-center justify-center" id="translate-switch"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] transition svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="m11.9 22l4.55-12h2.1l4.55 12H21l-1.075-3.05h-4.85L14 22zM4 19l-1.4-1.4l5.05-5.05q-.875-.875-1.588-2T4.75 8h2.1q.5.975 1 1.7t1.2 1.45q.825-.825 1.713-2.313T12.1 6H1V4h7V2h2v2h7v2h-2.9q-.525 1.8-1.575 3.7t-2.075 2.9l2.4 2.45l-.75 2.05l-3.05-3.125zm11.7-1.8h3.6l-1.8-5.1z"/></svg><!----></span><!--]--><!----></button> <div id="translate-panel-wrapper" class="fixed top-14.5 pt-5 right-4 w-[calc(100vw-2rem)] max-w-64 md:absolute md:top-11 md:right-0 md:w-64 md:pt-5 transition-all z-50 float-panel-closed"><div id="translate-panel" class="card-base float-panel p-2 p-4 w-full"><!--[0--><div class="text-sm font-medium text-(--primary) mb-3 px-1">选择语言 / Select Language</div> <div class="grid grid-cols-1 gap-2 max-h-64 overflow-y-auto svelte-oywurh"><!--[--><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇺🇸</span> <span class="text-sm transition grow text-left">English</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇨🇳</span> <span class="text-sm transition grow text-left">繁體中文</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇨🇳</span> <span class="text-sm transition grow text-left">简体中文</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇷🇺</span> <span class="text-sm transition grow text-left">Русский</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇩🇪</span> <span class="text-sm transition grow text-left">Deutsch</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇫🇷</span> <span class="text-sm transition grow text-left">Français</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇪🇸</span> <span class="text-sm transition grow text-left">Español</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇹🇷</span> <span class="text-sm transition grow text-left">Türkçe</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇸🇦</span> <span class="text-sm transition grow text-left">العربية</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇰🇷</span> <span class="text-sm transition grow text-left">한국어</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇯🇵</span> <span class="text-sm transition grow text-left">日本語</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇹🇭</span> <span class="text-sm transition grow text-left">ไทย</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇻🇳</span> <span class="text-sm transition grow text-left">Tiếng Việt</span> <!--[-1--><!--]--><!----><!--]--></button><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5  gap-3 p-2! h-auto!"><!--[0--><span class="text-lg transition">🇮🇩</span> <span class="text-sm transition grow text-left">Bahasa Indonesia</span> <!--[-1--><!--]--><!----><!--]--></button><!--]--></div><!----><!--]--></div><!----></div></div><!--]--><!--]--><!--astro:end--></astro-island> <astro-island uid="ZFqsyX" component-url="/_astro/displaySettings.Ckw_Ini1.js" component-export="default" renderer-url="/_astro/client.svelte.Cmf8TTJm.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;DisplaySettings&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="relative z-50"><button aria-label="Display Settings" class="btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90 flex items-center justify-center" id="display-settings-switch"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 22q-2.05 0-3.875-.788t-3.187-2.15t-2.15-3.187T2 12q0-2.075.813-3.9t2.2-3.175T8.25 2.788T12.2 2q2 0 3.775.688t3.113 1.9t2.125 2.875T22 11.05q0 2.875-1.75 4.413T16 17h-1.85q-.225 0-.312.125t-.088.275q0 .3.375.863t.375 1.287q0 1.25-.687 1.85T12 22m-4.425-9.425Q8 12.15 8 11.5t-.425-1.075T6.5 10t-1.075.425T5 11.5t.425 1.075T6.5 13t1.075-.425m3-4Q11 8.15 11 7.5t-.425-1.075T9.5 6t-1.075.425T8 7.5t.425 1.075T9.5 9t1.075-.425m5 0Q16 8.15 16 7.5t-.425-1.075T14.5 6t-1.075.425T13 7.5t.425 1.075T14.5 9t1.075-.425m3 4Q19 12.15 19 11.5t-.425-1.075T17.5 10t-1.075.425T16 11.5t.425 1.075T17.5 13t1.075-.425M12 20q.225 0 .363-.125t.137-.325q0-.35-.375-.825T11.75 17.3q0-1.05.725-1.675T14.25 15H16q1.65 0 2.825-.962T20 11.05q0-3.025-2.312-5.038T12.2 4Q8.8 4 6.4 6.325T4 12q0 3.325 2.338 5.663T12 20"/></svg><!----></span><!--]--><!----></button> <div id="display-setting-wrapper" class="fixed top-14.5 pt-5 right-4 w-[calc(100vw-2rem)] max-w-80 md:absolute md:top-11 md:right-0 md:w-80 md:pt-5 transition-all z-50 float-panel-closed"><div id="display-setting" class="card-base float-panel px-4 py-4 w-full svelte-19ehqli"><div class="flex flex-row gap-2 mb-3 items-center justify-between"><div class="flex gap-2 font-bold text-lg text-neutral-900 dark:text-neutral-100 transition relative ml-3 before:w-1 before:h-4 before:rounded-md before:bg-(--primary) before:absolute before:-left-3 before:top-[0.33rem]">Theme Color <button aria-label="Reset to Default" class="btn-regular w-7 h-7 rounded-md active:scale-90 flex items-center justify-center opacity-0 pointer-events-none"><div class="text-(--btn-content) flex items-center justify-center"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[0.875rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor"><path fill="currentColor" d="M125.7 160H176c17.7 0 32 14.3 32 32s-14.3 32-32 32H48c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32s32 14.3 32 32v51.2l17.6-17.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0z"/></svg><!----></span><!--]--><!----></div></button></div> <div class="flex gap-1"><div id="hueValue" class="transition bg-(--btn-regular-bg) w-10 h-7 rounded-md flex justify-center font-bold text-sm items-center text-(--btn-content)">255</div></div></div> <div class="w-full h-6 px-1 bg-[oklch(0.80_0.10_0)] dark:bg-[oklch(0.70_0.10_0)] rounded-sm select-none"><input aria-label="Theme Color" type="range" min="0" max="360" value="255" class="slider svelte-19ehqli" id="colorSlider" step="5" style="width: 100%"/></div></div></div></div><!--]--><!--astro:end--></astro-island> <astro-island uid="1sVqFG" component-url="/_astro/lightDarkSwitch.Do7etiaD.js" component-export="default" renderer-url="/_astro/client.svelte.Cmf8TTJm.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;LightDarkSwitch&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="relative z-50" role="menu" tabindex="-1"><button aria-label="Light/Dark/System Mode" role="menuitem" class="relative btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90 flex items-center justify-center" id="scheme-switch"><div class="absolute inset-0 flex items-center justify-center opacity-0"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M11 3V2q0-.425.288-.712T12 1t.713.288T13 2v1q0 .425-.288.713T12 4t-.712-.288T11 3m0 19v-1q0-.425.288-.712T12 20t.713.288T13 21v1q0 .425-.288.713T12 23t-.712-.288T11 22m11-9h-1q-.425 0-.712-.288T20 12t.288-.712T21 11h1q.425 0 .713.288T23 12t-.288.713T22 13M3 13H2q-.425 0-.712-.288T1 12t.288-.712T2 11h1q.425 0 .713.288T4 12t-.288.713T3 13m16.75-7.325l-.35.35q-.275.275-.687.275T18 6q-.275-.275-.288-.687t.263-.713l.375-.375q.275-.3.7-.3t.725.3t.288.725t-.313.725M6.025 19.4l-.375.375q-.275.3-.7.3t-.725-.3t-.288-.725t.313-.725l.35-.35q.275-.275.688-.275T6 18q.275.275.288.688t-.263.712m12.3.35l-.35-.35q-.275-.275-.275-.687T18 18q.275-.275.688-.287t.712.262l.375.375q.3.275.3.7t-.3.725t-.725.288t-.725-.313M4.6 6.025l-.375-.375q-.3-.275-.3-.7t.3-.725t.725-.288t.725.313l.35.35q.275.275.275.688T6 6q-.275.275-.687.288T4.6 6.025M7.75 16.25Q6 14.5 6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18t-4.25-1.75m7.088-1.412Q16 13.675 16 12t-1.162-2.838T12 8T9.162 9.163T8 12t1.163 2.838T12 16t2.838-1.162M12 12"/></svg><!----></span><!--]--><!----></div> <div class="absolute inset-0 flex items-center justify-center"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 21q-3.775 0-6.387-2.613T3 12q0-3.45 2.25-5.988T11 3.05q.325-.05.575.088t.4.362t.163.525t-.188.575q-.425.65-.638 1.375T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q.775 0 1.538-.225t1.362-.625q.275-.175.563-.162t.512.137q.25.125.388.375t.087.6q-.35 3.45-2.937 5.725T12 21m0-2q2.2 0 3.95-1.213t2.55-3.162q-.5.125-1 .2t-1 .075q-3.075 0-5.238-2.163T9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.163 2.55T5 12q0 2.9 2.05 4.95T12 19m-.25-6.75"/></svg><!----></span><!--]--><!----></div> <div class="absolute inset-0 flex items-center justify-center opacity-0"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 17V7Q9.925 7 8.463 8.463T7 12t1.463 3.538T12 17m0 5q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg><!----></span><!--]--><!----></div></button> <div id="light-dark-panel" class="absolute transition top-11 -right-2 pt-5 float-panel-closed"><div class="card-base float-panel p-2"><!--[0--><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5"><!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] mr-3 svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M11 3V2q0-.425.288-.712T12 1t.713.288T13 2v1q0 .425-.288.713T12 4t-.712-.288T11 3m0 19v-1q0-.425.288-.712T12 20t.713.288T13 21v1q0 .425-.288.713T12 23t-.712-.288T11 22m11-9h-1q-.425 0-.712-.288T20 12t.288-.712T21 11h1q.425 0 .713.288T23 12t-.288.713T22 13M3 13H2q-.425 0-.712-.288T1 12t.288-.712T2 11h1q.425 0 .713.288T4 12t-.288.713T3 13m16.75-7.325l-.35.35q-.275.275-.687.275T18 6q-.275-.275-.288-.687t.263-.713l.375-.375q.275-.3.7-.3t.725.3t.288.725t-.313.725M6.025 19.4l-.375.375q-.275.3-.7.3t-.725-.3t-.288-.725t.313-.725l.35-.35q.275-.275.688-.275T6 18q.275.275.288.688t-.263.712m12.3.35l-.35-.35q-.275-.275-.275-.687T18 18q.275-.275.688-.287t.712.262l.375.375q.3.275.3.7t-.3.725t-.725.288t-.725-.313M4.6 6.025l-.375-.375q-.3-.275-.3-.7t.3-.725t.725-.288t.725.313l.35.35q.275.275.275.688T6 6q-.275.275-.687.288T4.6 6.025M7.75 16.25Q6 14.5 6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18t-4.25-1.75m7.088-1.412Q16 13.675 16 12t-1.162-2.838T12 8T9.162 9.163T8 12t1.163 2.838T12 16t2.838-1.162M12 12"/></svg><!----></span><!--]--><!----> Light<!----><!--]--></button><!----> <button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5 current-theme-btn"><!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] mr-3 svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 21q-3.775 0-6.387-2.613T3 12q0-3.45 2.25-5.988T11 3.05q.325-.05.575.088t.4.362t.163.525t-.188.575q-.425.65-.638 1.375T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q.775 0 1.538-.225t1.362-.625q.275-.175.563-.162t.512.137q.25.125.388.375t.087.6q-.35 3.45-2.937 5.725T12 21m0-2q2.2 0 3.95-1.213t2.55-3.162q-.5.125-1 .2t-1 .075q-3.075 0-5.238-2.163T9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.163 2.55T5 12q0 2.9 2.05 4.95T12 19m-.25-6.75"/></svg><!----></span><!--]--><!----> Dark<!----><!--]--></button><!----> <button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95"><!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] mr-3 svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 17V7Q9.925 7 8.463 8.463T7 12t1.463 3.538T12 17m0 5q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg><!----></span><!--]--><!----> System<!----><!--]--></button><!----><!----><!--]--></div><!----></div></div><!--]--><!--astro:end--></astro-island> <astro-island uid="1XWHdQ" component-url="/_astro/wallpaperSwitch.Dlq74Qgd.js" component-export="default" renderer-url="/_astro/client.svelte.Cmf8TTJm.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;WallpaperSwitch&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="relative z-50" role="menu" tabindex="-1"><button aria-label="Wallpaper Mode" role="menuitem" class="relative btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90 flex items-center justify-center" id="wallpaper-mode-switch"><div class="absolute inset-0 flex items-center justify-center"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zm1-2h12l-3.75-5l-3 4L9 13zm-1 2V5z"/></svg><!----></span><!--]--><!----></div> <div class="absolute inset-0 flex items-center justify-center opacity-0"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19v-6h2v6h6v2zm8 0v-2h6v-6h2v6q0 .825-.587 1.413T19 21zm-7-4l3-4l2.25 3l3-4L18 17zm-3-6V5q0-.825.588-1.412T5 3h6v2H5v6zm16 0V5h-6V3h6q.825 0 1.413.588T21 5v6zm-4.575-1.425Q14 9.15 14 8.5t.425-1.075T15.5 7t1.075.425T17 8.5t-.425 1.075T15.5 10t-1.075-.425"/></svg><!----></span><!--]--><!----></div> <div class="absolute inset-0 flex items-center justify-center opacity-0"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="m21 18.15l-2-2V5H7.85l-2-2H19q.825 0 1.413.588T21 5zm-1.2 4.45L18.2 21H5q-.825 0-1.412-.587T3 19V5.8L1.4 4.2l1.4-1.4l18.4 18.4zM6 17l3-4l2.25 3l.825-1.1L5 7.825V19h11.175l-2-2zm4.6-3.6"/></svg><!----></span><!--]--><!----></div></button> <div id="wallpaper-mode-panel" class="absolute transition top-11 -right-2 pt-5 float-panel-closed"><div class="card-base float-panel p-2"><!--[0--><button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5 current-theme-btn"><!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] mr-3 svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zm1-2h12l-3.75-5l-3 4L9 13zm-1 2V5z"/></svg><!----></span><!--]--><!----> Banner<!----><!--]--></button><!----> <button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5"><!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] mr-3 svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19v-6h2v6h6v2zm8 0v-2h6v-6h2v6q0 .825-.587 1.413T19 21zm-7-4l3-4l2.25 3l3-4L18 17zm-3-6V5q0-.825.588-1.412T5 3h6v2H5v6zm16 0V5h-6V3h6q.825 0 1.413.588T21 5v6zm-4.575-1.425Q14 9.15 14 8.5t.425-1.075T15.5 7t1.075.425T17 8.5t-.425 1.075T15.5 10t-1.075-.425"/></svg><!----></span><!--]--><!----> Fullscreen<!----><!--]--></button><!----> <button class="flex transition whitespace-nowrap items-center justify-start! w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95"><!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] mr-3 svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="m21 18.15l-2-2V5H7.85l-2-2H19q.825 0 1.413.588T21 5zm-1.2 4.45L18.2 21H5q-.825 0-1.412-.587T3 19V5.8L1.4 4.2l1.4-1.4l18.4 18.4zM6 17l3-4l2.25 3l.825-1.1L5 7.825V19h11.175l-2-2zm4.6-3.6"/></svg><!----></span><!--]--><!----> None<!----><!--]--></button><!----><!----><!--]--></div><!----></div></div><!--]--><!--astro:end--></astro-island> <astro-island uid="11PzyH" component-url="/_astro/navMenu.1g5coPTq.js" component-export="default" renderer-url="/_astro/client.svelte.Cmf8TTJm.js" props="{&quot;links&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Home&quot;],&quot;url&quot;:[0,&quot;/&quot;],&quot;icon&quot;:[0,&quot;material-symbols:home&quot;],&quot;description&quot;:[0,&quot;Twilight - A simple, clean, and beautiful blog theme.&quot;]}],[0,{&quot;name&quot;:[0,&quot;Archive&quot;],&quot;url&quot;:[0,&quot;/archive/&quot;],&quot;icon&quot;:[0,&quot;material-symbols:archive&quot;],&quot;description&quot;:[0,&quot;A chronological list of all published posts.&quot;]}],[0,{&quot;name&quot;:[0,&quot;Exhibition&quot;],&quot;url&quot;:[0,&quot;/exhibition/&quot;],&quot;icon&quot;:[0,&quot;material-symbols:person&quot;],&quot;description&quot;:[0,&quot;A collection of my creative works and experiences&quot;],&quot;children&quot;:[1,[[0,2],[0,3],[0,4],[0,5],[0,6],[0,7]]]}],[0,{&quot;name&quot;:[0,&quot;Friends&quot;],&quot;url&quot;:[0,&quot;/friends/&quot;],&quot;icon&quot;:[0,&quot;material-symbols:group&quot;],&quot;description&quot;:[0,&quot;A curated list of friend sites.&quot;]}],[0,{&quot;name&quot;:[0,&quot;About&quot;],&quot;url&quot;:[0,&quot;/about/&quot;],&quot;icon&quot;:[0,&quot;material-symbols:info&quot;],&quot;description&quot;:[0,&quot;About&quot;]}]]]}" ssr client="idle" opts="{&quot;name&quot;:&quot;NavMenu&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="relative md:hidden"><button aria-label="Menu" name="Nav Menu" class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90" id="nav-menu-switch"><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.25rem] svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/></svg><!----></span><!--]--><!----></button> <div id="nav-menu-panel" class="float-panel fixed transition-all right-4 px-2 py-2 max-h-[80vh] overflow-y-auto float-panel-closed"><!--[--><div class="mobile-menu-item"><a href="/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8 hover:bg-(--btn-plain-bg-hover) active:bg-(--btn-plain-bg-active) transition"><div class="flex items-center transition text-black/75 dark:text-white/75 font-bold group-hover:text-(--primary) group-active:text-(--primary)"><!--[0--><!--[-1--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.1rem] mr-2 svelte-1klr2zv" aria-hidden="true"><iconify-icon icon="material-symbols:home"></iconify-icon></span><!--]--><!--]--> Home</div> <!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base transition text-[1.25rem] text-(--primary) svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"/></svg><!----></span><!--]--><!--]--></a></div><div class="mobile-menu-item"><a href="/archive/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8 hover:bg-(--btn-plain-bg-hover) active:bg-(--btn-plain-bg-active) transition"><div class="flex items-center transition text-black/75 dark:text-white/75 font-bold group-hover:text-(--primary) group-active:text-(--primary)"><!--[0--><!--[-1--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.1rem] mr-2 svelte-1klr2zv" aria-hidden="true"><iconify-icon icon="material-symbols:archive"></iconify-icon></span><!--]--><!--]--> Archive</div> <!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base transition text-[1.25rem] text-(--primary) svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"/></svg><!----></span><!--]--><!--]--></a></div><div class="mobile-menu-item"><a href="/exhibition/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8 hover:bg-(--btn-plain-bg-hover) active:bg-(--btn-plain-bg-active) transition"><div class="flex items-center transition text-black/75 dark:text-white/75 font-bold group-hover:text-(--primary) group-active:text-(--primary)"><!--[0--><!--[-1--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.1rem] mr-2 svelte-1klr2zv" aria-hidden="true"><iconify-icon icon="material-symbols:person"></iconify-icon></span><!--]--><!--]--> Exhibition</div> <!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base transition text-[1.25rem] text-(--primary) svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"/></svg><!----></span><!--]--><!--]--></a></div><div class="mobile-menu-item"><a href="/friends/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8 hover:bg-(--btn-plain-bg-hover) active:bg-(--btn-plain-bg-active) transition"><div class="flex items-center transition text-black/75 dark:text-white/75 font-bold group-hover:text-(--primary) group-active:text-(--primary)"><!--[0--><!--[-1--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.1rem] mr-2 svelte-1klr2zv" aria-hidden="true"><iconify-icon icon="material-symbols:group"></iconify-icon></span><!--]--><!--]--> Friends</div> <!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base transition text-[1.25rem] text-(--primary) svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"/></svg><!----></span><!--]--><!--]--></a></div><div class="mobile-menu-item"><a href="/about/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8 hover:bg-(--btn-plain-bg-hover) active:bg-(--btn-plain-bg-active) transition"><div class="flex items-center transition text-black/75 dark:text-white/75 font-bold group-hover:text-(--primary) group-active:text-(--primary)"><!--[0--><!--[-1--><span class="inline-icon inline-flex items-center justify-center text-base text-[1.1rem] mr-2 svelte-1klr2zv" aria-hidden="true"><iconify-icon icon="material-symbols:info"></iconify-icon></span><!--]--><!--]--> About</div> <!--[0--><!--[0--><span class="inline-icon inline-flex items-center justify-center text-base transition text-[1.25rem] text-(--primary) svelte-1klr2zv" aria-hidden="true"><!----><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"/></svg><!----></span><!--]--><!--]--></a></div><!--]--></div></div><!--]--><!--astro:end--></astro-island> </div> </div> </div> <script type="module">function l(){const e=document.getElementById("navbar");if(!e||e.getAttribute("data-transparent-mode")!=="semifull")return;window.semifullScrollHandler&&window.removeEventListener("scroll",window.semifullScrollHandler);let t=!1;function n(){(window.scrollY||document.documentElement.scrollTop)>50?e?.classList.add("scrolled"):e?.classList.remove("scrolled"),t=!1}function o(){t||(requestAnimationFrame(n),t=!0)}window.semifullScrollHandler=o,window.addEventListener("scroll",o,{passive:!0}),n()}window.initSemifullScrollDetection=l;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",l):l();</script> <script>(function(){const scriptUrl = "/pagefind/pagefind.js";
+
+async function loadPagefind() {
+    try {
+        const response = await fetch(scriptUrl, { method: 'HEAD' });
+        if (!response.ok) {
+            throw new Error(`Pagefind script not found: ${response.status}`);
+        }
+
+        const pagefind = await import(scriptUrl);
+
+        await pagefind.options({
+            excerptLength: 20
+        });
+
+        window.pagefind = pagefind;
+
+        document.dispatchEvent(new CustomEvent('pagefindready'));
+        console.log('Pagefind loaded and initialized successfully, event dispatched.');
+    } catch (error) {
+        console.error('Failed to load Pagefind:', error);
+        window.pagefind = {
+            search: () => Promise.resolve({ results: [] }),
+            options: () => Promise.resolve(),
+        };
+        document.dispatchEvent(new CustomEvent('pagefindloaderror'));
+        console.log('Pagefind load error, event dispatched.');
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadPagefind);
+} else {
+    loadPagefind();
+}
+})();</script> </div> </div>  <div id="fullscreen-wallpaper-wrapper" class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none transition-opacity duration-600 hidden" style="z-index: -1; opacity: 0.9;" data-fullscreen-wallpaper> <div id="fullscreen-wallpaper-carousel" class="relative h-full w-full" data-carousel-config="{&#34;enable&#34;:true,&#34;interval&#34;:3.6,&#34;kenBurns&#34;:true}"> <ul class="carousel-list h-full w-full"> <li class="carousel-item desktop-item hidden md:block absolute inset-0 transition-opacity duration-1200 opacity-100 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative" style="filter: blur(1px);"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/desktopWallpaper_1.jpg" alt="Desktop wallpaper 1" class="w-full h-full object-cover" style="object-position: center" loading="eager" decoding="async"> </div> </li><li class="carousel-item desktop-item hidden md:block absolute inset-0 transition-opacity duration-1200 opacity-0 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative" style="filter: blur(1px);"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/desktopWallpaper_2.jpg" alt="Desktop wallpaper 2" class="w-full h-full object-cover" style="object-position: center" loading="lazy" decoding="async"> </div> </li><li class="carousel-item desktop-item hidden md:block absolute inset-0 transition-opacity duration-1200 opacity-0 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative" style="filter: blur(1px);"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/desktopWallpaper_3.jpg" alt="Desktop wallpaper 3" class="w-full h-full object-cover" style="object-position: center" loading="lazy" decoding="async"> </div> </li> <li class="carousel-item mobile-item block md:hidden absolute inset-0 transition-opacity duration-1200 opacity-100 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative" style="filter: blur(1px);"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/mobileWallpaper_1.jpg" alt="Mobile wallpaper 1" class="w-full h-full object-cover" style="object-position: center" loading="eager" decoding="async"> </div> </li><li class="carousel-item mobile-item block md:hidden absolute inset-0 transition-opacity duration-1200 opacity-0 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative" style="filter: blur(1px);"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/mobileWallpaper_2.jpg" alt="Mobile wallpaper 2" class="w-full h-full object-cover" style="object-position: center" loading="lazy" decoding="async"> </div> </li> </ul> </div> </div> <script>(function(){const carouselInterval = 3.6;
+
+    // 全屏壁纸轮播图初始化函数
+    window.initFullscreenWallpaperCarousel = function() {
+        const carousel = document.getElementById('fullscreen-wallpaper-carousel');
+        if (!carousel) return;
+
+        // 检查是否是同一个 DOM 元素且定时器正在运行，避免重复初始化导致动画重置
+        if (window.fullscreenWallpaperTimer && window.currentFullscreenWallpaperCarousel === carousel) {
+            return;
+        }
+        window.currentFullscreenWallpaperCarousel = carousel;
+
+        // 初始化全局状态
+        if (!window.fullscreenWallpaperState) {
+            window.fullscreenWallpaperState = {
+                currentIndex: 0,
+                lastSwitchTime: Date.now()
+            };
+        }
+
+        // 清理旧的定时器，防止重复初始化导致的闪烁
+        if (window.fullscreenWallpaperTimer) {
+            clearTimeout(window.fullscreenWallpaperTimer);
+            window.fullscreenWallpaperTimer = null;
+        }
+
+        const carouselConfigData = carousel.getAttribute('data-carousel-config');
+        const carouselConfig = carouselConfigData ? JSON.parse(carouselConfigData) : {};
+
+        const desktopItems = carousel.querySelectorAll('.carousel-item.desktop-item');
+        const mobileItems = carousel.querySelectorAll('.carousel-item.mobile-item');
+
+        function setupCarousel(items, isEnabled) {
+            if (items.length === 0) return null;
+
+            // 如果禁用了轮播但有多张图，则随机显示一张
+            if (items.length > 1 && !isEnabled) {
+                items.forEach(item => {
+                    item.classList.add('opacity-0');
+                    item.classList.remove('opacity-100');
+                });
+                const randomIndex = Math.floor(Math.random() * items.length);
+                const randomItem = items[randomIndex];
+                randomItem.classList.add('opacity-100');
+                randomItem.classList.remove('opacity-0');
+                return null;
+            }
+
+            if (items.length > 1 && isEnabled) {
+                // 使用全局状态中的索引
+                let currentIndex = window.fullscreenWallpaperState.currentIndex;
+                // 确保索引有效
+                if (currentIndex >= items.length) {
+                    currentIndex = 0;
+                    window.fullscreenWallpaperState.currentIndex = 0;
+                }
+                
+                function switchToSlide(index) {
+                    const currentItem = items[currentIndex];
+                    currentItem.classList.remove('opacity-100');
+                    currentItem.classList.add('opacity-0');
+                    currentIndex = index;
+                    // 更新全局状态
+                    window.fullscreenWallpaperState.currentIndex = index;
+                    window.fullscreenWallpaperState.lastSwitchTime = Date.now();
+
+                    const nextItem = items[currentIndex];
+                    nextItem.classList.add('opacity-100');
+                    nextItem.classList.remove('opacity-0');
+                    // 通过切换 is-animating 类来重置下一张图片的动画
+                    if (nextItem.classList.contains('ken-burns-enabled')) {
+                        nextItem.classList.remove('is-animating');
+                        nextItem.offsetHeight; // 强制重绘
+                        nextItem.classList.add('is-animating');
+                    }
+                }
+
+                // 初始化：根据当前索引显示图片
+                items.forEach((item, index) => {
+                    if (index === currentIndex) {
+                        item.classList.add('opacity-100');
+                        item.classList.remove('opacity-0');
+                        // 初始图片开启动画
+                        if (item.classList.contains('ken-burns-enabled')) {
+                            item.classList.add('is-animating');
+                        }
+                    } else {
+                        item.classList.add('opacity-0');
+                        item.classList.remove('opacity-100');
+                        item.classList.remove('is-animating');
+                    }
+                });
+
+                return {
+                    next: () => switchToSlide((currentIndex + 1) % items.length),
+                    prev: () => switchToSlide((currentIndex - 1 + items.length) % items.length),
+                };
+            }
+            return null;
+        }
+
+        const desktopCtrl = setupCarousel(desktopItems, carouselConfig?.enable);
+        const mobileCtrl = setupCarousel(mobileItems, carouselConfig?.enable);
+
+        if (carouselConfig?.enable && (desktopCtrl || mobileCtrl)) {
+            function startCarousel() {
+                if (window.fullscreenWallpaperTimer) clearTimeout(window.fullscreenWallpaperTimer);
+                
+                const runLoop = () => {
+                    const now = Date.now();
+                    const intervalMs = carouselInterval * 1000;
+                    const elapsed = now - window.fullscreenWallpaperState.lastSwitchTime;
+                    let delay = intervalMs - elapsed;
+                    
+                    if (delay < 0) delay = 0;
+
+                    window.fullscreenWallpaperTimer = setTimeout(() => {
+                        desktopCtrl?.next();
+                        mobileCtrl?.next();
+                        runLoop();
+                    }, delay);
+                };
+
+                runLoop();
+            }
+
+            startCarousel();
+        }
+    }
+
+    // 壁纸显示控制函数
+    function showFullscreenWallpaper() {
+        requestAnimationFrame(() => {
+            const wallpaper = document.getElementById('fullscreen-wallpaper');
+            if (wallpaper) {
+                wallpaper.classList.remove('opacity-0');
+            }
+            const mobileWallpaper = document.querySelector('.block.md\\:hidden[alt="Mobile wallpaper"]');
+            if (mobileWallpaper && !document.getElementById('fullscreen-wallpaper-carousel')) {
+                mobileWallpaper.classList.remove('opacity-0');
+                mobileWallpaper.classList.add('opacity-100');
+            }
+            const carousel = document.getElementById('fullscreen-wallpaper-carousel');
+            if (carousel) {
+                window.initFullscreenWallpaperCarousel();
+            }
+        });
+    }
+
+    // 监听 Astro 页面切换事件
+    document.addEventListener('astro:after-swap', () => {
+        showFullscreenWallpaper();
+    });
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showFullscreenWallpaper);
+    } else {
+        showFullscreenWallpaper();
+    }
+})();</script>  <script type="module">document.body.classList.add("wallpaper-transparent");</script> <!-- Banner Wrapper --><div id="banner-wrapper" class="absolute z-10 w-full transition-all duration-600 overflow-hidden" style="top: -36vh"> <div id="banner-carousel" class="relative h-full w-full" data-carousel-config="{&#34;enable&#34;:true,&#34;interval&#34;:3.6,&#34;kenBurns&#34;:true}"> <ul class="carousel-list h-full w-full"> <li class="carousel-item desktop-item hidden md:block absolute inset-0 transition-opacity duration-1200 opacity-100 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/desktopWallpaper_1.jpg" alt="Desktop banner 1" class="w-full h-full object-cover" style="object-position: center" loading="eager" decoding="async"> </div> </li><li class="carousel-item desktop-item hidden md:block absolute inset-0 transition-opacity duration-1200 opacity-0 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/desktopWallpaper_2.jpg" alt="Desktop banner 2" class="w-full h-full object-cover" style="object-position: center" loading="lazy" decoding="async"> </div> </li><li class="carousel-item desktop-item hidden md:block absolute inset-0 transition-opacity duration-1200 opacity-0 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/desktopWallpaper_3.jpg" alt="Desktop banner 3" class="w-full h-full object-cover" style="object-position: center" loading="lazy" decoding="async"> </div> </li> <li class="carousel-item mobile-item block md:hidden absolute inset-0 transition-opacity duration-1200 opacity-100 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/mobileWallpaper_1.jpg" alt="Mobile banner 1" class="w-full h-full object-cover" style="object-position: center" loading="eager" decoding="async"> </div> </li><li class="carousel-item mobile-item block md:hidden absolute inset-0 transition-opacity duration-1200 opacity-0 ken-burns-enabled"> <div class="object-cover h-full w-full overflow-hidden relative"> <div class="transition absolute inset-0 bg-black/3 dark:bg-black/9 pointer-events-none"></div>  <img src="/assets/images/mobileWallpaper_2.jpg" alt="Mobile banner 2" class="w-full h-full object-cover" style="object-position: center" loading="lazy" decoding="async"> </div> </li> </ul> </div> <!-- Home page text overlay --> <div class="banner-text-overlay absolute inset-0 z-20 flex items-center justify-center hidden"> <div class="w-4/5 lg:w-3/4 text-center mb-0"> <div class="flex flex-col"> <h1 class="banner-title text-6xl lg:text-8xl text-white mb-2 lg:mb-4"> Twilight </h1> <h2 class="banner-subtitle text-xl lg:text-3xl text-white/90"> <span class="typewriter " data-text="[&#34;Illuminate Our Paths&#34;]" data-speed="111" data-delete-speed="51" data-pause-time="3000" data-astro-cid-jxgbxomk></span> <script type="module">class n{element;texts;currentTextIndex=0;speed;deleteSpeed;pauseTime;currentIndex=0;isDeleting=!1;timeoutId=null;constructor(t){this.element=t;const e=t.dataset.text||"";try{const i=JSON.parse(e);this.texts=Array.isArray(i)?i:[e]}catch{this.texts=[e]}this.speed=parseInt(t.dataset.speed||"100"),this.deleteSpeed=parseInt(t.dataset.deleteSpeed||"50"),this.pauseTime=parseInt(t.dataset.pauseTime||"2000"),this.texts.length>1&&!this.isTypewriterEnabled()?this.showRandomText():this.start()}isTypewriterEnabled(){return this.element.dataset.speed!==void 0||this.element.dataset.deleteSpeed!==void 0||this.element.dataset.pauseTime!==void 0}showRandomText(){const t=Math.floor(Math.random()*this.texts.length);this.element.textContent=this.texts[t]}start(){this.texts.length!==0&&this.type()}getCurrentText(){return this.texts[this.currentTextIndex]||""}type(){const t=this.getCurrentText();this.isDeleting?this.currentIndex>0?(this.currentIndex--,this.element.textContent=t.substring(0,this.currentIndex),this.timeoutId=window.setTimeout(()=>this.type(),this.deleteSpeed)):(this.isDeleting=!1,this.currentTextIndex=(this.currentTextIndex+1)%this.texts.length,this.timeoutId=window.setTimeout(()=>this.type(),this.speed)):this.currentIndex<t.length?(this.currentIndex++,this.element.textContent=t.substring(0,this.currentIndex),this.timeoutId=window.setTimeout(()=>this.type(),this.speed)):this.texts.length>1&&(this.isDeleting=!0,this.timeoutId=window.setTimeout(()=>this.type(),this.pauseTime))}destroy(){this.timeoutId&&clearTimeout(this.timeoutId)}}document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".typewriter").forEach(t=>{new n(t)})});document.addEventListener("swup:contentReplaced",()=>{document.querySelectorAll(".typewriter").forEach(t=>{new n(t)})});</script>  </h2> </div> </div> </div> <!-- Water waves effect --> <div class="waves-container absolute -bottom-px h-[10vh] max-h-37.5 min-h-12.5 w-full md:h-[15vh]" id="header-waves"> <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 21 150 30" preserveAspectRatio="none" shape-rendering="geometricPrecision"> <defs> <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v48h-352z"></path> </defs> <g class="parallax">  <use xlink:href="#gentle-wave" x="48" y="0" class="opacity-25 fill-(--page-bg)"></use> <use xlink:href="#gentle-wave" x="48" y="3" class="opacity-50 fill-(--page-bg)"></use> <use xlink:href="#gentle-wave" x="48" y="5" class="opacity-75 fill-(--page-bg)"></use> <use xlink:href="#gentle-wave" x="48" y="7" class="fill-(--page-bg)"></use>  </g> </svg> </div> </div> <script>(function(){const carouselInterval = 3.6;
+
+    // 轮播图初始化函数
+    window.initBannerCarousel = function() {
+        const carousel = document.getElementById('banner-carousel');
+        if (!carousel) return;
+
+        // 检查是否是同一个 DOM 元素且定时器正在运行，避免重复初始化导致动画重置
+        if (window.bannerCarouselTimer && window.currentBannerCarousel === carousel) {
+            return;
+        }
+        window.currentBannerCarousel = carousel;
+
+        // 初始化全局状态
+        if (!window.bannerCarouselState) {
+            window.bannerCarouselState = {
+                currentIndex: 0,
+                lastSwitchTime: Date.now()
+            };
+        }
+
+        // 清理旧的定时器，防止重复初始化导致的闪烁
+        if (window.bannerCarouselTimer) {
+            clearTimeout(window.bannerCarouselTimer);
+            window.bannerCarouselTimer = null;
+        }
+
+        const carouselConfigData = carousel.getAttribute('data-carousel-config');
+        const carouselConfig = carouselConfigData ? JSON.parse(carouselConfigData) : {};
+
+        const desktopItems = carousel.querySelectorAll('.carousel-item.desktop-item');
+        const mobileItems = carousel.querySelectorAll('.carousel-item.mobile-item');
+
+        function setupCarousel(items, isEnabled) {
+            if (items.length === 0) return null;
+
+            // 如果禁用了轮播但有多张图，则随机显示一张
+            if (items.length > 1 && !isEnabled) {
+                items.forEach(item => {
+                    item.classList.add('opacity-0');
+                    item.classList.remove('opacity-100');
+                });
+                const randomIndex = Math.floor(Math.random() * items.length);
+                const randomItem = items[randomIndex];
+                randomItem.classList.add('opacity-100');
+                randomItem.classList.remove('opacity-0');
+                return null;
+            }
+
+            if (items.length > 1 && isEnabled) {
+                // 使用全局状态中的索引
+                let currentIndex = window.bannerCarouselState.currentIndex;
+                // 确保索引有效
+                if (currentIndex >= items.length) {
+                    currentIndex = 0;
+                    window.bannerCarouselState.currentIndex = 0;
+                }
+                
+                function switchToSlide(index) {
+                    const currentItem = items[currentIndex];
+                    currentItem.classList.remove('opacity-100');
+                    currentItem.classList.add('opacity-0');
+                    currentIndex = index;
+                    // 更新全局状态
+                    window.bannerCarouselState.currentIndex = index;
+                    window.bannerCarouselState.lastSwitchTime = Date.now();
+
+                    const nextItem = items[currentIndex];
+                    nextItem.classList.add('opacity-100');
+                    nextItem.classList.remove('opacity-0');
+                    // 通过切换 is-animating 类来重置下一张图片的动画
+                    if (nextItem.classList.contains('ken-burns-enabled')) {
+                        nextItem.classList.remove('is-animating');
+                        nextItem.offsetHeight; // 强制重绘
+                        nextItem.classList.add('is-animating');
+                    }
+                }
+
+                // 初始化：根据当前索引显示图片
+                items.forEach((item, index) => {
+                    if (index === currentIndex) {
+                        item.classList.add('opacity-100');
+                        item.classList.remove('opacity-0');
+                        // 初始图片开启动画
+                        if (item.classList.contains('ken-burns-enabled')) {
+                            item.classList.add('is-animating');
+                        }
+                    } else {
+                        item.classList.add('opacity-0');
+                        item.classList.remove('opacity-100');
+                        item.classList.remove('is-animating');
+                    }
+                });
+
+                return {
+                    next: () => switchToSlide((currentIndex + 1) % items.length),
+                    prev: () => switchToSlide((currentIndex - 1 + items.length) % items.length),
+                };
+            }
+            return null;
+        }
+
+        const desktopCtrl = setupCarousel(desktopItems, carouselConfig?.enable);
+        const mobileCtrl = setupCarousel(mobileItems, carouselConfig?.enable);
+
+        if (carouselConfig?.enable && (desktopCtrl || mobileCtrl)) {
+            function startCarousel() {
+                if (window.bannerCarouselTimer) clearTimeout(window.bannerCarouselTimer);
+                
+                const runLoop = () => {
+                    const now = Date.now();
+                    const intervalMs = carouselInterval * 1000;
+                    const elapsed = now - window.bannerCarouselState.lastSwitchTime;
+                    let delay = intervalMs - elapsed;
+                    
+                    if (delay < 0) delay = 0;
+
+                    window.bannerCarouselTimer = setTimeout(() => {
+                        desktopCtrl?.next();
+                        mobileCtrl?.next();
+                        runLoop();
+                    }, delay);
+                };
+
+                runLoop();
+            }
+
+            startCarousel();
+        }
+    }
+
+    // Banner显示控制函数
+    function showBanner() {
+        requestAnimationFrame(() => {
+            const banner = document.getElementById('banner');
+            if (banner) {
+                banner.classList.remove('opacity-0');
+            }
+            const mobileBanner = document.querySelector('.block.lg\\:hidden[alt="Mobile banner"]');
+            if (mobileBanner && !document.getElementById('banner-carousel')) {
+                mobileBanner.classList.remove('opacity-0');
+                mobileBanner.classList.add('opacity-100');
+            }
+            const carousel = document.getElementById('banner-carousel');
+            if (carousel) {
+                window.initBannerCarousel();
+            }
+        });
+    }
+
+    // 监听 Astro 页面切换事件
+    document.addEventListener('astro:after-swap', () => {
+        showBanner();
+    });
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', showBanner);
+    } else {
+        showBanner();
+    }
+})();</script>  <div class="absolute w-full z-30 pointer-events-none transition-transform duration-600 top-0 min-h-[calc(100vh-var(--main-content-top))]  wallpaper-transparent" style="transform: translateY(var(--main-content-top))"> <div class="relative max-w-(--page-width) mx-auto pointer-events-auto"> <div id="main-grid" class="w-full left-0 right-0 grid grid-cols-1 md:grid-cols-[17.5rem_1fr] lg:grid-cols-[17.5rem_1fr_17.5rem] grid-rows-[auto] mx-auto gap-4 px-0 md:px-4  mobile-both-sidebar"> <!-- Banner image credit -->  <div class="contents lg:contents md:flex md:flex-col md:col-start-1 md:row-start-1 md:gap-4"> <div id="left-sidebar" data-side="left" class="mb-0 col-span-1 hidden min-w-0 md:flex md:flex-col md:max-w-70 lg:flex lg:flex-col lg:max-w-70 lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2 wallpaper-transparent onload-animation-up flex flex-col w-full h-full gap-(--sidebar-spacing)"> <!-- 顶部固定组件区域 -->  <!-- 粘性组件区域 --> <div id="sidebar-sticky" class="flex flex-col w-full gap-(--sidebar-spacing) sticky top-[calc(var(--sidebar-top)-var(--main-content-top))]"> <widget-layout id="directory-left" data-id="directory-left" data-swup-persist="directory-left" data-is-collapsed="false" style="; --collapsedHeight: 12rem;" data-astro-cid-n4f5b7cl="true" class="pb-4 card-base  transition-swup-fade"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-n4f5b7cl style="--collapsedHeight: 12rem;">Directory</div> <div id="directory-left-wrapper" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-n4f5b7cl style="--collapsedHeight: 12rem;">  <div class="directory-container"> <astro-island uid="Zr0DO7" component-url="/_astro/directoryTree.DI-LW0ch.js" component-export="default" renderer-url="/_astro/client.svelte.Cmf8TTJm.js" props="{&quot;tree&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Albums&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;example&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Album Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/albums/jsonExample/&quot;]}]]]}]]]}],[0,{&quot;name&quot;:[0,&quot;Diary&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;example&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Apothegm&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/diary/&quot;]}]]]}]]]}],[0,{&quot;name&quot;:[0,&quot;Posts&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;guide&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Guide for Template - Advanced Customization&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/guide/advanced-customization/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Guide for Template - Getting Started&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/guide/getting-started/&quot;]}]]]}],[0,{&quot;name&quot;:[0,&quot;Copy Protection Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/copy-protection/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Encryption Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/encryption/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Mermaid Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/mermaids/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Video Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/videos/&quot;]}]]]}],[0,{&quot;name&quot;:[0,&quot;Projects&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Twilight&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Twilight Blog Template&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/projects/&quot;]}]]]}]]]}],[0,{&quot;name&quot;:[0,&quot;Skills&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Astro&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/skills/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Git&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/skills/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Svelte&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/skills/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Tailwind CSS&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/skills/&quot;]}]]]}],[0,{&quot;name&quot;:[0,&quot;Timeline&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Twilight&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/timeline/&quot;]}]]]}]]]}" ssr client="idle" opts="{&quot;name&quot;:&quot;DirectoryTree&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="select-none pb-2"><!--[--><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Albums</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Diary</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Posts</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Projects</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Skills</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Timeline</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><!--]--></div><!--]--><!--astro:end--></astro-island> </div>  </div>  </widget-layout>  <script type="module">class d extends HTMLElement{constructor(){if(super(),this.dataset.isCollapsed!=="true")return;const t=this.dataset.id,e=this.querySelector(".expand-btn"),s=this.querySelector(`#${t}-wrapper`);e.addEventListener("click",()=>{s.classList.remove("collapsed"),e.classList.add("hidden")})}}customElements.get("widget-layout")||customElements.define("widget-layout",d);</script><widget-layout id="categories-left" data-id="categories-left" data-swup-persist="categories-left" data-is-collapsed="false" style="; --collapsedHeight: 7.5rem;" data-astro-cid-n4f5b7cl="true" class="pb-4 card-base  transition-swup-fade"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-n4f5b7cl style="--collapsedHeight: 7.5rem;">Categories</div> <div id="categories-left-wrapper" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-n4f5b7cl style="--collapsedHeight: 7.5rem;">  <div><div style="padding-left: 0rem;"><a href="/archive/?category=Examples" aria-label="View all posts in the Examples category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-(--btn-plain-bg-hover)
+            active:bg-(--btn-plain-bg-active)
+            transition-all
+            pl-2
+            hover:pl-3
+            text-neutral-700
+            hover:text-(--primary)
+            dark:text-neutral-300
+            dark:hover:text-(--primary)
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap text-ellipsis"> Examples </div> <div class="transition px-2 h-7 ml-4 min-w-8 rounded-lg text-sm font-bold
+                    text-(--btn-content) dark:text-(--deep-text)
+                    bg-[oklch(0.95_0.025_var(--hue))] dark:bg-(--primary)
+                    flex items-center justify-center"> 4 </div> </div> </button> </a></div></div><div><div style="padding-left: 0rem;"><a href="/archive/?category=Guides" aria-label="View all posts in the Guides category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-(--btn-plain-bg-hover)
+            active:bg-(--btn-plain-bg-active)
+            transition-all
+            pl-2
+            hover:pl-3
+            text-neutral-700
+            hover:text-(--primary)
+            dark:text-neutral-300
+            dark:hover:text-(--primary)
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap text-ellipsis"> Guides </div> <div class="transition px-2 h-7 ml-4 min-w-8 rounded-lg text-sm font-bold
+                    text-(--btn-content) dark:text-(--deep-text)
+                    bg-[oklch(0.95_0.025_var(--hue))] dark:bg-(--primary)
+                    flex items-center justify-center"> 2 </div> </div> </button> </a></div><div><div style="padding-left: 0.75rem;"><a href="/archive/?category=Guides%20%2F%20Advanced%20Customization" aria-label="View all posts in the Advanced Customization category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-(--btn-plain-bg-hover)
+            active:bg-(--btn-plain-bg-active)
+            transition-all
+            pl-2
+            hover:pl-3
+            text-neutral-700
+            hover:text-(--primary)
+            dark:text-neutral-300
+            dark:hover:text-(--primary)
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap text-ellipsis"> Advanced Customization </div> <div class="transition px-2 h-7 ml-4 min-w-8 rounded-lg text-sm font-bold
+                    text-(--btn-content) dark:text-(--deep-text)
+                    bg-[oklch(0.95_0.025_var(--hue))] dark:bg-(--primary)
+                    flex items-center justify-center"> 1 </div> </div> </button> </a></div></div><div><div style="padding-left: 0.75rem;"><a href="/archive/?category=Guides%20%2F%20Getting%20Started" aria-label="View all posts in the Getting Started category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-(--btn-plain-bg-hover)
+            active:bg-(--btn-plain-bg-active)
+            transition-all
+            pl-2
+            hover:pl-3
+            text-neutral-700
+            hover:text-(--primary)
+            dark:text-neutral-300
+            dark:hover:text-(--primary)
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap text-ellipsis"> Getting Started </div> <div class="transition px-2 h-7 ml-4 min-w-8 rounded-lg text-sm font-bold
+                    text-(--btn-content) dark:text-(--deep-text)
+                    bg-[oklch(0.95_0.025_var(--hue))] dark:bg-(--primary)
+                    flex items-center justify-center"> 1 </div> </div> </button> </a></div></div></div>  </div>  </widget-layout>  <widget-layout id="tags-left" data-id="tags-left" data-swup-persist="tags-left" data-is-collapsed="false" style="; --collapsedHeight: 7.5rem;" data-astro-cid-n4f5b7cl="true" class="pb-4 card-base  transition-swup-fade"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-n4f5b7cl style="--collapsedHeight: 7.5rem;">Tags</div> <div id="tags-left-wrapper" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-n4f5b7cl style="--collapsedHeight: 7.5rem;">  <div class="flex gap-2 flex-wrap"> <a href="/archive/?tag=Copy%20Protection" aria-label="View all posts with the Copy Protection tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Copy Protection </a><a href="/archive/?tag=Encryption" aria-label="View all posts with the Encryption tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Encryption </a><a href="/archive/?tag=Markdown" aria-label="View all posts with the Markdown tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Markdown </a><a href="/archive/?tag=Mermaid" aria-label="View all posts with the Mermaid tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Mermaid </a><a href="/archive/?tag=Video" aria-label="View all posts with the Video tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Video </a> </div>  </div>  </widget-layout>  <widget-layout id="toc-wrapper-left" data-id="toc-wrapper-left" data-swup-persist="toc-wrapper-left" data-is-collapsed="undefined" style="; " data-astro-cid-n4f5b7cl="true" class="pb-4 card-base hidden md:block lg:hidden transition-swup-fade toc-wrapper toc-hide"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-n4f5b7cl style="">Table of Contents</div> <div id="toc-wrapper-left-wrapper" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-n4f5b7cl style="">  <div class="toc-scroll-container" data-astro-cid-2xvgks5n> <table-of-contents class="group" data-depth="3" data-navbar-height="72" data-astro-cid-2xvgks5n="true"> <div class="toc-inner-content relative" data-astro-cid-2xvgks5n></div> </table-of-contents> </div>  </div>  </widget-layout>   <script type="module" src="/_astro/toc.astro_astro_type_script_index_0_lang.BG6r7bpR.js"></script>  </div> </div> <div id="right-sidebar" data-side="right" class="mb-0 col-span-1 hidden min-w-0 md:hidden lg:flex lg:flex-col lg:max-w-70 lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2 wallpaper-transparent onload-animation-up flex flex-col w-full h-full gap-(--sidebar-spacing)"> <!-- 顶部固定组件区域 -->  <!-- 粘性组件区域 --> <div id="sidebar-sticky" class="flex flex-col w-full gap-(--sidebar-spacing) sticky top-[calc(var(--sidebar-top)-var(--main-content-top))]"> <widget-layout id="toc-wrapper-right" data-id="toc-wrapper-right" data-swup-persist="toc-wrapper-right" data-is-collapsed="undefined" style="; " data-astro-cid-n4f5b7cl="true" class="pb-4 card-base  transition-swup-fade toc-wrapper toc-hide"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-n4f5b7cl style="">Table of Contents</div> <div id="toc-wrapper-right-wrapper" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-n4f5b7cl style="">  <div class="toc-scroll-container" data-astro-cid-2xvgks5n> <table-of-contents class="group" data-depth="3" data-navbar-height="72" data-astro-cid-2xvgks5n="true"> <div class="toc-inner-content relative" data-astro-cid-2xvgks5n></div> </table-of-contents> </div>  </div>  </widget-layout>     </div> </div> </div> <main id="swup-container" class="overflow-hidden w-full col-span-1 row-start-1 row-end-2 md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2 transition-swup-fade"> <div id="grid-class-carrier" data-grid-class="grid-cols-1 md:grid-cols-[17.5rem_1fr] lg:grid-cols-[17.5rem_1fr_17.5rem]" class="hidden"></div> <div id="content-wrapper" class="onload-animation-up transition-leaving">   <div class="flex w-full rounded-(--radius-large) overflow-hidden relative mb-4"> <div id="post-container" class="card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full "> <!-- word count and reading time --> <div class="flex flex-row text-black/30 dark:text-white/30 gap-5 mb-3 transition onload-animation-up"> <div class="flex flex-row items-center"> <div class="transition h-6 w-6 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center mr-2"> <svg width="1em" height="1em" data-icon="material-symbols:notes-rounded">   <symbol id="ai:material-symbols:notes-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h10q.425 0 .713.288T15 17t-.288.713T14 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/></symbol><use href="#ai:material-symbols:notes-rounded"></use>  </svg> </div> <div class="text-sm"> 341  words </div> </div> <div class="flex flex-row items-center"> <div class="transition h-6 w-6 rounded-md bg-black/5 dark:bg-white/10 text-black/50 dark:text-white/50 flex items-center justify-center mr-2"> <svg width="1em" height="1em" data-icon="material-symbols:schedule-outline-rounded">   <symbol id="ai:material-symbols:schedule-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M13 11.6V8q0-.425-.288-.712T12 7t-.712.288T11 8v3.975q0 .2.075.388t.225.337l3.3 3.3q.275.275.7.275T16 16t.275-.7t-.275-.7zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.325 0 5.663-2.337T20 12t-2.337-5.663T12 4T6.337 6.338T4 12t2.338 5.663T12 20"/></symbol><use href="#ai:material-symbols:schedule-outline-rounded"></use>  </svg> </div> <div class="text-sm"> 2  minutes </div> </div> </div> <!-- title --> <div class="relative onload-animation-up"> <div data-pagefind-body data-pagefind-weight="10" data-pagefind-meta="title" class="transition w-full block font-bold mb-3
+                    text-3xl md:text-[2.25rem]/[2.75rem]
+                    text-black/90 dark:text-white/90
+                    md:before:w-1 before:h-5 before:rounded-md before:bg-(--primary)
+                    before:absolute before:top-3 before:-left-4.5"> Guide for Template - Advanced Customization </div> </div> <!-- metadata --> <div class="onload-animation-up"> <div class="flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-x-4 gap-y-2 mb-5"> <!-- publish date --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" class="text-xl" data-icon="material-symbols:calendar-today-outline-rounded">   <symbol id="ai:material-symbols:calendar-today-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z"/></symbol><use href="#ai:material-symbols:calendar-today-outline-rounded"></use>  </svg> </div> <span class="text-50 text-sm font-medium">2024-02-10</span> </div> <!-- update date -->  <!-- categories --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" class="text-xl" data-icon="material-symbols:book-2-outline-rounded">   <symbol id="ai:material-symbols:book-2-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M6 15.325q.35-.175.725-.25T7.5 15H8V4h-.5q-.625 0-1.062.438T6 5.5zM10 15h8V4h-8zm-4 .325V4zM7.5 22q-1.45 0-2.475-1.025T4 18.5v-13q0-1.45 1.025-2.475T7.5 2H18q.825 0 1.413.587T20 4v12.525q0 .2-.162.363t-.588.362q-.35.175-.55.5t-.2.75t.2.763t.55.487t.55.413t.2.562v.25q0 .425-.288.725T19 22zm0-2h9.325q-.15-.35-.237-.712T16.5 18.5q0-.4.075-.775t.25-.725H7.5q-.65 0-1.075.438T6 18.5q0 .65.425 1.075T7.5 20"/></symbol><use href="#ai:material-symbols:book-2-outline-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <a href="/archive/?category=Guides" aria-label="View all posts in the Guides category" class="link-lg transition text-50 text-sm font-medium
+                                        hover:text-(--primary) dark:hover:text-(--primary) whitespace-nowrap"> Guides </a> <div class="mx-1.5 text-(--meta-divider) text-sm">/</div><a href="/archive/?category=Guides%20%2F%20Advanced%20Customization" aria-label="View all posts in the Advanced Customization category" class="link-lg transition text-50 text-sm font-medium
+                                        hover:text-(--primary) dark:hover:text-(--primary) whitespace-nowrap"> Advanced Customization </a>  </div> </div> <!-- tags --> <div class="items-center flex"> <div class="meta-icon"> <svg width="1em" height="1em" class="text-xl" data-icon="material-symbols:tag-rounded">   <symbol id="ai:material-symbols:tag-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="m9 16l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T6.3 18.8L7 16H4.275q-.5 0-.8-.387T3.3 14.75q.075-.35.35-.55t.625-.2H7.5l1-4H5.775q-.5 0-.8-.387T4.8 8.75q.075-.35.35-.55t.625-.2H9l.825-3.275Q9.9 4.4 10.15 4.2t.6-.2q.475 0 .775.375t.175.825L11 8h4l.825-3.275q.075-.325.325-.525t.6-.2q.475 0 .775.375t.175.825L17 8h2.725q.5 0 .8.387t.175.863q-.075.35-.35.55t-.625.2H16.5l-1 4h2.725q.5 0 .8.388t.175.862q-.075.35-.35.55t-.625.2H15l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T12.3 18.8L13 16zm.5-2h4l1-4h-4z"/></symbol><use href="#ai:material-symbols:tag-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center">  <div class="transition text-50 text-sm font-medium">No Tags</div> </div> </div> <!-- 访问量（首页不显示，且启用统计时显示） -->  </div> <!-- 只有在非首页且启用统计且有finalPostUrl时才加载脚本 -->  <div class="mt-4 border-(--line-divider) border-dashed border-b mb-5"></div> </div> <!-- always show cover as long as it has one -->   <div data-pagefind-body class="prose dark:prose-invert prose-base max-w-none! custom-md mb-6 markdown-content onload-animation-up"> <!--<div class="prose dark:prose-invert max-w-none custom-md">--> <!--<div class="max-w-none custom-md">-->  <p>This guide covers advanced customization options and features available in the Twilight template, from global configurations to specialized Markdown extensions.</p>
+<section><h2 id="global-configuration">Global Configuration</h2><p>The <code>twilight.config.yaml</code> file is the heart of your blog’s configuration. Here are some advanced settings you can tweak:</p><section><h3 id="site--localization">Site &#x26; Localization</h3><ul>
+<li>
+<p><strong>Language &#x26; Translation</strong>: Enable client-side translation using <code>site.translate.enable</code>. You can choose different services and configure auto-detection.</p>
+</li>
+<li>
+<p><strong>Custom Fonts</strong>: Add your own fonts by providing a CSS link or file path under <code>site.font</code>.</p>
+</li>
+</ul></section><section><h3 id="visual-effects">Visual Effects</h3><ul>
+<li>
+<p><strong>Theme Color</strong>: Change the primary color of your blog by adjusting the <code>site.themeColor.hue</code> (0-360).</p>
+</li>
+<li>
+<p><strong>Wallpaper Modes</strong>: Choose between <code>banner</code>, <code>fullscreen</code>, or <code>none</code>. You can also enable a <code>carousel</code> for multiple wallpapers with the <code>kenBurns</code> effect.</p>
+</li>
+<li>
+<p><strong>Waves Effect</strong>: Toggle the animated water ripple effect on the banner using <code>site.wallpaper.banner.waves.enable</code>.</p>
+</li>
+<li>
+<p><strong>Particle Effects</strong>: Enable floating particles in the background with <code>particle.enable</code>.</p>
+</li>
+</ul></section><section><h3 id="ui">UI</h3><ul>
+<li>
+<p><strong>Navbar Transparency</strong>: Adjust <code>site.wallpaper.banner.navbar.transparentMode</code> between <code>semi</code>, <code>full</code>, or <code>semifull</code>.</p>
+</li>
+<li>
+<p><strong>Sidebar Widgets</strong>: Reorder or toggle sidebar components like <code>profile</code>, <code>announcement</code>, <code>categories</code>, <code>tags</code>, <code>toc</code>, and <code>statistics</code> in <code>sidebar.components</code>.</p>
+</li>
+</ul></section></section>
+<section><h2 id="markdown-extensions">Markdown Extensions</h2><section><h3 id="github-repository-cards">GitHub Repository Cards</h3><p>You can add dynamic cards that link to GitHub repositories, on page load, the repository information is pulled from the GitHub API.</p><a id="GC3uv2e5-card" class="card-github fetch-waiting no-styling" href="https://github.com/Spr-Aachen/Twilight" target="_blank" repo="Spr-Aachen/Twilight"><div class="gc-titlebar"><div class="gc-titlebar-left"><div class="gc-owner"><div id="GC3uv2e5-avatar" class="gc-avatar"></div><div class="gc-user">Spr-Aachen</div></div><div class="gc-divider">/</div><div class="gc-repo">Twilight</div></div><div class="github-logo"></div></div><div id="GC3uv2e5-description" class="gc-description">Waiting for api.github.com...</div><div class="gc-infobar"><div id="GC3uv2e5-stars" class="gc-stars">00K</div><div id="GC3uv2e5-forks" class="gc-forks">0K</div><div id="GC3uv2e5-license" class="gc-license">0K</div><span id="GC3uv2e5-language" class="gc-language">Waiting...</span></div><script id="GC3uv2e5-script" type="text/javascript" defer>
+        const init = () => {
+            fetch('https://api.github.com/repos/Spr-Aachen/Twilight', { referrerPolicy: "no-referrer" }).then(response => response.json()).then(data => {
+                document.getElementById('GC3uv2e5-description').innerText = data.description?.replace(/:[a-zA-Z0-9_]+:/g, '') || "Description not set";
+                document.getElementById('GC3uv2e5-language').innerText = data.language;
+                document.getElementById('GC3uv2e5-forks').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.forks).replaceAll(" ", '');
+                document.getElementById('GC3uv2e5-stars').innerText = Intl.NumberFormat('en-us', { notation: "compact", maximumFractionDigits: 1 }).format(data.stargazers_count).replaceAll(" ", '');
+                const avatarEl = document.getElementById('GC3uv2e5-avatar');
+                avatarEl.style.backgroundImage = 'url(' + data.owner.avatar_url + ')';
+                avatarEl.style.backgroundColor = 'transparent';
+                document.getElementById('GC3uv2e5-license').innerText = data.license?.spdx_id || "no-license";
+                document.getElementById('GC3uv2e5-card').classList.remove("fetch-waiting");
+                console.log("[GITHUB-CARD] Loaded card for Spr-Aachen/Twilight | GC3uv2e5.")
+            }).catch(err => {
+                const c = document.getElementById('GC3uv2e5-card');
+                c?.classList.add("fetch-error");
+                console.warn("[GITHUB-CARD] (Error) Loading card for Spr-Aachen/Twilight | GC3uv2e5.")
+            });
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    init();
+                    observer.disconnect();
+                }
+            });
+        }, { rootMargin: '100px' });
+
+        observer.observe(document.getElementById('GC3uv2e5-card'));
+        </script></a><p>Create a GitHub repository card with the code <code>::github{repo="Spr-Aachen/Twilight"}</code>.</p><div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.6e06n.css"><script type="module" src="/_astro/ec.g1fg5.js"></script><figure class="frame collapsible expanded" data-language="markdown"><figcaption class="header"></figcaption><pre data-language="markdown" class="wrap" style="--ecMaxLine:36ch"><code><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">1</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">::github{repo="Spr-Aachen/Twilight"}</span></div></div></code></pre><button class="collapse-btn" aria-label="Collapse code"><div class="collapse-btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="collapse-btn-icon collapse-icon"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></div></button><button class="copy-btn" aria-label="Copy code"><div class="copy-btn-icon"><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon copy-icon"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"></path></svg><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon success-icon"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"></path></svg></div></button></figure></div></section><section><h3 id="music-cards">Music Cards</h3><ul>
+<li>Online</li>
+</ul><div class="card-music" id="SCse1orb-card"><div class="music-cover" style="background-image: url(&#x27;&#x27;);"></div><div class="music-info"><div class="music-header"><div class="music-title">Loading...</div><div class="music-artist">Loading...</div></div><div class="music-lyric" id="SCse1orb-lyric" style="display: grid; place-items: center;"><div class="lyric-exit" style="grid-area: 1/1; opacity: 0; pointer-events: none;"></div><div class="lyric-current" style="grid-area: 1/1;">Loading lyrics...</div></div><div class="music-controls"><button class="play-btn" id="SCse1orb-play" aria-label="Play/Pause"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg><svg viewBox="0 0 24 24" class="pause-icon" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg></button><div class="progress-container" id="SCse1orb-progress-container"><div class="progress-bar" id="SCse1orb-progress-bar"></div></div><div class="time-display" id="SCse1orb-time">0:00 / 0:00</div></div></div><audio id="SCse1orb-audio" src="" preload="none" data-lazy-media=""></audio><script type="text/javascript">
+    (async function() {
+        const cardId = 'SCse1orb';
+        const cardEl = document.getElementById(cardId + '-card');
+        const audio = document.getElementById(cardId + '-audio');
+        const playBtn = document.getElementById(cardId + '-play');
+        const playIcon = playBtn.querySelector('.play-icon');
+        const pauseIcon = playBtn.querySelector('.pause-icon');
+        const progressContainer = document.getElementById(cardId + '-progress-container');
+        const progressBar = document.getElementById(cardId + '-progress-bar');
+        const timeDisplay = document.getElementById(cardId + '-time');
+        const lyricContainer = document.getElementById(cardId + '-lyric');
+        const currentLyricEl = lyricContainer.querySelector('.lyric-current');
+        const exitLyricEl = lyricContainer.querySelector('.lyric-exit');
+        
+        let isPlaying = false;
+        let lyrics = [];
+        let inlineLyrics = "";
+        let lrcSrc = '';
+        const metingUrl = 'https://meting.spr-aachen.com/api?server=netease&type=song&id=1390882521';
+
+        // Helper: Format Time
+        function formatTime(seconds) {
+            if (!seconds || isNaN(seconds)) return "0:00";
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return mins + ":" + (secs < 10 ? "0" : "") + secs;
+        }
+
+        // Helper: Parse LRC
+        const stripTimestampPrefix = (line) => line.replace(/^s*[[^]]+]s*/g, "").trim();
+
+        const parseTimestamp = (token) => {
+            if (!token) return null;
+            const normalized = token.trim().replaceAll("：", ":");
+            if (!normalized) return null;
+
+            const colonCount = (normalized.match(/:/g) || []).length;
+
+            // mm:ss:xx format (colon-separated seconds and centiseconds)
+            if (colonCount === 2) {
+                const parts = normalized.split(":");
+                const minute = Number(parts[0]);
+                const second = Number(parts[1]);
+                const fraction = Number(parts[2]);
+                if (!Number.isFinite(minute) || !Number.isFinite(second) || !Number.isFinite(fraction)) return null;
+                return minute * 60 + second + fraction / 100;
+            }
+
+            // mm:ss(.xxx) format
+            if (colonCount === 1 && normalized.includes(":")) {
+                const [mRaw, secRaw] = normalized.split(":", 2);
+                const minute = Number(mRaw);
+                if (!Number.isFinite(minute)) return null;
+
+                let second = 0;
+                let fraction = 0;
+                if (secRaw.includes(".")) {
+                    const [sRaw, fRaw] = secRaw.split(".", 2);
+                    second = Number(sRaw);
+                    if (!Number.isFinite(second)) return null;
+                    const fracStr = (fRaw || "0").replace(/[^d]/g, "");
+                    fraction = fracStr ? Number(fracStr) / Math.pow(10, fracStr.length) : 0;
+                } else {
+                    second = Number(secRaw);
+                    if (!Number.isFinite(second)) return null;
+                }
+                return minute * 60 + second + fraction;
+            }
+
+            // ss(.xxx) format
+            if (normalized.includes(".")) {
+                const [sRaw, fRaw] = normalized.split(".", 2);
+                const second = Number(sRaw);
+                if (!Number.isFinite(second)) return null;
+                const fracStr = (fRaw || "0").replace(/[^d]/g, "");
+                const fraction = fracStr ? Number(fracStr) / Math.pow(10, fracStr.length) : 0;
+                return second + fraction;
+            }
+
+            return null;
+        };
+
+        const parseLRC = (input) => {
+            if (!input) return [];
+            const output = [];
+            const lines = input.split(/\r?\n/);
+            for (const line of lines) {
+                const timestampMatches = [...line.matchAll(/\[([^\]]+)\]/g)];
+                const text = stripTimestampPrefix(line.replace(/\[([^\]]+)\]/g, "").trim());
+                if (timestampMatches.length === 0) continue;
+                for (const match of timestampMatches) {
+                    const time = parseTimestamp(match[1]);
+                    if (time === null || Number.isNaN(time)) continue;
+                    output.push({ time, text: text || "..." });
+                }
+            }
+            return output.sort((a, b) => a.time - b.time);
+        };
+
+        // Helper: Render Lyric
+        // Restored animation logic from commit 2c0378c963bcf6a51c3a404a8c7275e41185e246
+        function renderLyric(index) {
+            if (!currentLyricEl) return;
+            
+            if (lyrics.length === 0) {
+                 // If no lyrics, maybe show title/artist or just "..."
+                 return;
+            }
+            
+            const current = (index >= 0 && index < lyrics.length) ? lyrics[index] : lyrics[0];
+            const nextText = current ? (current.text || "...") : "...";
+            
+            if (currentLyricEl.innerText !== nextText) {
+                const prevText = currentLyricEl.innerText || "";
+                
+                if (prevText && typeof exitLyricEl.animate === "function") {
+                    exitLyricEl.innerText = prevText;
+                    
+                    exitLyricEl.getAnimations().forEach(a => a.cancel());
+                    exitLyricEl.animate([
+                        { opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0px)" },
+                        { opacity: 0, transform: "translateY(-12px) scale(0.992)", filter: "blur(2px)" },
+                    ], {
+                        duration: 460,
+                        easing: "cubic-bezier(0.22,1,0.36,1)",
+                        fill: "both",
+                    });
+                } else if (prevText) {
+                    // Fallback if animate not supported
+                    exitLyricEl.innerText = prevText;
+                    exitLyricEl.style.opacity = 0;
+                }
+                
+                currentLyricEl.innerText = nextText;
+                
+                if (typeof currentLyricEl.animate === "function") {
+                    currentLyricEl.getAnimations().forEach(a => a.cancel());
+                    currentLyricEl.animate([
+                        { opacity: 0, transform: "translateY(12px) scale(0.992)", filter: "blur(2px)" },
+                        { opacity: 0.92, transform: "translateY(-1px) scale(1.001)", filter: "blur(0.35px)" },
+                        { opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0px)" },
+                    ], {
+                        duration: 460,
+                        easing: "cubic-bezier(0.64,0,0.78,0)",
+                        fill: "both",
+                    });
+                }
+            }
+        }
+
+        async function loadLyrics() {
+            let lrcText = inlineLyrics;
+            if ((!lrcText || lrcText.trim() === "") && lrcSrc) {
+                if (lrcSrc.startsWith('http') || lrcSrc.startsWith('/')) {
+                    try {
+                        const res = await fetch(lrcSrc);
+                        if (res.ok) lrcText = await res.text();
+                    } catch (e) { console.error('Failed to load lyrics', e); }
+                } else {
+                    // Treat lrcSrc as the lyric content itself (Meting sometimes returns this)
+                    lrcText = lrcSrc;
+                }
+            }
+            
+            if (lrcText) {
+                lyrics = parseLRC(lrcText);
+                renderLyric(0);
+            } else {
+                currentLyricEl.innerText = "Loading... - Loading...";
+            }
+        }
+
+        const init = async () => {
+            // Meting Logic
+            if (metingUrl) {
+                try {
+                    const res = await fetch(metingUrl);
+                    const data = await res.json();
+                    const music = Array.isArray(data) ? data[0] : data;
+                    
+                    if (music) {
+                        const titleEl = cardEl.querySelector('.music-title');
+                        const artistEl = cardEl.querySelector('.music-artist');
+                        const coverEl = cardEl.querySelector('.music-cover');
+                        
+                        if (titleEl) titleEl.innerText = music.title;
+                        if (artistEl) artistEl.innerText = music.author;
+                        if (coverEl) coverEl.style.backgroundImage = 'url("' + music.pic + '")';
+                        
+                        audio.src = music.url;
+                        
+                        if (music.lrc) {
+                            lrcSrc = music.lrc;
+                            inlineLyrics = ""; // Clear inline lyrics to force load from new src
+                            await loadLyrics(); // Reload lyrics
+                        }
+                    }
+                } catch (e) {
+                    console.error('Meting fetch error:', e);
+                    currentLyricEl.innerText = "Error loading music data";
+                }
+            } else {
+                // Load initial lyrics if not using Meting (or Meting url empty)
+                await loadLyrics();
+            }
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    init();
+                    observer.disconnect();
+                }
+            });
+        }, { rootMargin: '100px' });
+
+        observer.observe(cardEl);
+
+        function updatePlayState() {
+            if (isPlaying) {
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+                audio.play().catch(e => {
+                    console.error("Play error", e);
+                    isPlaying = false;
+                    updatePlayState();
+                });
+            } else {
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+                audio.pause();
+            }
+        }
+
+        playBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isPlaying = !isPlaying;
+            updatePlayState();
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            const current = audio.currentTime;
+            const duration = audio.duration || 0;
+            const percent = duration > 0 ? (current / duration) * 100 : 0;
+            progressBar.style.width = percent + '%';
+            timeDisplay.innerText = formatTime(current) + ' / ' + formatTime(duration);
+
+            if (lyrics.length > 0) {
+                // Find current lyric line
+                let idx = -1;
+                for (let i = 0; i < lyrics.length; i++) {
+                    if (current >= lyrics[i].time) {
+                        idx = i;
+                    } else {
+                        break;
+                    }
+                }
+                renderLyric(idx);
+            }
+        });
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            updatePlayState();
+            progressBar.style.width = '0%';
+            timeDisplay.innerText = "0:00 / " + formatTime(audio.duration);
+            if (lyrics.length > 0) renderLyric(0);
+        });
+        
+        audio.addEventListener('loadedmetadata', () => {
+             timeDisplay.innerText = "0:00 / " + formatTime(audio.duration);
+        });
+
+        progressContainer.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const rect = progressContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const width = rect.width;
+            const percent = x / width;
+            const duration = audio.duration || 0;
+            audio.currentTime = percent * duration;
+        });
+    })();
+    </script></div><div class="expressive-code"><figure class="frame collapsible expanded" data-language="markdown"><figcaption class="header"></figcaption><pre data-language="markdown" class="wrap" style="--ecMaxLine:90ch"><code><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">1</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">::music{meting="https://meting.spr-aachen.com/api?server=netease&#x26;type=song&#x26;id=1390882521"}</span></div></div></code></pre><button class="collapse-btn" aria-label="Collapse code"><div class="collapse-btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="collapse-btn-icon collapse-icon"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></div></button><button class="copy-btn" aria-label="Copy code"><div class="copy-btn-icon"><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon copy-icon"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"></path></svg><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon success-icon"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"></path></svg></div></button></figure></div><ul>
+<li>Local</li>
+</ul><div class="card-music" id="SC8s4yyk-card"><div class="music-cover" style="background-image: url(&#x27;https://p1.music.126.net/PhKOqFtljgHDDpKYM2ADUA==/109951169858309716.jpg&#x27;);"></div><div class="music-info"><div class="music-header"><div class="music-title">深海之息</div><div class="music-artist">Youzee Music</div></div><div class="music-lyric" id="SC8s4yyk-lyric" style="display: grid; place-items: center;"><div class="lyric-exit" style="grid-area: 1/1; opacity: 0; pointer-events: none;"></div><div class="lyric-current" style="grid-area: 1/1;">Loading lyrics...</div></div><div class="music-controls"><button class="play-btn" id="SC8s4yyk-play" aria-label="Play/Pause"><svg viewBox="0 0 24 24" class="play-icon"><path d="M8 5v14l11-7z"></path></svg><svg viewBox="0 0 24 24" class="pause-icon" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg></button><div class="progress-container" id="SC8s4yyk-progress-container"><div class="progress-bar" id="SC8s4yyk-progress-bar"></div></div><div class="time-display" id="SC8s4yyk-time">0:00 / 0:00</div></div></div><audio id="SC8s4yyk-audio" src="/assets/music/深海之息.m4a" preload="none" data-lazy-media=""></audio><script type="text/javascript">
+    (async function() {
+        const cardId = 'SC8s4yyk';
+        const cardEl = document.getElementById(cardId + '-card');
+        const audio = document.getElementById(cardId + '-audio');
+        const playBtn = document.getElementById(cardId + '-play');
+        const playIcon = playBtn.querySelector('.play-icon');
+        const pauseIcon = playBtn.querySelector('.pause-icon');
+        const progressContainer = document.getElementById(cardId + '-progress-container');
+        const progressBar = document.getElementById(cardId + '-progress-bar');
+        const timeDisplay = document.getElementById(cardId + '-time');
+        const lyricContainer = document.getElementById(cardId + '-lyric');
+        const currentLyricEl = lyricContainer.querySelector('.lyric-current');
+        const exitLyricEl = lyricContainer.querySelector('.lyric-exit');
+        
+        let isPlaying = false;
+        let lyrics = [];
+        let inlineLyrics = "";
+        let lrcSrc = '/assets/music/深海之息.lrc';
+        const metingUrl = '';
+
+        // Helper: Format Time
+        function formatTime(seconds) {
+            if (!seconds || isNaN(seconds)) return "0:00";
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return mins + ":" + (secs < 10 ? "0" : "") + secs;
+        }
+
+        // Helper: Parse LRC
+        const stripTimestampPrefix = (line) => line.replace(/^s*[[^]]+]s*/g, "").trim();
+
+        const parseTimestamp = (token) => {
+            if (!token) return null;
+            const normalized = token.trim().replaceAll("：", ":");
+            if (!normalized) return null;
+
+            const colonCount = (normalized.match(/:/g) || []).length;
+
+            // mm:ss:xx format (colon-separated seconds and centiseconds)
+            if (colonCount === 2) {
+                const parts = normalized.split(":");
+                const minute = Number(parts[0]);
+                const second = Number(parts[1]);
+                const fraction = Number(parts[2]);
+                if (!Number.isFinite(minute) || !Number.isFinite(second) || !Number.isFinite(fraction)) return null;
+                return minute * 60 + second + fraction / 100;
+            }
+
+            // mm:ss(.xxx) format
+            if (colonCount === 1 && normalized.includes(":")) {
+                const [mRaw, secRaw] = normalized.split(":", 2);
+                const minute = Number(mRaw);
+                if (!Number.isFinite(minute)) return null;
+
+                let second = 0;
+                let fraction = 0;
+                if (secRaw.includes(".")) {
+                    const [sRaw, fRaw] = secRaw.split(".", 2);
+                    second = Number(sRaw);
+                    if (!Number.isFinite(second)) return null;
+                    const fracStr = (fRaw || "0").replace(/[^d]/g, "");
+                    fraction = fracStr ? Number(fracStr) / Math.pow(10, fracStr.length) : 0;
+                } else {
+                    second = Number(secRaw);
+                    if (!Number.isFinite(second)) return null;
+                }
+                return minute * 60 + second + fraction;
+            }
+
+            // ss(.xxx) format
+            if (normalized.includes(".")) {
+                const [sRaw, fRaw] = normalized.split(".", 2);
+                const second = Number(sRaw);
+                if (!Number.isFinite(second)) return null;
+                const fracStr = (fRaw || "0").replace(/[^d]/g, "");
+                const fraction = fracStr ? Number(fracStr) / Math.pow(10, fracStr.length) : 0;
+                return second + fraction;
+            }
+
+            return null;
+        };
+
+        const parseLRC = (input) => {
+            if (!input) return [];
+            const output = [];
+            const lines = input.split(/\r?\n/);
+            for (const line of lines) {
+                const timestampMatches = [...line.matchAll(/\[([^\]]+)\]/g)];
+                const text = stripTimestampPrefix(line.replace(/\[([^\]]+)\]/g, "").trim());
+                if (timestampMatches.length === 0) continue;
+                for (const match of timestampMatches) {
+                    const time = parseTimestamp(match[1]);
+                    if (time === null || Number.isNaN(time)) continue;
+                    output.push({ time, text: text || "..." });
+                }
+            }
+            return output.sort((a, b) => a.time - b.time);
+        };
+
+        // Helper: Render Lyric
+        // Restored animation logic from commit 2c0378c963bcf6a51c3a404a8c7275e41185e246
+        function renderLyric(index) {
+            if (!currentLyricEl) return;
+            
+            if (lyrics.length === 0) {
+                 // If no lyrics, maybe show title/artist or just "..."
+                 return;
+            }
+            
+            const current = (index >= 0 && index < lyrics.length) ? lyrics[index] : lyrics[0];
+            const nextText = current ? (current.text || "...") : "...";
+            
+            if (currentLyricEl.innerText !== nextText) {
+                const prevText = currentLyricEl.innerText || "";
+                
+                if (prevText && typeof exitLyricEl.animate === "function") {
+                    exitLyricEl.innerText = prevText;
+                    
+                    exitLyricEl.getAnimations().forEach(a => a.cancel());
+                    exitLyricEl.animate([
+                        { opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0px)" },
+                        { opacity: 0, transform: "translateY(-12px) scale(0.992)", filter: "blur(2px)" },
+                    ], {
+                        duration: 460,
+                        easing: "cubic-bezier(0.22,1,0.36,1)",
+                        fill: "both",
+                    });
+                } else if (prevText) {
+                    // Fallback if animate not supported
+                    exitLyricEl.innerText = prevText;
+                    exitLyricEl.style.opacity = 0;
+                }
+                
+                currentLyricEl.innerText = nextText;
+                
+                if (typeof currentLyricEl.animate === "function") {
+                    currentLyricEl.getAnimations().forEach(a => a.cancel());
+                    currentLyricEl.animate([
+                        { opacity: 0, transform: "translateY(12px) scale(0.992)", filter: "blur(2px)" },
+                        { opacity: 0.92, transform: "translateY(-1px) scale(1.001)", filter: "blur(0.35px)" },
+                        { opacity: 1, transform: "translateY(0) scale(1)", filter: "blur(0px)" },
+                    ], {
+                        duration: 460,
+                        easing: "cubic-bezier(0.64,0,0.78,0)",
+                        fill: "both",
+                    });
+                }
+            }
+        }
+
+        async function loadLyrics() {
+            let lrcText = inlineLyrics;
+            if ((!lrcText || lrcText.trim() === "") && lrcSrc) {
+                if (lrcSrc.startsWith('http') || lrcSrc.startsWith('/')) {
+                    try {
+                        const res = await fetch(lrcSrc);
+                        if (res.ok) lrcText = await res.text();
+                    } catch (e) { console.error('Failed to load lyrics', e); }
+                } else {
+                    // Treat lrcSrc as the lyric content itself (Meting sometimes returns this)
+                    lrcText = lrcSrc;
+                }
+            }
+            
+            if (lrcText) {
+                lyrics = parseLRC(lrcText);
+                renderLyric(0);
+            } else {
+                currentLyricEl.innerText = "深海之息 - Youzee Music";
+            }
+        }
+
+        const init = async () => {
+            // Meting Logic
+            if (metingUrl) {
+                try {
+                    const res = await fetch(metingUrl);
+                    const data = await res.json();
+                    const music = Array.isArray(data) ? data[0] : data;
+                    
+                    if (music) {
+                        const titleEl = cardEl.querySelector('.music-title');
+                        const artistEl = cardEl.querySelector('.music-artist');
+                        const coverEl = cardEl.querySelector('.music-cover');
+                        
+                        if (titleEl) titleEl.innerText = music.title;
+                        if (artistEl) artistEl.innerText = music.author;
+                        if (coverEl) coverEl.style.backgroundImage = 'url("' + music.pic + '")';
+                        
+                        audio.src = music.url;
+                        
+                        if (music.lrc) {
+                            lrcSrc = music.lrc;
+                            inlineLyrics = ""; // Clear inline lyrics to force load from new src
+                            await loadLyrics(); // Reload lyrics
+                        }
+                    }
+                } catch (e) {
+                    console.error('Meting fetch error:', e);
+                    currentLyricEl.innerText = "Error loading music data";
+                }
+            } else {
+                // Load initial lyrics if not using Meting (or Meting url empty)
+                await loadLyrics();
+            }
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    init();
+                    observer.disconnect();
+                }
+            });
+        }, { rootMargin: '100px' });
+
+        observer.observe(cardEl);
+
+        function updatePlayState() {
+            if (isPlaying) {
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+                audio.play().catch(e => {
+                    console.error("Play error", e);
+                    isPlaying = false;
+                    updatePlayState();
+                });
+            } else {
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+                audio.pause();
+            }
+        }
+
+        playBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isPlaying = !isPlaying;
+            updatePlayState();
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            const current = audio.currentTime;
+            const duration = audio.duration || 0;
+            const percent = duration > 0 ? (current / duration) * 100 : 0;
+            progressBar.style.width = percent + '%';
+            timeDisplay.innerText = formatTime(current) + ' / ' + formatTime(duration);
+
+            if (lyrics.length > 0) {
+                // Find current lyric line
+                let idx = -1;
+                for (let i = 0; i < lyrics.length; i++) {
+                    if (current >= lyrics[i].time) {
+                        idx = i;
+                    } else {
+                        break;
+                    }
+                }
+                renderLyric(idx);
+            }
+        });
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            updatePlayState();
+            progressBar.style.width = '0%';
+            timeDisplay.innerText = "0:00 / " + formatTime(audio.duration);
+            if (lyrics.length > 0) renderLyric(0);
+        });
+        
+        audio.addEventListener('loadedmetadata', () => {
+             timeDisplay.innerText = "0:00 / " + formatTime(audio.duration);
+        });
+
+        progressContainer.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const rect = progressContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const width = rect.width;
+            const percent = x / width;
+            const duration = audio.duration || 0;
+            audio.currentTime = percent * duration;
+        });
+    })();
+    </script></div><div class="expressive-code"><figure class="frame collapsible expanded" data-language="markdown"><figcaption class="header"></figcaption><pre data-language="markdown" class="wrap" style="--ecMaxLine:182ch"><code><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">1</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">::music{title="深海之息" artist="Youzee Music" cover="https://p1.music.126.net/PhKOqFtljgHDDpKYM2ADUA==/109951169858309716.jpg" audio="assets/music/深海之息.m4a" lrc="assets/music/深海之息.lrc"}</span></div></div></code></pre><button class="collapse-btn" aria-label="Collapse code"><div class="collapse-btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="collapse-btn-icon collapse-icon"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></div></button><button class="copy-btn" aria-label="Copy code"><div class="copy-btn-icon"><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon copy-icon"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"></path></svg><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon success-icon"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"></path></svg></div></button></figure></div></section><section><h3 id="admonitions">Admonitions</h3><p>Following types of admonitions are supported: <code>note</code> <code>tip</code> <code>important</code> <code>warning</code> <code>caution</code></p><blockquote class="admonition bdm-note" data-callout="note"><div class="bdm-title">Note</div><p>Highlights information that users should take into account, even when skimming.</p></blockquote><blockquote class="admonition bdm-tip" data-callout="tip"><div class="bdm-title">Tip</div><p>Optional information to help a user be more successful.</p></blockquote><blockquote class="admonition bdm-important" data-callout="important"><div class="bdm-title">Important</div><p>Crucial information necessary for users to succeed.</p></blockquote><blockquote class="admonition bdm-warning" data-callout="warning"><div class="bdm-title">Warning</div><p>Critical content demanding immediate user attention due to potential risks.</p></blockquote><blockquote class="admonition bdm-caution" data-callout="caution"><div class="bdm-title">Caution</div><p>Negative potential consequences of an action.</p></blockquote><ul>
+<li>
+<p><strong>Basic Syntax</strong></p>
+<div class="expressive-code"><figure class="frame collapsible expanded" data-language="markdown"><figcaption class="header"></figcaption><pre data-language="markdown" class="wrap" style="--ecMaxLine:79ch"><code><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">1</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">:::note</span></div></div><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">2</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">Highlights information that users should take into account, even when skimming.</span></div></div><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">3</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">:::</span></div></div><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">4</div></div><div class="code">
+</div></div><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">5</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">:::tip</span></div></div><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">6</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">Optional information to help a user be more successful.</span></div></div><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">7</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">:::</span></div></div></code></pre><button class="collapse-btn" aria-label="Collapse code"><div class="collapse-btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="collapse-btn-icon collapse-icon"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></div></button><button class="copy-btn" aria-label="Copy code"><div class="copy-btn-icon"><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon copy-icon"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"></path></svg><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon success-icon"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"></path></svg></div></button></figure></div>
+</li>
+<li>
+<p><strong>Custom Titles</strong></p>
+<p>The title of the admonition can be customized.</p>
+<blockquote class="admonition bdm-note" data-callout="note"><div class="bdm-title">MY CUSTOM TITLE</div><p>This is a note with a custom title.</p></blockquote>
+<div class="expressive-code"><figure class="frame collapsible expanded" data-language="markdown"><figcaption class="header"></figcaption><pre data-language="markdown" class="wrap" style="--ecMaxLine:35ch"><code><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">1</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">:::note[MY CUSTOM TITLE]</span></div></div><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">2</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">This is a note with a custom title.</span></div></div><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">3</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">:::</span></div></div></code></pre><button class="collapse-btn" aria-label="Collapse code"><div class="collapse-btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="collapse-btn-icon collapse-icon"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></div></button><button class="copy-btn" aria-label="Copy code"><div class="copy-btn-icon"><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon copy-icon"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"></path></svg><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon success-icon"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"></path></svg></div></button></figure></div>
+</li>
+<li>
+<p><strong>GitHub Syntax</strong></p>
+<blockquote class="admonition bdm-tip" data-callout="tip" data-collapsible="false"><div class="bdm-title"><div class="callout-title-text">Tip</div></div><div class="bdm-content"><p><a href="https://github.com/orgs/community/discussions/16925">The GitHub syntax</a> is also supported.</p></div></blockquote>
+<div class="expressive-code"><figure class="frame collapsible expanded" data-language="markdown"><figcaption class="header"></figcaption><pre data-language="markdown" class="wrap" style="--ecMaxLine:38ch"><code><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">1</div></div><div class="code"><span style="--0:#1E7734;--1:#85E89D">> [</span><span style="--0:#032F62;--0td:underline;--1:#DBEDFF;--1td:underline">!TIP</span><span style="--0:#1E7734;--1:#85E89D">]</span></div></div><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">2</div></div><div class="code"><span style="--0:#1E7734;--1:#85E89D">> The GitHub syntax is also supported.</span></div></div></code></pre><button class="collapse-btn" aria-label="Collapse code"><div class="collapse-btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="collapse-btn-icon collapse-icon"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></div></button><button class="copy-btn" aria-label="Copy code"><div class="copy-btn-icon"><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon copy-icon"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"></path></svg><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon success-icon"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"></path></svg></div></button></figure></div>
+</li>
+<li>
+<p><strong>Spoiler</strong></p>
+<p>You can add spoilers to your text. The text also supports <strong>Markdown</strong> syntax.</p>
+<p>The content <spoiler>is hidden <strong>ayyy</strong></spoiler>!</p>
+<div class="expressive-code"><figure class="frame collapsible expanded" data-language="markdown"><figcaption class="header"></figcaption><pre data-language="markdown" class="wrap" style="--ecMaxLine:41ch"><code><div class="ec-line"><div class="gutter"><div class="ln" aria-hidden="true">1</div></div><div class="code"><span style="--0:#24292E;--1:#E1E4E8">The content :spoiler[is hidden </span><span style="--0:#24292E;--0fw:bold;--1:#E1E4E8;--1fw:bold">**ayyy**</span><span style="--0:#24292E;--1:#E1E4E8">]!</span></div></div></code></pre><button class="collapse-btn" aria-label="Collapse code"><div class="collapse-btn-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="collapse-btn-icon collapse-icon"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg></div></button><button class="copy-btn" aria-label="Copy code"><div class="copy-btn-icon"><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon copy-icon"><path d="M368.37-237.37q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-474.26q0-34.48 24.26-58.74 24.26-24.26 58.74-24.26h378.26q34.48 0 58.74 24.26 24.26 24.26 24.26 58.74v474.26q0 34.48-24.26 58.74-24.26 24.26-58.74 24.26H368.37Zm0-83h378.26v-474.26H368.37v474.26Zm-155 238q-34.48 0-58.74-24.26-24.26-24.26-24.26-58.74v-515.76q0-17.45 11.96-29.48 11.97-12.02 29.33-12.02t29.54 12.02q12.17 12.03 12.17 29.48v515.76h419.76q17.45 0 29.48 11.96 12.02 11.97 12.02 29.33t-12.02 29.54q-12.03 12.17-29.48 12.17H213.37Zm155-238v-474.26 474.26Z"></path></svg><svg viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg" class="copy-btn-icon success-icon"><path d="m389-377.13 294.7-294.7q12.58-12.67 29.52-12.67 16.93 0 29.61 12.67 12.67 12.68 12.67 29.53 0 16.86-12.28 29.14L419.07-288.41q-12.59 12.67-29.52 12.67-16.94 0-29.62-12.67L217.41-430.93q-12.67-12.68-12.79-29.45-.12-16.77 12.55-29.45 12.68-12.67 29.62-12.67 16.93 0 29.28 12.67L389-377.13Z"></path></svg></div></button></figure></div>
+</li>
+</ul><hr><p>For more details, check the <a href="https://docs.twilight.spr-aachen.com">Documentation</a>.</p></section></section><script type="module" data-lazy-media-init="">
+                    (() => {
+                        const mediaElements = document.querySelectorAll('video[data-lazy-media], audio[data-lazy-media]');
+                        if (mediaElements.length === 0) return;
+
+                        const lazyLoadMedia = () => {
+                            mediaElements.forEach(media => {
+                                if (media.dataset.lazyLoaded) return;
+                                
+                                const observer = new IntersectionObserver((entries) => {
+                                    entries.forEach(entry => {
+                                        if (entry.isIntersecting) {
+                                            media.preload = "metadata";
+                                            if (media.tagName === "VIDEO" && media.hasAttribute("poster")) {
+                                                media.load();
+                                            }
+                                            media.dataset.lazyLoaded = "true";
+                                            observer.disconnect();
+                                        }
+                                    });
+                                }, { rootMargin: "200px" });
+
+                                observer.observe(media);
+                            });
+                        };
+
+                        if (document.readyState === "loading") {
+                            document.addEventListener("DOMContentLoaded", lazyLoadMedia);
+                        } else {
+                            lazyLoadMedia();
+                        }
+                    })();
+                    </script>  </div> <div class="relative transition overflow-hidden bg-(--license-block-bg) py-5 px-6 mb-6 rounded-xl license-container onload-animation-up"> <div class="transition font-bold text-black/75 dark:text-white/75"> Guide for Template - Advanced Customization </div> <a href="/posts/guide/advanced-customization/" class="link text-(--primary)"> /posts/guide/advanced-customization/ </a> <div class="flex gap-6 mt-2"> <div> <div class="transition text-black/30 dark:text-white/30 text-sm">Author</div> <div class="transition text-black/75 dark:text-white/75 line-clamp-2">Twilight</div> </div> <div> <div class="transition text-black/30 dark:text-white/30 text-sm">Published at</div> <div class="transition text-black/75 dark:text-white/75 line-clamp-2">2024-02-10</div> </div> <div> <div class="transition text-black/30 dark:text-white/30 text-sm">License</div> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" class="link text-(--primary) line-clamp-2">CC BY-NC-SA 4.0</a> </div> </div> <svg width="0.97em" height="1em" class="transition text-[15rem] absolute pointer-events-none right-6 top-1/2 -translate-y-1/2 text-black/5 dark:text-white/5" data-icon="fa6-brands:creative-commons">   <symbol id="ai:fa6-brands:creative-commons" viewBox="0 0 496 512"><path fill="currentColor" d="m245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93c-22.13 0-33.22 14.61-33.22 43.84c0 23.57 9.21 43.84 33.22 43.84c14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98c-22.6 0-73.96-10.32-73.96-77.05c0-58.69 43-77.06 72.63-77.06c30.72-.01 52.7 11.95 65.99 35.86m143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93c-22.14 0-33.22 14.61-33.22 43.84c0 23.55 9.23 43.84 33.22 43.84c14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98c-22.69 0-73.96-9.87-73.96-77.05c0-58.67 42.97-77.06 72.63-77.06c30.71-.01 52.58 11.95 65.56 35.86M247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248c129.93 0 248.44-100.87 248.44-248c0-137.87-106.62-248-248.44-248m.87 450.81c-112.54 0-203.7-93.04-203.7-202.81c0-105.42 85.43-203.27 203.72-203.27c112.53 0 202.82 89.46 202.82 203.26c-.01 121.69-99.68 202.82-202.84 202.82"/></symbol><use href="#ai:fa6-brands:creative-commons"></use>  </svg> </div> </div> </div>    <div id="last-modified" class="ignore" data-last-modified="2024-02-10T00:00:00" data-translations="{&#34;english&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;chinese_traditional&#34;:{&#34;lastModifiedPrefix&#34;:&#34;距離上次編輯: &#34;,&#34;year&#34;:&#34;年&#34;,&#34;month&#34;:&#34;月&#34;,&#34;day&#34;:&#34;天&#34;,&#34;hour&#34;:&#34;小時&#34;,&#34;minute&#34;:&#34;分&#34;,&#34;second&#34;:&#34;秒&#34;},&#34;chinese_simplified&#34;:{&#34;lastModifiedPrefix&#34;:&#34;距离上次编辑: &#34;,&#34;year&#34;:&#34;年&#34;,&#34;month&#34;:&#34;月&#34;,&#34;day&#34;:&#34;天&#34;,&#34;hour&#34;:&#34;小时&#34;,&#34;minute&#34;:&#34;分&#34;,&#34;second&#34;:&#34;秒&#34;},&#34;russian&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;deutsch&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;french&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;spanish&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;turkish&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;arabic&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;korean&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;japanese&#34;:{&#34;lastModifiedPrefix&#34;:&#34;最終編集からの時間：&#34;,&#34;year&#34;:&#34;年&#34;,&#34;month&#34;:&#34;月&#34;,&#34;day&#34;:&#34;日&#34;,&#34;hour&#34;:&#34;時間&#34;,&#34;minute&#34;:&#34;分&#34;,&#34;second&#34;:&#34;秒&#34;},&#34;thai&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;vietnamese&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;},&#34;indonesian&#34;:{&#34;lastModifiedPrefix&#34;:&#34;Time since last edit: &#34;,&#34;year&#34;:&#34;year&#34;,&#34;month&#34;:&#34;month&#34;,&#34;day&#34;:&#34;day&#34;,&#34;hour&#34;:&#34;hour&#34;,&#34;minute&#34;:&#34;minute&#34;,&#34;second&#34;:&#34;second&#34;}}" data-default-lang="english" style="display: none;"></div> <div class="card-base p-6 mb-4"> <script>
+                    function runtime() {
+                        const lastModifiedElement = document.getElementById('last-modified');
+                        if (!lastModifiedElement) return;
+                        const startDate = new Date(lastModifiedElement.dataset.lastModified);
+                        const currentDate = new Date();
+                        const diff = currentDate - startDate;
+                        const seconds = Math.floor(diff / 1000);
+                        const days = Math.floor(seconds / 86400);
+                        const hours = Math.floor((seconds % 86400) / 3600);
+                        const minutes = Math.floor((seconds % 3600) / 60);
+                        const secs = seconds % 60;
+                        const years = Math.floor(days / 365);
+                        const months = Math.floor((days % 365) / 30);
+                        const remainingDays = days % 30;
+
+                        // 获取当前语言翻译数据
+                        const translations = JSON.parse(lastModifiedElement.dataset.translations);
+                        const defaultLang = lastModifiedElement.dataset.defaultLang;
+                        // translate.js 在 localStorage 中使用 'selected-language' 存储目标语言
+                        const currentLang = localStorage.getItem('selected-language') || defaultLang;
+                        
+                        // 获取对应的翻译文本
+                        const langTranslations = translations[currentLang] || translations[defaultLang] || Object.values(translations)[0];
+
+                        const prefix = langTranslations.lastModifiedPrefix;
+                        const yearKey = langTranslations.year;
+                        const monthKey = langTranslations.month;
+                        const dayKey = langTranslations.day;
+                        const hourKey = langTranslations.hour;
+                        const minuteKey = langTranslations.minute;
+                        const secondKey = langTranslations.second;
+
+                        let runtimeString = prefix + ' ';
+                        if (years > 0) {
+                            runtimeString += `${years} ${yearKey} `;
+                        }
+                        if (months > 0) {
+                            runtimeString += `${months} ${monthKey} `;
+                        }
+                        if (remainingDays > 0) {
+                            runtimeString += `${remainingDays} ${dayKey} `;
+                        }
+                        runtimeString += `${hours} ${hourKey} `;
+                        if (minutes < 10) {
+                            runtimeString += `0${minutes} ${minuteKey} `;
+                        } else {
+                            runtimeString += `${minutes} ${minuteKey} `;
+                        }
+                        if (secs < 10) {
+                            runtimeString += `0${secs} ${secondKey}`;
+                        } else {
+                            runtimeString += `${secs} ${secondKey}`;
+                        }
+                        document.getElementById("modifiedtime").innerHTML = runtimeString;
+                    }
+                    setInterval(runtime, 1000);
+                </script> <div class="card-base p-1 mb-0.1"> <div class="flex items-center gap-2"> <div class="transition h-9 w-9 rounded-lg overflow-hidden relative flex items-center justify-center mr-0"> <svg width="1em" height="1em" class="text-4xl text-(--primary) transition-transform group-hover:translate-x-0.5 bg-(--enter-btn-bg) p-2 rounded-md" data-icon="material-symbols:history-rounded">   <symbol id="ai:material-symbols:history-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21q-3.15 0-5.575-1.912T3.275 14.2q-.1-.375.15-.687t.675-.363q.4-.05.725.15t.45.6q.6 2.25 2.475 3.675T12 19q2.925 0 4.963-2.037T19 12t-2.037-4.962T12 5q-1.725 0-3.225.8T6.25 8H8q.425 0 .713.288T9 9t-.288.713T8 10H4q-.425 0-.712-.288T3 9V5q0-.425.288-.712T4 4t.713.288T5 5v1.35q1.275-1.6 3.113-2.475T12 3q1.875 0 3.513.713t2.85 1.924t1.925 2.85T21 12t-.712 3.513t-1.925 2.85t-2.85 1.925T12 21m1-9.4l2.5 2.5q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-2.8-2.8q-.15-.15-.225-.337T11 11.975V8q0-.425.288-.712T12 7t.713.288T13 8z"/></symbol><use href="#ai:material-symbols:history-rounded"></use>  </svg> </div> <div class="flex flex-col gap-0.1"> <div id="modifiedtime" class="text-[1.0rem] leading-tight text-black/75 dark:text-white/75 ignore"></div> <p class="text-[0.8rem] leading-tight text-black/75 dark:text-white/75"> Some information may be outdated </p> </div> </div> </div> </div> <div class="flex flex-col md:flex-row justify-between mb-4 gap-4 overflow-hidden w-full"> <a href="/posts/guide/getting-started/" class="w-full font-bold overflow-hidden active:scale-95"> <div class="btn-card rounded-2xl w-full h-15 max-w-full px-4 flex items-center justify-start! gap-4"> <svg width="1em" height="1em" class="text-[2rem] text-(--primary)" data-icon="material-symbols:chevron-left-rounded">   <symbol id="ai:material-symbols:chevron-left-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="m10.8 12l3.9 3.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-4.6-4.6q-.15-.15-.212-.325T8.425 12t.063-.375t.212-.325l4.6-4.6q.275-.275.7-.275t.7.275t.275.7t-.275.7z"/></symbol><use href="#ai:material-symbols:chevron-left-rounded"></use>  </svg> <div class="overflow-hidden transition text-ellipsis whitespace-nowrap max-w-[calc(100%-3rem)] text-black/75 dark:text-white/75"> Guide for Template - Getting Started </div> </div> </a> <a href="/posts/copy-protection/" class="w-full font-bold overflow-hidden active:scale-95"> <div class="btn-card rounded-2xl w-full h-15 max-w-full px-4 flex items-center justify-end! gap-4"> <div class="overflow-hidden transition text-ellipsis whitespace-nowrap max-w-[calc(100%-3rem)] text-black/75 dark:text-white/75"> Copy Protection Example </div> <svg width="1em" height="1em" class="text-[2rem] text-(--primary)" data-icon="material-symbols:chevron-right-rounded">   <symbol id="ai:material-symbols:chevron-right-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"/></symbol><use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </div> </a> </div>   <div class="footer col-span-2 onload-animation-up hidden lg:block transition-swup-fade"> <div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div> <div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6"> <div class="transition text-50 text-sm text-center leading-6"> 
+&copy; <span id="copyright-year">2026</span> Twilight. All Rights Reserved. /
+<a class="transition link text-(--primary) font-medium" href="/rss/" onclick="event.preventDefault(); navigateToPage('/rss/')">RSS</a> /
+<a class="transition link text-(--primary) font-medium" href="/atom/" onclick="event.preventDefault(); navigateToPage('/atom/')">Atom</a> /
+<a class="transition link text-(--primary) font-medium" target="_blank" href="/sitemap-index.xml">Sitemap</a><br>
+Powered by
+<a class="transition link text-(--primary) font-medium" target="_blank" href="https://astro.build">Astro</a> &
+<a class="transition link text-(--primary) font-medium" target="_blank" href="https://github.com/Spr-Aachen/Twilight">Twilight</a>&nbsp; Version <a class="transition link text-(--primary) font-medium" target="_blank" href="https://github.com/Spr-Aachen/Twilight/releases">1.0</a><br> </div> </div> </div> </div> </main> <div class="min-w-0 col-span-1 flex flex-col md:hidden"> <div id="middle-sidebar" data-side="middle" class="wallpaper-transparent onload-animation-up flex flex-col w-full h-full gap-(--sidebar-spacing)"> <!-- 顶部固定组件区域 -->  <!-- 粘性组件区域 --> <div id="sidebar-sticky" class="flex flex-col w-full gap-(--sidebar-spacing) sticky top-[calc(var(--sidebar-top)-var(--main-content-top))]"> <widget-layout id="directory-middle" data-id="directory-middle" data-swup-persist="directory-middle" data-is-collapsed="false" style="; --collapsedHeight: 12rem;" data-astro-cid-n4f5b7cl="true" class="pb-4 card-base  transition-swup-fade"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-n4f5b7cl style="--collapsedHeight: 12rem;">Directory</div> <div id="directory-middle-wrapper" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-n4f5b7cl style="--collapsedHeight: 12rem;">  <div class="directory-container"> <astro-island uid="Zr0DO7" component-url="/_astro/directoryTree.DI-LW0ch.js" component-export="default" renderer-url="/_astro/client.svelte.Cmf8TTJm.js" props="{&quot;tree&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Albums&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;example&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Album Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/albums/jsonExample/&quot;]}]]]}]]]}],[0,{&quot;name&quot;:[0,&quot;Diary&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;example&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Apothegm&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/diary/&quot;]}]]]}]]]}],[0,{&quot;name&quot;:[0,&quot;Posts&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;guide&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Guide for Template - Advanced Customization&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/guide/advanced-customization/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Guide for Template - Getting Started&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/guide/getting-started/&quot;]}]]]}],[0,{&quot;name&quot;:[0,&quot;Copy Protection Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/copy-protection/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Encryption Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/encryption/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Mermaid Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/mermaids/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Video Example&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/posts/videos/&quot;]}]]]}],[0,{&quot;name&quot;:[0,&quot;Projects&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Twilight&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Twilight Blog Template&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/projects/&quot;]}]]]}]]]}],[0,{&quot;name&quot;:[0,&quot;Skills&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Astro&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/skills/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Git&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/skills/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Svelte&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/skills/&quot;]}],[0,{&quot;name&quot;:[0,&quot;Tailwind CSS&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/skills/&quot;]}]]]}],[0,{&quot;name&quot;:[0,&quot;Timeline&quot;],&quot;type&quot;:[0,&quot;folder&quot;],&quot;children&quot;:[1,[[0,{&quot;name&quot;:[0,&quot;Twilight&quot;],&quot;type&quot;:[0,&quot;file&quot;],&quot;url&quot;:[0,&quot;/timeline/&quot;]}]]]}]]]}" ssr client="idle" opts="{&quot;name&quot;:&quot;DirectoryTree&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="select-none pb-2"><!--[--><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Albums</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Diary</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Posts</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Projects</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Skills</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><div class="flex flex-col"><!--[0--><div class="min-w-0 flex items-center px-2 py-1.5 my-0.5 rounded-md cursor-pointer transition-colors duration-300 hover:text-(--primary) hover:bg-(--btn-plain-bg-hover) font-medium text-75"><svg class="w-4 h-4 mr-1.5 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"></path></svg> <span class="overflow-hidden text-ellipsis whitespace-nowrap flex-1">Timeline</span> <div class="flex items-center justify-center ml-1.5 w-4 h-4 transition-transform duration-300 "><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div></div> <!--[-1--><!--]--><!--]--></div><!--]--></div><!--]--><!--astro:end--></astro-island> </div>  </div>  </widget-layout>  <widget-layout id="categories-middle" data-id="categories-middle" data-swup-persist="categories-middle" data-is-collapsed="false" style="; --collapsedHeight: 7.5rem;" data-astro-cid-n4f5b7cl="true" class="pb-4 card-base  transition-swup-fade"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-n4f5b7cl style="--collapsedHeight: 7.5rem;">Categories</div> <div id="categories-middle-wrapper" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-n4f5b7cl style="--collapsedHeight: 7.5rem;">  <div><div style="padding-left: 0rem;"><a href="/archive/?category=Examples" aria-label="View all posts in the Examples category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-(--btn-plain-bg-hover)
+            active:bg-(--btn-plain-bg-active)
+            transition-all
+            pl-2
+            hover:pl-3
+            text-neutral-700
+            hover:text-(--primary)
+            dark:text-neutral-300
+            dark:hover:text-(--primary)
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap text-ellipsis"> Examples </div> <div class="transition px-2 h-7 ml-4 min-w-8 rounded-lg text-sm font-bold
+                    text-(--btn-content) dark:text-(--deep-text)
+                    bg-[oklch(0.95_0.025_var(--hue))] dark:bg-(--primary)
+                    flex items-center justify-center"> 4 </div> </div> </button> </a></div></div><div><div style="padding-left: 0rem;"><a href="/archive/?category=Guides" aria-label="View all posts in the Guides category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-(--btn-plain-bg-hover)
+            active:bg-(--btn-plain-bg-active)
+            transition-all
+            pl-2
+            hover:pl-3
+            text-neutral-700
+            hover:text-(--primary)
+            dark:text-neutral-300
+            dark:hover:text-(--primary)
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap text-ellipsis"> Guides </div> <div class="transition px-2 h-7 ml-4 min-w-8 rounded-lg text-sm font-bold
+                    text-(--btn-content) dark:text-(--deep-text)
+                    bg-[oklch(0.95_0.025_var(--hue))] dark:bg-(--primary)
+                    flex items-center justify-center"> 2 </div> </div> </button> </a></div><div><div style="padding-left: 0.75rem;"><a href="/archive/?category=Guides%20%2F%20Advanced%20Customization" aria-label="View all posts in the Advanced Customization category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-(--btn-plain-bg-hover)
+            active:bg-(--btn-plain-bg-active)
+            transition-all
+            pl-2
+            hover:pl-3
+            text-neutral-700
+            hover:text-(--primary)
+            dark:text-neutral-300
+            dark:hover:text-(--primary)
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap text-ellipsis"> Advanced Customization </div> <div class="transition px-2 h-7 ml-4 min-w-8 rounded-lg text-sm font-bold
+                    text-(--btn-content) dark:text-(--deep-text)
+                    bg-[oklch(0.95_0.025_var(--hue))] dark:bg-(--primary)
+                    flex items-center justify-center"> 1 </div> </div> </button> </a></div></div><div><div style="padding-left: 0.75rem;"><a href="/archive/?category=Guides%20%2F%20Getting%20Started" aria-label="View all posts in the Getting Started category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-(--btn-plain-bg-hover)
+            active:bg-(--btn-plain-bg-active)
+            transition-all
+            pl-2
+            hover:pl-3
+            text-neutral-700
+            hover:text-(--primary)
+            dark:text-neutral-300
+            dark:hover:text-(--primary)
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap text-ellipsis"> Getting Started </div> <div class="transition px-2 h-7 ml-4 min-w-8 rounded-lg text-sm font-bold
+                    text-(--btn-content) dark:text-(--deep-text)
+                    bg-[oklch(0.95_0.025_var(--hue))] dark:bg-(--primary)
+                    flex items-center justify-center"> 1 </div> </div> </button> </a></div></div></div>  </div>  </widget-layout>  <widget-layout id="tags-middle" data-id="tags-middle" data-swup-persist="tags-middle" data-is-collapsed="false" style="; --collapsedHeight: 7.5rem;" data-astro-cid-n4f5b7cl="true" class="pb-4 card-base  transition-swup-fade"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-n4f5b7cl style="--collapsedHeight: 7.5rem;">Tags</div> <div id="tags-middle-wrapper" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-n4f5b7cl style="--collapsedHeight: 7.5rem;">  <div class="flex gap-2 flex-wrap"> <a href="/archive/?tag=Copy%20Protection" aria-label="View all posts with the Copy Protection tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Copy Protection </a><a href="/archive/?tag=Encryption" aria-label="View all posts with the Encryption tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Encryption </a><a href="/archive/?tag=Markdown" aria-label="View all posts with the Markdown tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Markdown </a><a href="/archive/?tag=Mermaid" aria-label="View all posts with the Mermaid tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Mermaid </a><a href="/archive/?tag=Video" aria-label="View all posts with the Video tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Video </a> </div>  </div>  </widget-layout>  <widget-layout id="toc-wrapper-middle" data-id="toc-wrapper-middle" data-swup-persist="toc-wrapper-middle" data-is-collapsed="undefined" style="; " data-astro-cid-n4f5b7cl="true" class="pb-4 card-base  transition-swup-fade toc-wrapper toc-hide"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-(--primary)
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-n4f5b7cl style="">Table of Contents</div> <div id="toc-wrapper-middle-wrapper" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-n4f5b7cl style="">  <div class="toc-scroll-container" data-astro-cid-2xvgks5n> <table-of-contents class="group" data-depth="3" data-navbar-height="72" data-astro-cid-2xvgks5n="true"> <div class="toc-inner-content relative" data-astro-cid-2xvgks5n></div> </table-of-contents> </div>  </div>  </widget-layout>     </div> </div> </div> <div class="footer col-span-1 onload-animation-up block lg:hidden transition-swup-fade md:col-span-2"> <div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div> <div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6"> <div class="transition text-50 text-sm text-center leading-6"> 
+&copy; <span id="copyright-year">2026</span> Twilight. All Rights Reserved. /
+<a class="transition link text-(--primary) font-medium" href="/rss/" onclick="event.preventDefault(); navigateToPage('/rss/')">RSS</a> /
+<a class="transition link text-(--primary) font-medium" href="/atom/" onclick="event.preventDefault(); navigateToPage('/atom/')">Atom</a> /
+<a class="transition link text-(--primary) font-medium" target="_blank" href="/sitemap-index.xml">Sitemap</a><br>
+Powered by
+<a class="transition link text-(--primary) font-medium" target="_blank" href="https://astro.build">Astro</a> &
+<a class="transition link text-(--primary) font-medium" target="_blank" href="https://github.com/Spr-Aachen/Twilight">Twilight</a>&nbsp; Version <a class="transition link text-(--primary) font-medium" target="_blank" href="https://github.com/Spr-Aachen/Twilight/releases">1.0</a><br> </div> </div> </div> </div> </div> </div> <table-of-contents data-is-floating="true" data-navbar-height="72" data-astro-cid-isfta2rr="true"> <div class="toc-floating-container" data-astro-cid-isfta2rr> <div class="toc-floating-btn-wrapper rounded-2xl overflow-hidden transition" data-astro-cid-isfta2rr> <button class="toc-floating-btn btn-card rounded-2xl p-0 flex items-center justify-center" aria-label="Table of Contents" data-astro-cid-isfta2rr> <svg width="24" height="24" data-astro-cid-isfta2rr="true" data-icon="material-symbols:format-list-bulleted-rounded">   <symbol id="ai:material-symbols:format-list-bulleted-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M10 19q-.425 0-.712-.288T9 18t.288-.712T10 17h10q.425 0 .713.288T21 18t-.288.713T20 19zm0-6q-.425 0-.712-.288T9 12t.288-.712T10 11h10q.425 0 .713.288T21 12t-.288.713T20 13zm0-6q-.425 0-.712-.288T9 6t.288-.712T10 5h10q.425 0 .713.288T21 6t-.288.713T20 7zM5 20q-.825 0-1.412-.587T3 18t.588-1.412T5 16t1.413.588T7 18t-.587 1.413T5 20m0-6q-.825 0-1.412-.587T3 12t.588-1.412T5 10t1.413.588T7 12t-.587 1.413T5 14M3.588 7.413Q3 6.825 3 6t.588-1.412T5 4t1.413.588T7 6t-.587 1.413T5 8t-1.412-.587"/></symbol><use href="#ai:material-symbols:format-list-bulleted-rounded"></use>  </svg> </button> </div> <div class="toc-floating-panel hidden opacity-0 translate-y-4 pointer-events-none" data-astro-cid-isfta2rr> <div class="toc-panel-header" data-astro-cid-isfta2rr> <svg width="20" height="20" viewBox="0 0 24 24" class="text-(--primary)" data-astro-cid-isfta2rr="true" data-icon="material-symbols:format-list-bulleted-rounded">   <use href="#ai:material-symbols:format-list-bulleted-rounded"></use>  </svg> <span class="text-sm font-bold text-75" data-astro-cid-isfta2rr>Table of Contents</span> </div> <div class="toc-inner-content relative" data-astro-cid-isfta2rr></div> </div> </div> </table-of-contents> <script type="module" src="/_astro/tocButton.astro_astro_type_script_index_0_lang.CUutSgaW.js"></script>  <!-- There can't be a filter on parent element, or it will break `fixed` --><div class="back-to-top-wrapper block" data-astro-cid-zdqm26mj> <div id="back-to-top-btn" class="back-to-top-btn z-100 hide flex items-center rounded-2xl overflow-hidden transition" onclick="backToTop()" data-astro-cid-zdqm26mj> <button aria-label="Back to Top" class="btn-card h-full w-full" data-astro-cid-zdqm26mj> <svg width="1em" height="1em" class="mx-auto" data-astro-cid-zdqm26mj="true" data-icon="material-symbols:keyboard-arrow-up-rounded">   <symbol id="ai:material-symbols:keyboard-arrow-up-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="m12 10.8l-3.9 3.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.6-4.6q.3-.3.7-.3t.7.3l4.6 4.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></symbol><use href="#ai:material-symbols:keyboard-arrow-up-rounded"></use>  </svg> </button> </div> </div>  <script>
+function backToTop() {
+    // 直接使用原生滚动，避免OverlayScrollbars冲突
+    window.scroll({ top: 0, behavior: 'smooth' });
+}
+</script>  <!-- Analytics -->  <!-- Music Player - 仅在启用时加载 --> <astro-island uid="ZuSrcO" component-url="/_astro/musicPlayer.C5l7y_pU.js" component-export="default" renderer-url="/_astro/client.svelte.Cmf8TTJm.js" props="{&quot;data-astro-cid-tnnyocjb&quot;:[0,true]}" ssr client="idle" opts="{&quot;name&quot;:&quot;MusicPlayer&quot;,&quot;value&quot;:true}" await-children><!--[--><!--[0--><!--[-1--><!--]--> <div class="music-player fixed bottom-4 right-4 z-101 transition-all duration-300 ease-in-out onload-animation-up flex flex-col items-end pointer-events-none collapsed"><!--[-1--><!--]--> <div class="orb-player w-12 h-12 bg-(--primary) rounded-full shadow-lg cursor-pointer transition-all duration-500 ease-in-out flex items-center justify-center hover:scale-110 active:scale-95 pointer-events-auto" role="button" tabindex="0" aria-label="Expand music player"><!--[-1--><!--[-1--><!--]--><!--]--></div> <div class="expanded-player card-base bg-(--float-panel-bg) shadow-xl rounded-2xl p-4 transition-all duration-500 ease-in-out opacity-0 scale-95 pointer-events-none"><div class="flex items-center gap-4 mb-4"><div class="cover-container relative w-16 h-16 rounded-full overflow-hidden shrink-0"><img src="/favicon/icon-light.ico" alt="封面" class="w-full h-full object-cover transition-transform duration-300"/></div> <div class="flex-1 min-w-0"><div class="song-title text-lg font-bold text-90 truncate mb-1">Music</div> <div class="song-artist text-sm text-50 truncate">Artist</div> <div class="text-xs text-30 mt-1">0:00 / 0:00</div></div> <div class="flex items-center gap-1"><button class="btn-plain w-8 h-8 rounded-lg flex items-center justify-center" title="Switch to Local mode"><!--[-1--><!--]--><!----></button> <button class="btn-plain w-8 h-8 rounded-lg flex items-center justify-center" title="Playlist"><!--[-1--><!--]--><!----></button></div></div> <!--[0--><div class="lyrics-section mb-2 px-1"><div class="lyrics-container h-[88px] overflow-y-auto overflow-x-hidden relative text-center scroll-smooth"><!--[1--><div class="h-full flex items-center justify-center text-sm text-30">加载歌词中...</div><!--]--></div></div><!--]--> <div class="progress-section mb-4"><div class="progress-bar flex-1 h-2 bg-(--btn-regular-bg) rounded-full cursor-pointer" role="slider" tabindex="0" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="h-full bg-(--primary) rounded-full transition-all duration-100" style="width: 0%"></div></div></div> <div class="controls flex items-center justify-center gap-2 mb-4"><button class="w-10 h-10 rounded-lg btn-plain"><!--[-1--><!--[-1--><!--]--><!--]--></button> <button class="btn-plain w-10 h-10 rounded-lg" disabled=""><!--[-1--><!--]--><!----></button> <button class="btn-regular w-12 h-12 rounded-full"><!--[-1--><!--[-1--><!--]--><!--]--></button> <button class="btn-plain w-10 h-10 rounded-lg" disabled=""><!--[-1--><!--]--><!----></button> <button class="w-10 h-10 rounded-lg btn-plain" title="切换歌词显示"><!--[-1--><!--]--><!----></button></div> <div class="bottom-controls flex items-center gap-2"><button class="btn-plain w-8 h-8 rounded-lg"><!--[-1--><!--[-1--><!--]--><!--]--></button> <div class="flex-1 h-2 bg-(--btn-regular-bg) rounded-full cursor-pointer" role="slider" tabindex="0" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75"><div class="h-full bg-(--primary) rounded-full transition-all duration-100" style="width: 75%"></div></div> <button class="btn-plain w-8 h-8 rounded-lg flex items-center justify-center" title="Collapse player"><!--[-1--><!--]--><!----></button></div></div></div><!--]--><!--]--><!--astro:end--></astro-island> <!-- Pio 看板娘组件 - 如果启用了侧边栏，可能需要调整 z-index -->  <!-- increase the page height during page transition to prevent the scrolling animation from jumping --> <div id="page-height-extend" class="hidden h-[300vh]" data-astro-cid-tnnyocjb style="--navbar-height: 4.5rem;--navbar-gap: 1.25rem;--navbar-follow-distance: 0rem;--main-panel-overlaps-banner-height: 0rem;--sidebar-top: 1rem;--sidebar-spacing: 1rem;--bannerOffset: 18vh;--banner-height-home: 66vh;--banner-height: 30vh;--configHue: 255;--page-width: 90rem;"></div>  <script type="module" src="/_astro/base.astro_astro_type_script_index_0_lang.Bh6l8XoF.js"></script></body></html>

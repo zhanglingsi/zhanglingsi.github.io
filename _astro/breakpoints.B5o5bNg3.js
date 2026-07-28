@@ -1,0 +1,1 @@
+const e=(o,t)=>{if(typeof window>"u")return t;const r=getComputedStyle(document.documentElement).getPropertyValue(`--breakpoint-${o}`).trim(),n=parseInt(r,10);return isNaN(n)?t:n};e("sm",512);const s=e("md",768),a=e("lg",1280);e("xl",1920);export{a as B,s as a};

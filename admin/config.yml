@@ -1,0 +1,424 @@
+backend:
+  name: github
+  repo: Spr-Aachen/Twilight
+  branch: main
+  site_domain: twilight.spr-aachen.com
+  base_url: https://twilight.spr-aachen.com
+  auth_endpoint: oauth
+media_folder: public/assets/images
+public_folder: /assets/images
+collections:
+  - name: posts
+    label: Posts
+    folder: src/content/posts
+    meta:
+      path:
+        label: Path
+        widget: hidden
+        index_file: _index
+    nested:
+      depth: 10
+      summary: '{{dirname}}'
+      subfolders: false
+    create: true
+    slug: '{{slug}}'
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: published
+        label: Published Date
+        widget: datetime
+        required: false
+      - name: updated
+        label: Updated Date
+        widget: datetime
+        required: false
+      - name: description
+        label: Description
+        widget: text
+        required: false
+      - name: cover
+        label: Cover
+        widget: image
+        required: false
+      - name: tags
+        label: Tags
+        widget: list
+        default: []
+        required: false
+      - name: category
+        label: Category
+        widget: string
+        required: false
+      - name: draft
+        label: Draft
+        widget: boolean
+        default: false
+      - name: body
+        label: Body
+        widget: markdown
+  - name: diary
+    label: Diary
+    folder: src/content/diary
+    path: '{{slug}}/{{slug}}'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}'
+    format: json
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: content
+        label: Content
+        widget: text
+      - name: date
+        label: Date
+        widget: datetime
+      - name: images
+        label: Images
+        widget: list
+        required: false
+        default: []
+        field:
+          name: image
+          label: Image
+          widget: image
+  - name: albums
+    label: Albums
+    folder: src/content/albums
+    path: '{{slug}}/{{slug}}'
+    create: true
+    slug: '{{slug}}'
+    format: json
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: description
+        label: Description
+        widget: text
+        required: false
+      - name: cover
+        label: Cover
+        widget: image
+      - name: date
+        label: Date
+        widget: datetime
+      - name: location
+        label: Location
+        widget: string
+        required: false
+      - name: tags
+        label: Tags
+        widget: list
+        required: false
+        default: []
+      - name: layout
+        label: Layout
+        widget: select
+        options:
+          - grid
+          - masonry
+          - list
+        default: grid
+      - name: columns
+        label: Columns
+        widget: number
+        default: 3
+        value_type: int
+        min: 1
+        max: 6
+      - name: photos
+        label: Photos
+        widget: list
+        required: false
+        fields:
+          - name: src
+            label: Image
+            widget: image
+          - name: alt
+            label: Caption
+            widget: string
+            required: false
+          - name: title
+            label: Title
+            widget: string
+            required: false
+          - name: description
+            label: Description
+            widget: text
+            required: false
+          - name: tags
+            label: Tags
+            widget: list
+            required: false
+            default: []
+          - name: date
+            label: Date
+            widget: datetime
+            required: false
+      - name: visible
+        label: Visible
+        widget: boolean
+        default: true
+        required: false
+  - name: projects
+    label: Projects
+    folder: src/content/projects
+    path: '{{slug}}/{{slug}}'
+    create: true
+    slug: '{{slug}}'
+    format: json
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: description
+        label: Description
+        widget: text
+      - name: image
+        label: Image
+        widget: image
+        required: false
+      - name: category
+        label: Category
+        widget: select
+        options:
+          - library
+          - ai
+          - software
+          - website
+          - game
+      - name: techStack
+        label: Tech Stack
+        widget: list
+        default: []
+      - name: status
+        label: Status
+        widget: select
+        options:
+          - completed
+          - in-progress
+          - planned
+      - name: liveDemo
+        label: Live Demo
+        widget: string
+        required: false
+      - name: sourceCode
+        label: Source Code
+        widget: string
+        required: false
+      - name: startDate
+        label: Start Date
+        widget: datetime
+      - name: endDate
+        label: End Date
+        widget: datetime
+        required: false
+      - name: featured
+        label: Featured
+        widget: boolean
+        required: false
+        default: false
+      - name: tags
+        label: Tags
+        widget: list
+        required: false
+        default: []
+  - name: skills
+    label: Skills
+    folder: src/content/skills
+    create: true
+    slug: '{{slug}}'
+    format: json
+    fields:
+      - name: name
+        label: Name
+        widget: string
+      - name: description
+        label: Description
+        widget: text
+      - name: icon
+        label: Icon
+        widget: string
+      - name: category
+        label: Category
+        widget: select
+        options:
+          - ai
+          - backend
+          - client
+          - frontend
+          - database
+          - engines
+          - tools
+          - others
+      - name: level
+        label: Level
+        widget: select
+        options:
+          - beginner
+          - intermediate
+          - advanced
+          - expert
+      - name: experience
+        label: Experience
+        widget: object
+        fields:
+          - name: years
+            label: Years
+            widget: number
+            value_type: int
+            min: 0
+          - name: months
+            label: Months
+            widget: number
+            value_type: int
+            min: 0
+            max: 11
+      - name: projects
+        label: Projects
+        widget: list
+        required: false
+        default: []
+      - name: certifications
+        label: Certifications
+        widget: list
+        required: false
+        default: []
+      - name: color
+        label: Color
+        widget: string
+        required: false
+  - name: timeline
+    label: Timeline
+    folder: src/content/timeline
+    create: true
+    slug: '{{slug}}'
+    format: json
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: description
+        label: Description
+        widget: text
+      - name: type
+        label: Type
+        widget: select
+        options:
+          - education
+          - work
+          - project
+          - achievement
+      - name: startDate
+        label: Start Date
+        widget: datetime
+      - name: endDate
+        label: End Date
+        widget: datetime
+        required: false
+      - name: location
+        label: Location
+        widget: string
+        required: false
+      - name: organization
+        label: Organization
+        widget: string
+        required: false
+      - name: position
+        label: Position
+        widget: string
+        required: false
+      - name: skills
+        label: Skills
+        widget: list
+        required: false
+        default: []
+      - name: achievements
+        label: Achievements
+        widget: list
+        required: false
+        default: []
+      - name: links
+        label: Links
+        widget: list
+        required: false
+        fields:
+          - name: name
+            label: Name
+            widget: string
+          - name: url
+            label: URL
+            widget: string
+          - name: type
+            label: Type
+            widget: select
+            options:
+              - certificate
+              - project
+              - other
+      - name: icon
+        label: Icon
+        widget: string
+        required: false
+      - name: color
+        label: Color
+        widget: string
+        required: false
+  - name: friends
+    label: Friends
+    folder: src/content/friends
+    create: true
+    slug: '{{slug}}'
+    format: json
+    fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: imgurl
+        label: Avatar URL
+        widget: string
+      - name: desc
+        label: Description
+        widget: text
+      - name: siteurl
+        label: Site URL
+        widget: string
+      - name: tags
+        label: Tags
+        widget: list
+        required: false
+        default: []
+  - name: page_friends
+    label: Friends Page
+    files:
+      - name: friends
+        label: Friends
+        file: src/content/friends.md
+        fields:
+          - name: body
+            label: Body
+            widget: markdown
+  - name: page_about
+    label: About Page
+    files:
+      - name: about
+        label: About
+        file: src/content/about.md
+        fields:
+          - name: body
+            label: Body
+            widget: markdown
+editor:
+  preview: true
+locale: en
