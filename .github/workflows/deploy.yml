@@ -44,6 +44,12 @@ jobs:
       - name: Build (astro build)
         run: pnpm run build
 
+      # GitHub Pages 默认会用 Jekyll 渲染，而 Jekyll 会忽略所有以下划线 "_" 开头的文件/目录。
+      # Astro 把所有 CSS/JS 产到 _astro/ 下，没有 .nojekyll 就会全部 404，页面变裸 HTML。
+      # 在 dist 根放一个空的 .nojekyll 即可让 GitHub Pages 跳过 Jekyll。
+      - name: Add .nojekyll to dist (avoid Jekyll ignoring _astro/)
+        run: touch ./dist/.nojekyll
+
       - name: Deploy to master branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
