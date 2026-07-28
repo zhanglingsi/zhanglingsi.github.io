@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { getPostUrl } from "@utils/url";
+import { postConfig } from "@/config";
+import Waline from "./comment/waline.astro";
+import Twikoo from "./comment/twikoo.astro";
+
+
+interface Props {
+    post?: CollectionEntry<"posts">;
+    path?: string;
+}
+
+const { post, path: explicitPath } = Astro.props;
+
+let path = "";
+if (explicitPath) {
+    path = explicitPath;
+} else if (post) {
+    path = getPostUrl(post);
+}
+
+const provider = postConfig.comment?.enable ? postConfig.comment.provider : undefined;
+---
+
+{provider && (
+    <div class="card-base p-6 mb-4 transition-swup-fade" data-comment-root>
+        {provider === 'waline' && <Waline path={path} />}
+        {provider === 'twikoo' && <Twikoo path={path} />}
+    </div>
+)}
