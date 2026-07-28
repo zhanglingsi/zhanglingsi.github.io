@@ -1,27 +1,36 @@
-# Ref: https://docs.astro.build/en/guides/deploy/github/
+# Astro 官方推荐的 GitHub Pages 部署方式（基于 artifact，不经过 Jekyll）
+# 参考：https://docs.astro.build/en/guides/deploy/github/
+#
+# 与 dev 分支的等价功能：push 到 astro 分支 -> 自动构建 -> 自动发布到 GitHub Pages
+# 区别：不再强推 master 分支，而是由 Pages 直接服务构建产物（artifact），
+#       彻底规避 Jekyll 忽略 _astro/ 导致 CSS/JS 全部 404 的问题。
 
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [ astro ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
+  # 允许在 Actions 页面手动触发
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
+# 允许一个并发部署，跳过正在运行和最新排队之间的运行
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout astro branch
         uses: actions/checkout@v7
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -44,21 +53,18 @@ jobs:
       - name: Build (astro build)
         run: pnpm run build
 
-      # GitHub Pages 默认会用 Jekyll 渲染，而 Jekyll 会忽略所有以下划线 "_" 开头的文件/目录。
-      # Astro 把所有 CSS/JS 产到 _astro/ 下，没有 .nojekyll 就会全部 404，页面变裸 HTML。
-      # 在 dist 根放一个空的 .nojekyll 即可让 GitHub Pages 跳过 Jekyll。
-      - name: Add .nojekyll to dist (avoid Jekyll ignoring _astro/)
-        run: touch ./dist/.nojekyll
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
-      - name: Deploy to master branch
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          cd ./dist
-          git init
-          git config user.name "zhanglingsi"
-          git config user.email "zhanglingsi@aliyun.com"
-          git add .
-          git commit -m "Update docs by GitHub Actions ($(date +'%Y-%m-%d %H:%M:%S'))"
-          git push --force --quiet "https://x-access-token:${GH_TOKEN}@github.com/zhanglingsi/zhanglingsi.github.io.git" HEAD:master
-  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
