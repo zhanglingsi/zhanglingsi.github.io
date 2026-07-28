@@ -29,7 +29,7 @@ export const SIDEBAR_TOP = 1;
 export const SIDEBAR_SPACING = 1;
 
 // Page width (rem)
-export const PAGE_WIDTH = 90;
+export const PAGE_WIDTH = 110;
 
 // Category constants
 export const UNCATEGORIZED = "uncategorized";
